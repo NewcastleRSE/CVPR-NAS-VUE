@@ -56,8 +56,8 @@
                     errorMsg: `An Error occurred, please try again`,
                     success: false,
                     successMsg: `Registration successful! Now please login.`
-          ***REMOVED***
-      ***REMOVED***,
+                }
+            },
             methods: {
                 async register(e) {
                     try {
@@ -67,16 +67,16 @@
                             password: this.password,
                             email: this.email,
                             username: this.username
-                  ***REMOVED***)
+                        })
                         this.success = true
                         await this.$router.push('login')
-              ***REMOVED*** catch(e) {
+                    } catch(e) {
                         this.error = true
                         this.email = ''
-              ***REMOVED*** 
-          ***REMOVED***
-      ***REMOVED***
-  ***REMOVED***
+                    } 
+                }
+            }
+        }
     </script>
     <style scoped>
     </style>

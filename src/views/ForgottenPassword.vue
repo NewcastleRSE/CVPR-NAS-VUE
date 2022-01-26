@@ -49,14 +49,14 @@ export default {
       this.error = false;
       this.axios.post(`http://localhost:1337/api/auth/forgot-password`, {
         email: this.email
-***REMOVED***)
+      })
           .then(() => {
             this.done = true
-    ***REMOVED***)
+          })
           .catch(e => {
             e;
             this.error = true
-    ***REMOVED***)
+          })
     }
   }
 }

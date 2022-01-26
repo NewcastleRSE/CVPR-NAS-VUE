@@ -108,7 +108,7 @@ export default {
 #twitter {
 	color: #fff;
 }
-***REMOVED***
+/*
   Solid State by HTML5 UP
   html5up.net | @ajlkn
   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
@@ -129,7 +129,7 @@ section, summary, time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 105%;
-	***REMOVED*** font: inherit; */
+	/* font: inherit; */
 	vertical-align: baseline;}
 
 
@@ -185,7 +185,7 @@ input, select, textarea {
 	appearance: none;
 }
 
-***REMOVED*** Basic */
+/* Basic */
 
 @-ms-viewport {
 	width: device-width;
@@ -238,7 +238,7 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 	transition: none !important;
 }
 
-***REMOVED*** Type */
+/* Type */
 
 body, input, select, textarea {
 	color: #ffffff;
@@ -466,7 +466,7 @@ code {
 }
 
 pre {
-	***REMOVED***-webkit-overflow-scrolling: touch; */
+	/*-webkit-overflow-scrolling: touch; */
 	font-family: "Courier New", monospace;
 	font-size: 0.9em;
 	margin: 0 0 2em 0;
@@ -501,7 +501,7 @@ hr.major {
 	text-align: right;
 }
 
-***REMOVED*** Row */
+/* Row */
 
 .row {
 	display: flex;
@@ -2214,13 +2214,13 @@ hr.major {
 
 }
 
-***REMOVED*** Section/Article */
+/* Section/Article */
 
 section.special, article.special {
 	text-align: center;
 }
 
-***REMOVED*** Form */
+/* Form */
 
 form {
 	margin: 0 0 2em 0;
@@ -2481,7 +2481,7 @@ input[type="radio"] + label:before {
 	opacity: 1.0;
 }
 
-***REMOVED*** Box */
+/* Box */
 
 .box {
 	border-radius: 5px;
@@ -2502,7 +2502,7 @@ input[type="radio"] + label:before {
 	padding: 0;
 }
 
-***REMOVED*** Icon */
+/* Icon */
 
 .icon {
 	text-decoration: none;
@@ -2539,7 +2539,7 @@ input[type="radio"] + label:before {
 	font-family: 'Font Awesome 5 Brands';
 }
 
-***REMOVED*** Image */
+/* Image */
 
 .image {
 	border-radius: 5px;
@@ -2593,7 +2593,7 @@ input[type="radio"] + label:before {
 	width: 100%;
 }
 
-***REMOVED*** List */
+/* List */
 
 ol {
 	list-style: decimal;
@@ -2644,7 +2644,7 @@ dl dd {
 	margin-left: 2em;
 }
 
-***REMOVED*** Actions */
+/* Actions */
 
 ul.actions {
 	display: -moz-flex;
@@ -2766,7 +2766,7 @@ ul.actions.fit.stacked {
 
 }
 
-***REMOVED*** Icons */
+/* Icons */
 
 ul.icons {
 	cursor: default;
@@ -2787,7 +2787,7 @@ ul.icons li .icon:before {
 	font-size: 1.25em;
 }
 
-***REMOVED*** Contact */
+/* Contact */
 
 ul.contact {
 	list-style: none;
@@ -2840,7 +2840,7 @@ ul.contact li:first-child {
 
 }
 
-***REMOVED*** Pagination */
+/* Pagination */
 
 ul.pagination {
 	cursor: default;
@@ -2910,7 +2910,7 @@ ul.pagination li:last-child {
 
 }
 
-***REMOVED*** Table */
+/* Table */
 
 .table-wrapper {
 	-webkit-overflow-scrolling: touch;
@@ -2978,7 +2978,7 @@ table.alt tfoot {
 	border-top: 0;
 }
 
-***REMOVED*** Button */
+/* Button */
 
 input[type="submit"],
 input[type="reset"],
@@ -3119,7 +3119,7 @@ button:disabled,
 
 }
 
-***REMOVED*** Features */
+/* Features */
 
 .features {
 	display: -moz-flex;
@@ -3199,7 +3199,7 @@ button:disabled,
 
 }
 
-***REMOVED*** Header */
+/* Header */
 
 #header {
 	-moz-transition: background-color 0.2s ease-in-out;
@@ -3289,7 +3289,7 @@ button:disabled,
 }
 
 
-***REMOVED*** Banner */
+/* Banner */
 
 #banner {
 	padding: 3em 0 4.75em 0 ;
@@ -3460,7 +3460,7 @@ body.is-preload #banner p {
 	filter: blur(2px);
 }
 
-***REMOVED*** Wrapper */
+/* Wrapper */
 
 #wrapper > header {
 	padding: 11em 0 2.25em 0 ;
@@ -3920,7 +3920,7 @@ body.is-preload #banner p {
 
 }
 
-***REMOVED*** Footer */
+/* Footer */
 
 #footer .inner {
 	padding: 5em 0 3em 0 ;

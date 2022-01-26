@@ -12,17 +12,17 @@ import ResetPassword from '../views/ResetPassword.vue'
         path: '/',
         name: 'Home',
         component: Home
-***REMOVED***,
+      },
       {
         path: '/register',
         name: 'Register',
         component: Register
-***REMOVED***,
+      },
       {
         path: '/login',
         name: 'Login',
         component: Login
-***REMOVED***,
+      },
     {
     path: '/forgotpassword',
     name: 'ForgotPassword',
@@ -38,5 +38,5 @@ import ResetPassword from '../views/ResetPassword.vue'
       mode: 'history',
       base: process.env.BASE_URL,
       routes
-***REMOVED***
+    })
     export default router

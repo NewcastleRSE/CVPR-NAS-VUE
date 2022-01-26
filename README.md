@@ -36,22 +36,22 @@ Project milestones relate to the phases of the competition.
 
 The website must be able to collect data from running the competition submissions and display a ranking of competitor results.
 
-Last years website is available for reference at: 
+Last year's website is available for reference at: 
 
 https://competitions.codalab.org/competitions/29853 
 
 
 ### Prerequisites
 
-Any tools or versions of languages needed to run code. For example specific Python or Node versions. Minimum hardware requirements also go here.
+Vue-cli, Node.js
 
 ### Installation
 
-How to build or install the applcation.
+How to build or install the application
 
 ### Running Locally
 
-How to run the application on your local system.
+yarn serve
 
 ### Running Tests
 
@@ -90,9 +90,4 @@ Should be considered fragile, code should compile and run but features may be pr
 A branch per feature being worked on.
 
 https://nvie.com/posts/a-successful-git-branching-model/
-
-## License
-
-
-## Acknowledgements
 
