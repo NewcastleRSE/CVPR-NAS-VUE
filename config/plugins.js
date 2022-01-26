@@ -11,7 +11,7 @@ module.exports = ({ env }) => ({
       auth: {
         user: process.env.GMAIL_USER,
         pass: process.env.GMAIL_PASS,
-      },
+***REMOVED***,
       // ... any custom nodemailer options
     },
     settings: {

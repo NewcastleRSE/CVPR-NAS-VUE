@@ -79,7 +79,5 @@ export default {
 </script>
 <style scoped>
 
-.btn-sub {
-	background-color: #93C47D;
-}
+
 </style>

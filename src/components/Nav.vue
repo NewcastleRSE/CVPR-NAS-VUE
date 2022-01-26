@@ -16,9 +16,10 @@
 						<router-link to="" v-if="user">
 							<font-awesome-icon class="text-xl" :icon="['fas', 'user-circle']" /> {{ user.username }}
 						</router-link>
+						<router-link to="download" v-if="user">DOWNLOAD</router-link>
 						<span @click="logout">
                   <router-link to="" v-if="user">LOGOUT</router-link>
-                </span>
+						</span>
           </div>
           <br>
           <h2>CVPR NAS Workshop 2022</h2>
@@ -108,7 +109,7 @@ export default {
 #twitter {
 	color: #fff;
 }
-/*
+***REMOVED***
   Solid State by HTML5 UP
   html5up.net | @ajlkn
   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
@@ -129,7 +130,7 @@ section, summary, time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 105%;
-	/* font: inherit; */
+	***REMOVED*** font: inherit; */
 	vertical-align: baseline;}
 
 
@@ -185,7 +186,7 @@ input, select, textarea {
 	appearance: none;
 }
 
-/* Basic */
+***REMOVED*** Basic */
 
 @-ms-viewport {
 	width: device-width;
@@ -238,7 +239,7 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 	transition: none !important;
 }
 
-/* Type */
+***REMOVED*** Type */
 
 body, input, select, textarea {
 	color: #ffffff;
@@ -466,7 +467,7 @@ code {
 }
 
 pre {
-	/*-webkit-overflow-scrolling: touch; */
+	***REMOVED***-webkit-overflow-scrolling: touch; */
 	font-family: "Courier New", monospace;
 	font-size: 0.9em;
 	margin: 0 0 2em 0;
@@ -501,7 +502,7 @@ hr.major {
 	text-align: right;
 }
 
-/* Row */
+***REMOVED*** Row */
 
 .row {
 	display: flex;
@@ -2214,13 +2215,13 @@ hr.major {
 
 }
 
-/* Section/Article */
+***REMOVED*** Section/Article */
 
 section.special, article.special {
 	text-align: center;
 }
 
-/* Form */
+***REMOVED*** Form */
 
 form {
 	margin: 0 0 2em 0;
@@ -2481,7 +2482,7 @@ input[type="radio"] + label:before {
 	opacity: 1.0;
 }
 
-/* Box */
+***REMOVED*** Box */
 
 .box {
 	border-radius: 5px;
@@ -2502,7 +2503,7 @@ input[type="radio"] + label:before {
 	padding: 0;
 }
 
-/* Icon */
+***REMOVED*** Icon */
 
 .icon {
 	text-decoration: none;
@@ -2539,7 +2540,7 @@ input[type="radio"] + label:before {
 	font-family: 'Font Awesome 5 Brands';
 }
 
-/* Image */
+***REMOVED*** Image */
 
 .image {
 	border-radius: 5px;
@@ -2593,7 +2594,7 @@ input[type="radio"] + label:before {
 	width: 100%;
 }
 
-/* List */
+***REMOVED*** List */
 
 ol {
 	list-style: decimal;
@@ -2644,7 +2645,7 @@ dl dd {
 	margin-left: 2em;
 }
 
-/* Actions */
+***REMOVED*** Actions */
 
 ul.actions {
 	display: -moz-flex;
@@ -2766,7 +2767,7 @@ ul.actions.fit.stacked {
 
 }
 
-/* Icons */
+***REMOVED*** Icons */
 
 ul.icons {
 	cursor: default;
@@ -2787,7 +2788,7 @@ ul.icons li .icon:before {
 	font-size: 1.25em;
 }
 
-/* Contact */
+***REMOVED*** Contact */
 
 ul.contact {
 	list-style: none;
@@ -2840,7 +2841,7 @@ ul.contact li:first-child {
 
 }
 
-/* Pagination */
+***REMOVED*** Pagination */
 
 ul.pagination {
 	cursor: default;
@@ -2910,7 +2911,7 @@ ul.pagination li:last-child {
 
 }
 
-/* Table */
+***REMOVED*** Table */
 
 .table-wrapper {
 	-webkit-overflow-scrolling: touch;
@@ -2978,7 +2979,7 @@ table.alt tfoot {
 	border-top: 0;
 }
 
-/* Button */
+***REMOVED*** Button */
 
 input[type="submit"],
 input[type="reset"],
@@ -3119,7 +3120,7 @@ button:disabled,
 
 }
 
-/* Features */
+***REMOVED*** Features */
 
 .features {
 	display: -moz-flex;
@@ -3199,7 +3200,7 @@ button:disabled,
 
 }
 
-/* Header */
+***REMOVED*** Header */
 
 #header {
 	-moz-transition: background-color 0.2s ease-in-out;
@@ -3289,7 +3290,7 @@ button:disabled,
 }
 
 
-/* Banner */
+***REMOVED*** Banner */
 
 #banner {
 	padding: 3em 0 4.75em 0 ;
@@ -3460,7 +3461,7 @@ body.is-preload #banner p {
 	filter: blur(2px);
 }
 
-/* Wrapper */
+***REMOVED*** Wrapper */
 
 #wrapper > header {
 	padding: 11em 0 2.25em 0 ;
@@ -3920,7 +3921,7 @@ body.is-preload #banner p {
 
 }
 
-/* Footer */
+***REMOVED*** Footer */
 
 #footer .inner {
 	padding: 5em 0 3em 0 ;

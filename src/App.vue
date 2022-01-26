@@ -11,3 +11,12 @@ export default {
 };
 
 </script>
+
+<style>
+
+.btn-sub {
+	background-color: #93C47D;
+	font-size: 1.2em;
+}
+
+</style>

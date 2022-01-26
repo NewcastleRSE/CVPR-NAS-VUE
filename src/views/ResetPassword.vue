@@ -51,15 +51,15 @@ export default {
         code: this.$route.query.code,
         password: this.password,
         passwordConfirmation: this.confirmPassword
-      })
+***REMOVED***)
           .then(() => {
             this.done = true
             this.$router.push("login")
-          })
+    ***REMOVED***)
           .catch(e => {
             e;
             this.error = true
-          })
+    ***REMOVED***)
     }
   },
 }

@@ -73,7 +73,7 @@
     <script>
         export default {
             name: 'FeaturedSection'
-        }
+  ***REMOVED***
     </script>
     <style scoped>
     </style>
