@@ -6,6 +6,7 @@ import Login from '../views/Login.vue'
 import ForgottenPassword from '../views/ForgottenPassword.vue'
 import ResetPassword from '../views/ResetPassword.vue'
 import Download from "../views/Download";
+import Leaderboard from "../views/Leaderboard";
   
 Vue.use(VueRouter)
 const routes = [
@@ -38,6 +39,11 @@ const routes = [
     path: '/download',
     name: 'Download',
     component: Download
+  },
+  {
+    path: '/leaderboard',
+    name: 'Leaderboard',
+    component: Leaderboard
   }
 ]
 const router = new VueRouter({
@@ -51,7 +57,7 @@ router.beforeEach((to, from, next) => {
   // redirect to login page if not logged in and trying to access a restricted page
 
   // list public pages
-  const publicPages = ['/','/home', '/login', '/register','/forgotpassword', '/resetpassword', '/featured-section'];
+  const publicPages = ['/','/home', '/login', '/register','/forgotpassword', '/resetpassword'];
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem('userData');
 

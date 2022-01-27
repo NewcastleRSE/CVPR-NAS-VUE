@@ -17,6 +17,7 @@
 							<font-awesome-icon class="text-xl" :icon="['fas', 'user-circle']" /> {{ user.username }}
 						</router-link>
 						<router-link to="download" v-if="user">DOWNLOAD</router-link>
+						<router-link to="leaderboard" v-if="user">LEADERBOARD</router-link>
 						<span @click="logout">
                   <router-link to="" v-if="user">LOGOUT</router-link>
 						</span>
