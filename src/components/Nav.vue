@@ -1,6 +1,6 @@
 <template>
 	<!-- Page Wrapper -->
-	<div id="page-wrapper">
+	<div id="page-wrapper" >
 
 	<!-- Banner -->
       <section id="banner">
@@ -75,7 +75,13 @@
 				</div>
 			</section>
 
-		</div>
+		<!--	<section id="spacer" class="wrapper spotlight style4">
+				<div class="inner">
+
+				</div>
+			</section> -->
+
+	</div>
 </template>
 <script>
 // import { mapGetters } from 'vuex'
@@ -3776,7 +3782,7 @@ body.is-preload #banner p {
 }
 
 .wrapper.spotlight.style4 {
-	background-color: #39477c;
+	background-color: #2d3a69;
 }
 
 .wrapper.spotlight.style4:before, .wrapper.spotlight.style4:after {
