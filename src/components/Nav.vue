@@ -23,7 +23,7 @@
 						</span>
           </div>
           <br>
-          <h2>CVPR NAS Workshop 2022</h2>
+          <h2>CVPR-NAS 2022 </h2>
 
         </div>
       </section>
