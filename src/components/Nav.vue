@@ -17,6 +17,7 @@
 							<font-awesome-icon class="text-xl" :icon="['fas', 'user-circle']" /> {{ user.username }}
 						</router-link>
 						<router-link to="download" v-if="user">DOWNLOAD</router-link>
+						<router-link to="submit" v-if="user">SUBMIT</router-link>
 						<router-link to="leaderboard" v-if="user">LEADERBOARD</router-link>
 						<span @click="logout">
                   <router-link to="" v-if="user">LOGOUT</router-link>
@@ -44,7 +45,7 @@
 							The competition will be run in three phases:
 						</p>
 						<ul>
-							<li>Phase 1: Development of your own NAS approach within our testing framework. Starting early January 2022.</li>
+							<li>Phase 1: Local development of your NAS approach using the provided testing framework. Starting January 2022.</li>
 							<li>Phase 2: Validation that your framework works within our test environment. Starting March 2022.</li>
 							<li>Phase 3: Running your NAS approach against our hidden data. Competition ends April 2022.</li>
 						</ul>

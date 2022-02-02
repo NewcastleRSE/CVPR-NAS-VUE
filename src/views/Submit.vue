@@ -18,7 +18,7 @@
 					<form enctype="multipart/form-data">
 						<div class="my-5">
 							<h1 class="text-left font-bold mb-5 font-montserrat">Title</h1>
-							<input type="email" v-model="title" class="text-sm outline-none pb-5 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700">
+							<input type="text" v-model="title" class="text-sm outline-none pb-5 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700">
 						</div>
 						<div class="my-5">
 
@@ -38,7 +38,7 @@
 
 
 export default {
-	name: 'Home',
+	name: 'Submit',
 	data() {
 		return {
 			title: '',
@@ -56,13 +56,13 @@ export default {
 		async handleFileUpload() {
 			try {
 
-				submitFile()
+				this.uploadFile()
 				{
 					const formData = new FormData();
 					formData.append('file', this.data);
+					formData.append('title', this.title);
 					const headers = {'Content-Type': 'multipart/form-data'};
-					axios.post('http://localhost:1337/api/submission', formData, {headers}).then((res) => {
-						res.data.files; // binary representation of the file
+					await this.axios.post('http://localhost:1337/api/submission', formData, {headers}).then((res) => {
 						res.status; // HTTP status
 					});
 					await this.$router.push('/')

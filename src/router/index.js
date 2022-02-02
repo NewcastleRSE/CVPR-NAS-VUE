@@ -6,6 +6,7 @@ import Login from '../views/Login.vue'
 import ForgottenPassword from '../views/ForgottenPassword.vue'
 import ResetPassword from '../views/ResetPassword.vue'
 import Download from "../views/Download";
+import Submit from "../views/Submit";
 import Leaderboard from "../views/Leaderboard";
   
 Vue.use(VueRouter)
@@ -39,6 +40,11 @@ const routes = [
     path: '/download',
     name: 'Download',
     component: Download
+  },
+  {
+    path: '/submit',
+    name: 'Submit',
+    component: Submit
   },
   {
     path: '/leaderboard',
