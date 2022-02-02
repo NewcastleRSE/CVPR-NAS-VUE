@@ -18,12 +18,12 @@
 					<form enctype="multipart/form-data">
 						<div class="my-5">
 							<h1 class="text-left font-bold mb-5 font-montserrat">Title</h1>
-							<input type="text" v-model="title" class="text-sm outline-none pb-5 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700">
+							<input type="text" v-model="title" class="text-sm outline-none pb-5 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700" required>
 						</div>
 						<div class="my-5">
 
 							<input type="file" id="file" ref="file" v-on:change="uploadFile()"/>
-							<br>
+							<br><br>
 							<button @click="handleFileUpload">Upload!</button>
 						</div>
 					</form>
@@ -51,7 +51,7 @@ export default {
 	methods: {
 
 		uploadFile() {
-			this.Images = this.$refs.file.files[0];
+			this.data = this.$refs.file.files[0];
 		},
 		async handleFileUpload() {
 			try {
@@ -59,11 +59,18 @@ export default {
 				this.uploadFile()
 				{
 					const formData = new FormData();
-					formData.append('file', this.data);
+					formData.append('file', JSON.stringify(this.data);
 					formData.append('title', this.title);
-					const headers = {'Content-Type': 'multipart/form-data'};
-					await this.axios.post('http://localhost:1337/api/submission', formData, {headers}).then((res) => {
+
+
+					await this.axios.post('http://localhost:1337/api/submission', formData, {
+						headers: {
+							'Content-Type' : 'multipart/form-data',
+							'Authorization' : `Bearer ${window.localStorage.getItem('jwt')}`,
+						}
+					}).then((res) => {
 						res.status; // HTTP status
+						console.log(res.status);
 					});
 					await this.$router.push('/')
 				}
