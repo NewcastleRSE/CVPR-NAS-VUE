@@ -19,4 +19,13 @@ export default {
 	font-size: 1.2em;
 }
 
+.errorMsg {
+	font-weight: bold;
+	color: darkred;
+}
+
+.successMsg {
+	font-weight: bold;
+}
+
 </style>
