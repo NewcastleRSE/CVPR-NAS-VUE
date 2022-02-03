@@ -7,11 +7,13 @@
 			</div>
       <div class="sm:w-1/2">
         <div class="p-5 w-4/5 mx-auto text-left font-raleway">
-          <div class="text-left mb-10">
-            <router-link to="/login">
-              <font-awesome-icon class="mr-5" :icon="['fas', 'arrow-left']" /> Login
-            </router-link>
-          </div>
+					<div class="text-left mb-7">
+						<span class="outline">
+							<router-link to="/">
+									<font-awesome-icon class="mr-5" :icon="['fas', 'arrow-left']" /> HOME
+							</router-link>
+						</span>
+					</div>
 
 					<h2 class="font-bold text-left font-montserrat mb-10 text-2xl sm:text-3xl">Recover your password</h2>
           <p v-show="done" class="text-sm text-green-500">Password reset link has been sent to {{ email }}</p>

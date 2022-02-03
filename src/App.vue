@@ -28,4 +28,10 @@ export default {
 	font-weight: bold;
 }
 
+.outline {
+	border : 1px rgba(76, 175, 80, 0.3) solid;
+	padding: 15px;
+}
+
+
 </style>

@@ -8,9 +8,11 @@
 			<div class="sm:w-1/2">
 				<div class="p-5 w-4/5 mx-auto text-left font-raleway">
 					<div class="text-left mb-7">
-						<router-link to="/">
-							<font-awesome-icon class="mr-5" :icon="['fas', 'arrow-left']" /> HOME
-						</router-link>
+						<span class="outline">
+							<router-link to="/">
+								<font-awesome-icon class="mr-5" :icon="['fas', 'arrow-left']" /> HOME
+							</router-link>
+						</span>
 					</div>
 
 					<h2 class="font-bold text-left font-montserrat mb-10 text-2xl sm:text-3xl">Create a submission</h2>
@@ -87,3 +89,8 @@ export default {
 	}
 }
 </script>
+
+<style scoped>
+
+
+</style>
