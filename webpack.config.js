@@ -10,5 +10,32 @@ module.exports = {
         { family: "Raleway", variants: [ "200", "700" ] }
       ]
 ***REMOVED***
-  ]
+
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.s(c|a)ss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            // Requires sass-loader@^7.0.0
+            options: {
+              implementation: require('sass'),
+              indentedSyntax: true // optional
+      ***REMOVED***,
+            // Requires >= sass-loader@^8.0.0
+            options: {
+              implementation: require('sass'),
+              sassOptions: {
+                indentedSyntax: true // optional
+        ***REMOVED***,
+      ***REMOVED***,
+    ***REMOVED***,
+        ],
+***REMOVED***,
+    ],
+  }
 }
