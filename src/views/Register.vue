@@ -18,7 +18,7 @@
 										<p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
 										<form @submit="register">
 												<div class="my-4">
-														<h1 class="text-left font-bold mb-2 font-montserrat">Name</h1>
+														<h1 class="text-left font-bold mb-2 font-montserrat">Name (min 3 characters)</h1>
 														<input type="text" v-model="name" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700">
 												</div>
 												<div class="my-4">
@@ -30,7 +30,7 @@
 														<input type="password" v-model="password" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700">
 												</div>
 												<div class="my-4">
-														<h1 class="text-left font-bold mb-2 font-montserrat">Username</h1>
+														<h1 class="text-left font-bold mb-2 font-montserrat">Username (min 6 characters)</h1>
 														<input type="text" v-model="username" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700">
 												</div>
 

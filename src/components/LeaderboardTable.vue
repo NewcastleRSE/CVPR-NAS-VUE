@@ -21,8 +21,8 @@
           :total-items="totalItems"
           :items-per-page="itemsPerPage"
           :css="paginationCss"
-          @onUpdate="changePage"
-          @updateCurrentPage="updateCurrentPage"
+          @on-update="changePage"
+          @update-current-page="updateCurrentPage"
       />
 
       <!--
@@ -34,13 +34,15 @@
             :list-items-per-page="listItemsPerPage"
             :items-per-page="itemsPerPage"
             :css="itemsPerPageCss"
-            @onUpdate="updateItemsPerPage"
+            @on-update="updateItemsPerPage"
         />
       </div>
 
       <!-- Spinner element as slot used when is-loading attribute is true -->
       <Spinner slot="spinner" />
     </DataTable>
+
+		{{ data }}
 
   </div>
 
@@ -67,7 +69,7 @@ export default {
       user: {},
       headerFields: [
         { name: "title", label : "Title", sortable : true },
-				{ name: "totalScore", label : "Final Score", sortable : true },
+        { name: "totalScore", label : "Final Score", sortable : true },
         { name: "adalineAdjScore", label : "Adaline Adj_Score", sortable : true },
         { name: "adalineParams", label : "Adaline Params", sortable : true },
         { name: "adalineRawScore", label : "Adaline Raw Score", sortable : true },
@@ -118,38 +120,38 @@ export default {
       itemsPerPage: 10,
       currentPage: 1,
       totalItems: this.myData.length,
-			data: this.myData
+      data: this.myData
     };
   },
-  methods: {
-    dtUpdateSort: function({ sortField, sort }) {
-      const sortedData = orderBy(this.myData, [sortField], [sort]);
-      const start = (this.currentPage - 1) * this.itemsPerPage;
-      const end = this.currentPage * this.itemsPerPage;
-      this.myData = sortedData.slice(start, end);
-      console.log("load data based on new sort", this.currentPage);
-    },
-    updateItemsPerPage: function(itemsPerPage) {
-      this.itemsPerPage = itemsPerPage;
-      if (itemsPerPage >= this.myData.length) {
-        // do nothing
-***REMOVED*** else {
-        this.myData = this.myData.slice(0, itemsPerPage);
-***REMOVED***
-      console.log("load data with new items per page number", itemsPerPage);
-    },
-    changePage: function(currentPage) {
-      this.currentPage = currentPage;
-      const start = (currentPage - 1) * this.itemsPerPage;
-      const end = currentPage * this.itemsPerPage;
-      this.myData = this.myData.slice(start, end);
-      console.log("load data for the new page", currentPage);
-    },
-    updateCurrentPage: function(currentPage) {
-      this.currentPage = currentPage;
-      console.log("update current page without need to load data", currentPage);
-    },
-  }
+	methods: {
+		dtUpdateSort: function({ sortField, sort }) {
+			const sortedData = orderBy(this.myData, [sortField], [sort]);
+			const start = (this.currentPage - 1) * this.itemsPerPage;
+			const end = this.currentPage * this.itemsPerPage;
+			this.myData = sortedData.slice(start, end);
+			console.log("load data based on new sort", this.currentPage);
+		},
+		updateItemsPerPage: function(itemsPerPage) {
+			this.myData = JSON.parse(this.data);
+			this.itemsPerPage = parseInt(itemsPerPage);
+			if (itemsPerPage >= this.myData.length) {
+				// do nothing
+			} else {
+				this.myData =  this.myData.slice(0, itemsPerPage);
+			}
+			console.log("load data with new items per page number", itemsPerPage);
+		},
+		changePage: function(currentPage) {
+			this.myData = JSON.parse(this.data);
+			this.currentPage = parseInt(currentPage) ;
+			const start = (currentPage - 1) * this.itemsPerPage;
+			const end = currentPage * this.itemsPerPage;
+			this.myData = this.myData.slice(start, end);
+		},
+		updateCurrentPage: function(currentPage) {
+			this.currentPage = parseInt(currentPage);
+		},
+	}
 }
 </script>
 
@@ -200,7 +202,7 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(odd) {
-	background-color: #fff;
+  background-color: #fff;
 }
 
 ***REMOVED*** Datatable CSS */
@@ -274,7 +276,7 @@ tr:nth-child(odd) {
 
 .v-datatable-light .column-1 {
   color: green;
-	font-weight: bold;
+  font-weight: bold;
 }
 
 

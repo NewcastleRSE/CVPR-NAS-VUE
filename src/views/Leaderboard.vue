@@ -27,7 +27,7 @@
     </section>
 
     <div id="table-section">
-      <LeaderboardTable :my-data="azureData"></LeaderboardTable>
+      <LeaderboardTable2 :my-data="azureData"></LeaderboardTable2>
     </div>
 
   </div>
@@ -35,12 +35,12 @@
 
 <script>
 
-import LeaderboardTable from "../components/LeaderboardTable";
+import LeaderboardTable2 from "../components/LeaderboardTable2";
 
 export default {
   name: "Leaderboard",
   components: {
-      LeaderboardTable
+      LeaderboardTable2
   },
   data() {
     return {
@@ -51,9 +51,14 @@ export default {
   },
   methods: {
     async getSubmissions() {
-      await this.axios.get(`http://localhost:1337/api/submissions`, {
+
+    ***REMOVED***  const endpoint = process.env.BATCH_ENDPOINT + '/api/submissions'; */
+      const endpoint = `http://localhost:1337/api/submissions`;
+     ***REMOVED*** const token = process.env.JWT_SECRET; */
+      await this.axios.get(endpoint, {
         headers: {
           'Content-Type' : 'application/json',
+         ***REMOVED*** 'Authorization' : `Bearer ` + token, */
           'Authorization' : `Bearer ${window.localStorage.getItem('jwt')}`
   ***REMOVED***,
 ***REMOVED***).then(function(response){
@@ -64,7 +69,7 @@ export default {
           tempArray.push(x);
   ***REMOVED***
         this.azureData = tempArray;
-       ***REMOVED*** localStorage.setItem('lbdata', JSON.stringify(tempArray)); */
+        localStorage.setItem('lbdata', JSON.stringify(tempArray));
 ***REMOVED***.bind(this))
           .catch( function( error ){
             this.axiosError = error;
