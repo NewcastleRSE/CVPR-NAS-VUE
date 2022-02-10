@@ -9,7 +9,7 @@
         :is-loading="isLoading"
         :css="datatableCss"
         not-found-msg="Items not found"
-        @onUpdate="dtUpdateSort"
+        @on-update="dtUpdateSort"
         track-by="title"
     >
       <!--
@@ -42,7 +42,7 @@
       <Spinner slot="spinner" />
     </DataTable>
 
-	</div>
+  </div>
 
 </template>
 
@@ -54,7 +54,7 @@ import orderBy from "lodash.orderby";
 export default {
   name: "LeaderboardTable",
   props: {
-    myData : []
+     myData : []
   },
   components: {
     DataTable,
@@ -65,31 +65,30 @@ export default {
     return {
       submissions: [],
       user: {},
-      data: '',
       headerFields: [
         { name: "title", label : "Title", sortable : true },
-        { name: "adalineAdjScore", label : "AAS", sortable : true },
-        { name: "adalineParams", label : "AP", sortable : true },
-        { name: "adalineRawScore", label : "ARS", sortable : true },
-        { name: "adalineRuntime", label : "AR", sortable : true },
-        { name: "caitieAdjScore", label : "CAS", sortable : true },
-        { name: "caitieParams", label : "CP", sortable : true },
-        { name: "caitieRawScore", label : "CRS", sortable : true },
-        { name: "caitieRuntime", label : "CR", sortable : true },
-        { name: "fabianAdjScore", label : "FAS", sortable : true },
-        { name: "fabianParams", label : "FP", sortable : true },
-        { name: "fabianRawScore", label : "FRS", sortable : true },
-        { name: "fabianRuntime", label : "FR", sortable : true },
-        { name: "lameloAdjScore", label : "LAS", sortable : true },
-        { name: "lameloParams", label : "LP", sortable : true },
-        { name: "lameloRawScore", label : "LRS", sortable : true },
-        { name: "lameloRuntime", label : "LR", sortable : true },
-        { name: "mateoAdjScore", label : "MAS", sortable : true },
-        { name: "mateoParams", label : "MP", sortable : true },
-        { name: "mateoRawScore", label : "MRS", sortable : true },
-        { name: "mateoRuntime", label : "MR", sortable : true },
-        { name: "totalScore", label : "Final Score", sortable : true },
-        { name: "dateSubmitted", label : "Date", sortable : true },
+				{ name: "totalScore", label : "Final Score", sortable : true },
+        { name: "adalineAdjScore", label : "Adaline Adj_Score", sortable : true },
+        { name: "adalineParams", label : "Adaline Params", sortable : true },
+        { name: "adalineRawScore", label : "Adaline Raw Score", sortable : true },
+        { name: "adalineRuntime", label : "Adaline Runtime", sortable : true },
+        { name: "caitieAdjScore", label : "Caitie Adj_Score", sortable : true },
+        { name: "caitieParams", label : "Caitie Params", sortable : true },
+        { name: "caitieRawScore", label : "Caitie Raw Score", sortable : true },
+        { name: "caitieRuntime", label : "Caitie Runtime", sortable : true },
+        { name: "fabianAdjScore", label : "Fabian Adj_Score", sortable : true },
+        { name: "fabianParams", label : "Fabian Params", sortable : true },
+        { name: "fabianRawScore", label : "Fabian Raw Score", sortable : true },
+        { name: "fabianRuntime", label : "Fabian Runtime", sortable : true },
+        { name: "lameloAdjScore", label : "Lamelo Adj_Score", sortable : true },
+        { name: "lameloParams", label : "Lamelo Params", sortable : true },
+        { name: "lameloRawScore", label : "Lamelo Raw Score", sortable : true },
+        { name: "lameloRuntime", label : "Lamelo Runtime", sortable : true },
+        { name: "mateoAdjScore", label : "Mateo Adj_Score", sortable : true },
+        { name: "mateoParams", label : "Mateo Params", sortable : true },
+        { name: "mateoRawScore", label : "Mateo Raw Score", sortable : true },
+        { name: "mateoRuntime", label : "Mateo Runtime", sortable : true },
+        { name: "dateSubmitted", label : "Date Submitted", sortable : true },
       ],
       datatableCss: {
         table: "table table-bordered table-center",
@@ -119,6 +118,7 @@ export default {
       itemsPerPage: 10,
       currentPage: 1,
       totalItems: this.myData.length,
+			data: this.myData
     };
   },
   methods: {
@@ -126,15 +126,15 @@ export default {
       const sortedData = orderBy(this.myData, [sortField], [sort]);
       const start = (this.currentPage - 1) * this.itemsPerPage;
       const end = this.currentPage * this.itemsPerPage;
-      this.data = sortedData.slice(start, end);
+      this.myData = sortedData.slice(start, end);
       console.log("load data based on new sort", this.currentPage);
     },
     updateItemsPerPage: function(itemsPerPage) {
       this.itemsPerPage = itemsPerPage;
       if (itemsPerPage >= this.myData.length) {
-        this.data = this.myData;
+        // do nothing
 ***REMOVED*** else {
-        this.data = this.myData.slice(0, itemsPerPage);
+        this.myData = this.myData.slice(0, itemsPerPage);
 ***REMOVED***
       console.log("load data with new items per page number", itemsPerPage);
     },
@@ -142,7 +142,7 @@ export default {
       this.currentPage = currentPage;
       const start = (currentPage - 1) * this.itemsPerPage;
       const end = currentPage * this.itemsPerPage;
-      this.data = this.myData.slice(start, end);
+      this.myData = this.myData.slice(start, end);
       console.log("load data for the new page", currentPage);
     },
     updateCurrentPage: function(currentPage) {
@@ -173,8 +173,7 @@ export default {
 }
 
 .table {
-  width: 100%;
-  font-size: smaller;
+  font-size: 16px;
 }
 
 .table-bordered thead td, .table-bordered thead th {
@@ -198,6 +197,10 @@ export default {
 
 tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+	background-color: #fff;
 }
 
 ***REMOVED*** Datatable CSS */
@@ -225,14 +228,11 @@ tr:nth-child(even) {
   font-weight: bold;
 }
 
-.v-datatable-light .header-item .th-wrapper.checkboxes {
-  justify-content: center;
-}
-
 .arrows-wrapper {
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
+  margin-left: 80px;
+  margin-top: -20px;
   justify-content: space-between;
 }
 
@@ -250,6 +250,7 @@ tr:nth-child(even) {
 
 .v-datatable-light .arrow.up {
   border-bottom: 8px solid #337ab7;
+  margin-bottom: 2px;
 }
 
 .v-datatable-light .arrow.up:hover {
@@ -258,6 +259,7 @@ tr:nth-child(even) {
 
 .v-datatable-light .arrow.down {
   border-top: 8px solid #337ab7;
+  margin-top: 2px;
 }
 
 .v-datatable-light .arrow.down:hover {
@@ -272,6 +274,7 @@ tr:nth-child(even) {
 
 .v-datatable-light .column-1 {
   color: green;
+	font-weight: bold;
 }
 
 

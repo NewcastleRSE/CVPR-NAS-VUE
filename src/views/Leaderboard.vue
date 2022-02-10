@@ -23,96 +23,30 @@
         </div>
         <br>
         <h2>CVPR-NAS 2022 leader board</h2>
-			</div>
+      </div>
     </section>
 
-		<LeaderboardTable :myData="azureData"></LeaderboardTable>
+    <div id="table-section">
+      <LeaderboardTable :my-data="azureData"></LeaderboardTable>
+    </div>
 
-	</div>
+  </div>
 </template>
 
 <script>
-
-
-***REMOVED***const addZero = value => ("0" + value).slice(-2);
-
-const formatDate = value => {
-  if (value) {
-    const dt = new Date(value);
-    return `${addZero(dt.getDate())}/${addZero(
-        dt.getMonth() + 1
-    )}/${dt.getFullYear()}`;
-  }
-  return "";
-}; */
-
 
 import LeaderboardTable from "../components/LeaderboardTable";
 
 export default {
   name: "Leaderboard",
   components: {
-			LeaderboardTable
+      LeaderboardTable
   },
   data() {
     return {
       submissions: [],
       user: {},
-			azureData : [],
-      myHeaderFields: [
-				{ name: "title", label : "Title", sortable : true },
-				{ name: "adalineAdjScore", label : "Adaline Adj_Score", sortable : true },
-				{ name: "adalineParams", label : "Adaline Params", sortable : true },
-				{ name: "adalineRawScore", label : "Adaline Raw Score", sortable : true },
-				{ name: "adalineRuntime", label : "Adaline Runtime", sortable : true },
-				{ name: "caitieAdjScore", label : "Caitie Adj_Score", sortable : true },
-				{ name: "caitieParams", label : "Caitie Params", sortable : true },
-				{ name: "caitieRawScore", label : "Caitie Raw Score", sortable : true },
-				{ name: "caitieRuntime", label : "Caitie Runtime", sortable : true },
-				{ name: "fabianAdjScore", label : "Fabian Adj_Score", sortable : true },
-				{ name: "fabianParams", label : "Fabian Params", sortable : true },
-				{ name: "fabianRawScore", label : "Fabian Raw Score", sortable : true },
-				{ name: "fabianRuntime", label : "Fabian Runtime", sortable : true },
-				{ name: "lameloAdjScore", label : "Lamelo Adj_Score", sortable : true },
-				{ name: "lameloParams", label : "Lamelo Params", sortable : true },
-				{ name: "lameloRawScore", label : "Lamelo Raw Score", sortable : true },
-				{ name: "lameloRuntime", label : "Lamelo Runtime", sortable : true },
-				{ name: "mateoAdjScore", label : "Mateo Adj_Score", sortable : true },
-				{ name: "mateoParams", label : "Mateo Params", sortable : true },
-				{ name: "mateoRawScore", label : "Mateo Raw Score", sortable : true },
-				{ name: "mateoRuntime", label : "Mateo Runtime", sortable : true },
-				{ name: "totalScore", label : "Final Score", sortable : true },
-				{ name: "dateSubmitted", label : "Date Submitted", sortable : true },
-			],
-      myData :  '', ***REMOVED***this.azureData.slice(0, 10), */
-      datatableCss: {
-        table: "table table-bordered table-center",
-        th: "header-item",
-        thWrapper: "th-wrapper",
-        thWrapperCheckboxes: "th-wrapper checkboxes",
-        arrowsWrapper: "arrows-wrapper",
-        arrowUp: "arrow up",
-        arrowDown: "arrow down",
-        footer: "footer"
-***REMOVED***,
-      paginationCss: {
-        paginationItem: "pagination-item",
-        moveFirstPage: "move-first-page",
-        movePreviousPage: "move-previous-page",
-        moveNextPage: "move-next-page",
-        moveLastPage: "move-last-page",
-        pageBtn: "page-btn"
-***REMOVED***,
-      itemsPerPageCss: {
-        select: "item-per-page-dropdown"
-***REMOVED***,
-      isLoading: false,
-      sort: "asc",
-      sortField: "firstName",
-      listItemsPerPage: [5, 10, 20, 50, 100],
-      itemsPerPage: 10,
-      currentPage: 1,
-      totalItems: 16
+      azureData: []
     };
   },
   methods: {
@@ -123,7 +57,6 @@ export default {
           'Authorization' : `Bearer ${window.localStorage.getItem('jwt')}`
   ***REMOVED***,
 ***REMOVED***).then(function(response){
-        console.log(response.data);
         let tempArray = []
         let tempData =  response.data;
         for(let i in tempData.data) {
@@ -131,6 +64,7 @@ export default {
           tempArray.push(x);
   ***REMOVED***
         this.azureData = tempArray;
+       ***REMOVED*** localStorage.setItem('lbdata', JSON.stringify(tempArray)); */
 ***REMOVED***.bind(this))
           .catch( function( error ){
             this.axiosError = error;
@@ -180,8 +114,13 @@ export default {
 
 <style scoped>
 
+#table-section{
+  width: 100%;
+  overflow-x: scroll;
+}
+
 #page-wrapper {
-	margin: 0;
+  margin: 0 auto;
   padding: 0;
   border: 0;
   font-size: 128%;
