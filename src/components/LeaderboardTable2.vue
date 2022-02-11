@@ -10,7 +10,6 @@
         :css="datatableCss"
         not-found-msg="Items not found"
         @on-update="dtUpdateSort"
-        track-by="title"
     >
       <!--
         Pagination component as a slot, but could be drag out from Database element
@@ -63,7 +62,7 @@ export default {
       submissions: [],
       user: {},
       headerFields: [
-        { name: "title", label : "Title", sortable : true },
+        { name: "title", label : "Entry Title ", sortable : true },
         { name: "totalScore", label : "Final Score", sortable : true },
         { name: "adalineAdjScore", label : "Adaline Adj_Score", sortable : true },
         { name: "adalineRawScore", label : "Adaline (Raw Score)", sortable : true },
@@ -126,8 +125,6 @@ export default {
       else {
         sortedData = this.sortNegativeNumbers(sortField, sort)
 ***REMOVED***
-      console.log(sortedData);
-
       const start = (this.currentPage - 1) * this.itemsPerPage;
       const end = this.currentPage * this.itemsPerPage;
       this.myData = sortedData.slice(start, end);
@@ -153,8 +150,6 @@ export default {
     },
     sortNegativeNumbers(sortField, sort) {
       let sorted = [];
-      console.log(sort);
-
       if(sortField === 'totalScore'){
         sorted = this.myData.sort(this.totalScoreCompare);
 ***REMOVED***
@@ -190,7 +185,7 @@ export default {
 ***REMOVED***
 
       // reverse if necessary
-      if(sort === 'desc'){
+      if(sort === 'asc'){
         sorted.reverse();
 ***REMOVED***
       return sorted;

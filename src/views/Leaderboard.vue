@@ -66,16 +66,17 @@ export default {
           let x = this.formatData(tempData.data[i])
           tempArray.push(x);
   ***REMOVED***
-        this.azureData = tempArray;
-        localStorage.setItem('lbdata', JSON.stringify(tempArray));
+        this.azureData = tempArray.sort(this.totalScoreCompare).reverse();
+        localStorage.setItem('lbdata', JSON.stringify(this.azureData));
 ***REMOVED***.bind(this))
-          .catch( function( error ){
-            this.axiosError = error;
-    ***REMOVED***.bind(this));
+        .catch( function( error ){
+          this.axiosError = error;
+  ***REMOVED***.bind(this));
     },
     formatData(data){
        let tableItem = {
          'title' : data.attributes.title,
+         'totalScore' : data.attributes.totalScore,
          'adalineAdjScore' : data.attributes.adalineAdjScore,
          'adalineParams' : data.attributes.adalineParams,
          'adalineRawScore' : data.attributes.adalineRawScore,
@@ -95,10 +96,12 @@ export default {
          'mateoAdjScore' : data.attributes.mateoAdjScore,
          'mateoParams' : data.attributes.mateoParams,
          'mateoRawScore' : data.attributes.mateoRawScore,
-         'mateoRuntime' : data.attributes.mateoRuntime,
-         'totalScore' : data.attributes.totalScore
+         'mateoRuntime' : data.attributes.mateoRuntime
  ***REMOVED***
        return tableItem;
+    },
+    totalScoreCompare(obj1, obj2) {
+      return obj1.totalScore - obj2.totalScore;
     },
     logout() {
       window.localStorage.removeItem('jwt')
