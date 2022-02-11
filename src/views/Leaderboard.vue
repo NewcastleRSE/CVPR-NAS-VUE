@@ -52,13 +52,11 @@ export default {
   methods: {
     async getSubmissions() {
 
-    ***REMOVED***  const endpoint = process.env.BATCH_ENDPOINT + '/api/submissions'; */
+    ***REMOVED***  const endpoint = process.env.API_ENDPOINT + '/api/submissions'; */
       const endpoint = `http://localhost:1337/api/submissions`;
-     ***REMOVED*** const token = process.env.JWT_SECRET; */
       await this.axios.get(endpoint, {
         headers: {
           'Content-Type' : 'application/json',
-         ***REMOVED*** 'Authorization' : `Bearer ` + token, */
           'Authorization' : `Bearer ${window.localStorage.getItem('jwt')}`
   ***REMOVED***,
 ***REMOVED***).then(function(response){
