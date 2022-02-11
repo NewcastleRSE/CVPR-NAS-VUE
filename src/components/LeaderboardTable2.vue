@@ -11,6 +11,10 @@
         not-found-msg="Items not found"
         @on-update="dtUpdateSort"
     >
+			<!-- Action link slot -->
+			<template v-slot:actionView="props">
+				<a href="#" @click.prevent="actionViewClick(props)">View</a>
+			</template>
       <!--
         Pagination component as a slot, but could be drag out from Database element
       -->
@@ -38,6 +42,10 @@
       <Spinner slot="spinner" />
     </DataTable>
 
+    {{ currentPage }}
+
+		<ScoreModal v-if="showScoreModal"  @close="showScoreModal = false" :params="params" />
+
   </div>
 
 </template>
@@ -45,6 +53,7 @@
 <script>
 
 import { DataTable, ItemsPerPageDropdown, Pagination } from "v-datatable-light";
+import ScoreModal from "./ScoreModal";
 import orderBy from "lodash.orderby";
 
 export default {
@@ -56,6 +65,7 @@ export default {
     DataTable,
     ItemsPerPageDropdown,
     Pagination,
+		ScoreModal
   },
   data() {
     return {
@@ -85,6 +95,7 @@ export default {
       ***REMOVED***	{ name: "mateoParams", label : "Mateo Params", sortable : true },
         { name: "mateoRuntime", label : "Mateo Runtime", sortable : true }, */
       ***REMOVED***	{ name: "dateSubmitted", label : "Date Submitted", sortable : true }, */
+				"__slot:actions:actionView",
       ],
       datatableCss: {
         table: "table table-bordered table-center",
@@ -113,10 +124,16 @@ export default {
       itemsPerPage: 10,
       currentPage: 1,
       totalItems: this.myData.length,
-      data: localStorage.getItem('lbdata')
+      data: localStorage.getItem('lbdata'),
+			showScoreModal : false,
+			params : ''
     };
   },
   methods: {
+		actionViewClick: function(params) {
+			this.showScoreModal = true;
+			this.params = JSON.stringify(params);
+		},
     dtUpdateSort: function({sortField, sort }) {
       let sortedData = [];
       if(sortField === 'title'){
@@ -130,6 +147,7 @@ export default {
       this.myData = sortedData.slice(start, end);
     },
     updateItemsPerPage: function(itemsPerPage) {
+      console.log('In items per page ' + this.currentPage);
       this.myData = JSON.parse(this.data);
       this.itemsPerPage = parseInt(itemsPerPage);
       if (itemsPerPage >= this.myData.length) {
@@ -137,10 +155,12 @@ export default {
 ***REMOVED*** else {
         this.myData =  this.myData.slice(0, itemsPerPage);
 ***REMOVED***
+
     },
     changePage: function(currentPage) {
+			console.log('In change page ' + this.currentPage);
       this.myData = JSON.parse(this.data);
-      this.currentPage = parseInt(currentPage) ;
+      this.currentPage = parseInt(currentPage);
       const start = (currentPage - 1) * this.itemsPerPage;
       const end = currentPage * this.itemsPerPage;
       this.myData = this.myData.slice(start, end);
@@ -171,12 +191,12 @@ export default {
       else if (sortField === 'fabianRawScore'){
         sorted = this.myData.sort(this.fabianRawScoreCompare);
 ***REMOVED***
-			else if (sortField === 'lameloAdjScore'){
-				sorted = this.myData.sort(this.lameloAdjScoreCompare);
-			}
-			else if (sortField === 'lameloRawScore'){
-				sorted = this.myData.sort(this.lameloRawScoreCompare);
-			}
+      else if (sortField === 'lameloAdjScore'){
+        sorted = this.myData.sort(this.lameloAdjScoreCompare);
+***REMOVED***
+      else if (sortField === 'lameloRawScore'){
+        sorted = this.myData.sort(this.lameloRawScoreCompare);
+***REMOVED***
       else if (sortField === 'mateoAdjScore'){
         sorted = this.myData.sort(this.mateoAdjScoreCompare);
 ***REMOVED***
@@ -211,12 +231,12 @@ export default {
     fabianRawScoreCompare(obj1, obj2) {
       return obj1.fabianRawScore - obj2.fabianRawScore;
     },
-		lameloAdjScoreCompare(obj1, obj2) {
-			return obj1.lameloAdjScore - obj2.lameloAdjScore;
-		},
-		lameloRawScoreCompare(obj1, obj2) {
-			return obj1.lameloRawScore - obj2.lameloRawScore;
-		},
+    lameloAdjScoreCompare(obj1, obj2) {
+      return obj1.lameloAdjScore - obj2.lameloAdjScore;
+    },
+    lameloRawScoreCompare(obj1, obj2) {
+      return obj1.lameloRawScore - obj2.lameloRawScore;
+    },
     mateoAdjScoreCompare(obj1, obj2) {
       return obj1.mateoAdjScore - obj2.mateoAdjScore;
     },
@@ -346,7 +366,7 @@ tr:nth-child(odd) {
 }
 
 .v-datatable-light .column-1 {
-  color: green;
+  color: #60b634;
   font-weight: bold;
 }
 
