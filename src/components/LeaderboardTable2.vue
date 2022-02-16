@@ -11,10 +11,10 @@
         not-found-msg="Items not found"
         @on-update="dtUpdateSort"
     >
-			<!-- Action link slot -->
-			<template v-slot:actionView="props">
-				<a href="#" @click.prevent="actionViewClick(props)">View</a>
-			</template>
+      <!-- Action link slot -->
+      <template v-slot:actionView="props">
+        <a href="#" @click.prevent="actionViewClick(props)">View</a>
+      </template>
       <!--
         Pagination component as a slot, but could be drag out from Database element
       -->
@@ -42,9 +42,9 @@
       <Spinner slot="spinner" />
     </DataTable>
 
-    {{ currentPage }}
+    {{ getCurrentPage }}
 
-		<ScoreModal v-if="showScoreModal"  @close="showScoreModal = false" :params="params" />
+    <ScoreModal v-if="showScoreModal"  @close="showScoreModal = false" :params="params" />
 
   </div>
 
@@ -55,6 +55,7 @@
 import { DataTable, ItemsPerPageDropdown, Pagination } from "v-datatable-light";
 import ScoreModal from "./ScoreModal";
 import orderBy from "lodash.orderby";
+import store from '../store/index';
 
 export default {
   name: "LeaderboardTable2",
@@ -65,7 +66,7 @@ export default {
     DataTable,
     ItemsPerPageDropdown,
     Pagination,
-		ScoreModal
+    ScoreModal
   },
   data() {
     return {
@@ -76,26 +77,26 @@ export default {
         { name: "totalScore", label : "Final Score", sortable : true },
         { name: "adalineAdjScore", label : "Adaline Adj_Score", sortable : true },
       ***REMOVED***  { name: "adalineRawScore", label : "Adaline (Raw Score)", sortable : true },
-      	{ name: "adalineParams", label : "Adaline Params", sortable : true },
+        { name: "adalineParams", label : "Adaline Params", sortable : true },
         { name: "adalineRuntime", label : "Adaline Runtime", sortable : true }, */
         { name: "caitieAdjScore", label : "Caitie Adj_Score", sortable : true },
      ***REMOVED***   { name: "caitieRawScore", label : "Caitie (Raw Score)", sortable : true },
-      	{ name: "caitieParams", label : "Caitie Params", sortable : true },
+        { name: "caitieParams", label : "Caitie Params", sortable : true },
         { name: "caitieRuntime", label : "Caitie Runtime", sortable : true }, */
         { name: "fabianAdjScore", label : "Fabian Adj_Score", sortable : true },
      ***REMOVED***   { name: "fabianRawScore", label : "Fabian (Raw Score)", sortable : true },
-    		{ name: "fabianParams", label : "Fabian Params", sortable : true },
+        { name: "fabianParams", label : "Fabian Params", sortable : true },
         { name: "fabianRuntime", label : "Fabian Runtime", sortable : true }, */
         { name: "lameloAdjScore", label : "Lamelo Adj_Score", sortable : true },
      ***REMOVED***   { name: "lameloRawScore", label : "Lamelo (Raw Score)", sortable : true },
-      	{ name: "lameloParams", label : "Lamelo Params", sortable : true },
+        { name: "lameloParams", label : "Lamelo Params", sortable : true },
         { name: "lameloRuntime", label : "Lamelo Runtime", sortable : true }, */
         { name: "mateoAdjScore", label : "Mateo Adj_Score", sortable : true },
      ***REMOVED***   { name: "mateoRawScore", label : "Mateo (Raw Score)", sortable : true },
-      	{ name: "mateoParams", label : "Mateo Params", sortable : true },
+        { name: "mateoParams", label : "Mateo Params", sortable : true },
         { name: "mateoRuntime", label : "Mateo Runtime", sortable : true }, */
       ***REMOVED***	{ name: "dateSubmitted", label : "Date Submitted", sortable : true }, */
-				"__slot:actions:actionView",
+        "__slot:actions:actionView",
       ],
       datatableCss: {
         table: "table table-bordered table-center",
@@ -125,15 +126,20 @@ export default {
       currentPage: 1,
       totalItems: this.myData.length,
       data: localStorage.getItem('lbdata'),
-			showScoreModal : false,
-			params : ''
+      showScoreModal : false,
+      params : ''
     };
   },
-  methods: {
-		actionViewClick: function(params) {
-			this.showScoreModal = true;
-			this.params = JSON.stringify(params);
+	computed: {
+		getCurrentPage() {
+			return this.$store.state.currentPage;
 		},
+	},
+  methods: {
+    actionViewClick: function(params) {
+      this.showScoreModal = true;
+      this.params = JSON.stringify(params);
+    },
     dtUpdateSort: function({sortField, sort }) {
       let sortedData = [];
       if(sortField === 'title'){
@@ -147,7 +153,6 @@ export default {
       this.myData = sortedData.slice(start, end);
     },
     updateItemsPerPage: function(itemsPerPage) {
-      console.log('In items per page ' + this.currentPage);
       this.myData = JSON.parse(this.data);
       this.itemsPerPage = parseInt(itemsPerPage);
       if (itemsPerPage >= this.myData.length) {
@@ -155,10 +160,11 @@ export default {
 ***REMOVED*** else {
         this.myData =  this.myData.slice(0, itemsPerPage);
 ***REMOVED***
-
+      let currentPage = this.currentPage;
+			store.dispatch('setCurrentPage', { currentPage });
+      console.log('current page: ' + currentPage);
     },
     changePage: function(currentPage) {
-			console.log('In change page ' + this.currentPage);
       this.myData = JSON.parse(this.data);
       this.currentPage = parseInt(currentPage);
       const start = (currentPage - 1) * this.itemsPerPage;
@@ -243,6 +249,10 @@ export default {
     mateoRawScoreCompare(obj1, obj2) {
       return obj1.mateoRawScore - obj2.mateoRawScore;
     }
+  },
+  created()  {
+		let currentPage = 1;
+		store.dispatch('setCurrentPage', { currentPage });
   }
 }
 </script>
@@ -268,7 +278,7 @@ export default {
 
 .table {
   font-size: 16px;
-	width: 100%;
+  width: 100%;
 }
 
 .table-bordered thead td, .table-bordered thead th {
@@ -328,7 +338,7 @@ tr:nth-child(odd) {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-	margin-left: 20px;
+  margin-left: 20px;
 }
 
 .arrows-wrapper.centralized {
@@ -373,7 +383,7 @@ tr:nth-child(odd) {
 }
 
 .column-7 a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 

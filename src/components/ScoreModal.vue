@@ -66,7 +66,7 @@ h3 {
 }
 table {
 	width: 100%;
-	border: 1px solid #4d5060;
+	border: 1px solid #868890;
 	border-collapse: collapse;
 
 }
@@ -74,7 +74,7 @@ table {
 
 td, th {
 	padding: 10px;
-	border: 1px solid #4d5060;
+	border: 1px solid #868890;
 }
 
 .modal-mask {
@@ -104,7 +104,7 @@ td, th {
   transform: translate(-50%, -50%);
   width: 80%;
   height: 65%;
-  background: #FFF;
+  background: #f6f2f2;
   border-radius: 25px;
 }
 

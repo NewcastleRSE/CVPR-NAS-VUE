@@ -122,7 +122,6 @@ export default {
 
 #table-section{
   width: 100%;
-  overflow-x: scroll;
 }
 
 #page-wrapper {
