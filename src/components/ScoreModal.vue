@@ -141,7 +141,7 @@ td, th {
 }
 
 .g-col {
-	background-color: #cffcbf;
+	background-color: #C4DFB9;
 }
 
 </style>

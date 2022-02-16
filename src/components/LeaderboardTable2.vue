@@ -75,24 +75,24 @@ export default {
         { name: "title", label : "Entry Title ", sortable : true },
         { name: "totalScore", label : "Final Score", sortable : true },
         { name: "adalineAdjScore", label : "Adaline Adj_Score", sortable : true },
-        { name: "adalineRawScore", label : "Adaline (Raw Score)", sortable : true },
-      ***REMOVED***	{ name: "adalineParams", label : "Adaline Params", sortable : true },
+      ***REMOVED***  { name: "adalineRawScore", label : "Adaline (Raw Score)", sortable : true },
+      	{ name: "adalineParams", label : "Adaline Params", sortable : true },
         { name: "adalineRuntime", label : "Adaline Runtime", sortable : true }, */
         { name: "caitieAdjScore", label : "Caitie Adj_Score", sortable : true },
-        { name: "caitieRawScore", label : "Caitie (Raw Score)", sortable : true },
-      ***REMOVED***	{ name: "caitieParams", label : "Caitie Params", sortable : true },
+     ***REMOVED***   { name: "caitieRawScore", label : "Caitie (Raw Score)", sortable : true },
+      	{ name: "caitieParams", label : "Caitie Params", sortable : true },
         { name: "caitieRuntime", label : "Caitie Runtime", sortable : true }, */
         { name: "fabianAdjScore", label : "Fabian Adj_Score", sortable : true },
-        { name: "fabianRawScore", label : "Fabian (Raw Score)", sortable : true },
-    ***REMOVED***		{ name: "fabianParams", label : "Fabian Params", sortable : true },
+     ***REMOVED***   { name: "fabianRawScore", label : "Fabian (Raw Score)", sortable : true },
+    		{ name: "fabianParams", label : "Fabian Params", sortable : true },
         { name: "fabianRuntime", label : "Fabian Runtime", sortable : true }, */
         { name: "lameloAdjScore", label : "Lamelo Adj_Score", sortable : true },
-        { name: "lameloRawScore", label : "Lamelo (Raw Score)", sortable : true },
-      ***REMOVED***	{ name: "lameloParams", label : "Lamelo Params", sortable : true },
+     ***REMOVED***   { name: "lameloRawScore", label : "Lamelo (Raw Score)", sortable : true },
+      	{ name: "lameloParams", label : "Lamelo Params", sortable : true },
         { name: "lameloRuntime", label : "Lamelo Runtime", sortable : true }, */
         { name: "mateoAdjScore", label : "Mateo Adj_Score", sortable : true },
-        { name: "mateoRawScore", label : "Mateo (Raw Score)", sortable : true },
-      ***REMOVED***	{ name: "mateoParams", label : "Mateo Params", sortable : true },
+     ***REMOVED***   { name: "mateoRawScore", label : "Mateo (Raw Score)", sortable : true },
+      	{ name: "mateoParams", label : "Mateo Params", sortable : true },
         { name: "mateoRuntime", label : "Mateo Runtime", sortable : true }, */
       ***REMOVED***	{ name: "dateSubmitted", label : "Date Submitted", sortable : true }, */
 				"__slot:actions:actionView",
@@ -268,6 +268,7 @@ export default {
 
 .table {
   font-size: 16px;
+	width: 100%;
 }
 
 .table-bordered thead td, .table-bordered thead th {
@@ -327,6 +328,7 @@ tr:nth-child(odd) {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+	margin-left: 20px;
 }
 
 .arrows-wrapper.centralized {
@@ -365,12 +367,12 @@ tr:nth-child(odd) {
   width: 500px;
 }
 
-.v-datatable-light .column-1, .column-12 {
+.v-datatable-light .column-1, .column-7 {
   color: #3C78D8;
   font-weight: bold;
 }
 
-.column-12 a:hover {
+.column-7 a:hover {
 	text-decoration: underline;
 }
 
