@@ -365,9 +365,13 @@ tr:nth-child(odd) {
   width: 500px;
 }
 
-.v-datatable-light .column-1 {
-  color: #60b634;
+.v-datatable-light .column-1, .column-12 {
+  color: #3C78D8;
   font-weight: bold;
+}
+
+.column-12 a:hover {
+	text-decoration: underline;
 }
 
 

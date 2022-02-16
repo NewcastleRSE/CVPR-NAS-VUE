@@ -6,17 +6,18 @@
           <h2>{{ data.rowData.title }} </h2>
         </div>
 
-        <h3>Final Score</h3><p>{{ data.rowData.totalScore }} </p>
+        <h3>Final Score</h3>
+				<div id="score">{{ data.rowData.totalScore }} </div>
         <div class='modal-body'>
           <table>
             <thead>
-              <tr><th colspan="2">Adaline</th><th colspan="2">Caitie</th><th colspan="2">Fabian</th><th colspan="2">Lamelo</th><th colspan="2">Mateo</th></tr>
+              <tr><th colspan="2" class="yellow-header">Adaline</th><th colspan="2" class="green-header">Caitie</th><th colspan="2" class="yellow-header">Fabian</th><th colspan="2" class="green-header">Lamelo</th><th colspan="2" class="yellow-header">Mateo</th></tr>
             </thead>
             <tbody>
-              <tr><td>Adj_Score</td><td>{{ data.rowData.adalineAdjScore }}</td><td>Adj_Score</td><td>{{ data.rowData.caitieAdjScore }}</td><td>Adj_Score</td><td>{{ data.rowData.fabianAdjScore }}</td><td>Adj_Score</td><td>{{ data.rowData.lameloAdjScore }}</td><td>Adj_Score</td><td>{{ data.rowData.mateoAdjScore }}</td></tr>
-              <tr><td>Raw Score</td><td>{{ data.rowData.adalineRawScore }}</td><td>Adj_Score</td><td>{{ data.rowData.adalineAdjScore }}</td><td>Adj_Score</td><td>{{ data.rowData.adalineAdjScore }}</td><td>Adj_Score</td><td>{{ data.rowData.adalineAdjScore }}</td><td>Adj_Score</td><td>{{ data.rowData.adalineAdjScore }}</td></tr>
-              <tr><td>Params</td><td>{{ data.rowData.adalineParams }}</td><td>Adj_Score</td><td>{{ data.rowData.adalineAdjScore }}</td><td>Adj_Score</td><td>{{ data.rowData.adalineAdjScore }}</td><td>Adj_Score</td><td>{{ data.rowData.adalineAdjScore }}</td><td>Adj_Score</td><td>{{ data.rowData.adalineAdjScore }}</td></tr>
-              <tr><td>Runtime</td><td>{{ data.rowData.adalineRuntime }}</td><td>Adj_Score</td><td>{{ data.rowData.adalineAdjScore }}</td><td>Adj_Score</td><td>{{ data.rowData.adalineAdjScore }}</td><td>Adj_Score</td><td>{{ data.rowData.adalineAdjScore }}</td><td>Adj_Score</td><td>{{ data.rowData.adalineAdjScore }}</td></tr>
+              <tr><td class="y-col">Adj_Score</td><td>{{ data.rowData.adalineAdjScore }}</td><td class="g-col">Adj_Score</td><td>{{ data.rowData.caitieAdjScore }}</td><td class="y-col">Adj_Score</td><td>{{ data.rowData.fabianAdjScore }}</td><td class="g-col">Adj_Score</td><td>{{ data.rowData.lameloAdjScore }}</td><td class="y-col">Adj_Score</td><td>{{ data.rowData.mateoAdjScore }}</td></tr>
+              <tr><td class="y-col">Raw Score</td><td>{{ data.rowData.adalineRawScore }}</td><td class="g-col">Raw Score</td><td>{{ data.rowData.caitieRawScore }}</td><td class="y-col">Raw Score</td><td>{{ data.rowData.fabianRawScore }}</td><td class="g-col">Raw Score</td><td>{{ data.rowData.lameloRawScore }}</td><td class="y-col">Raw Score</td><td>{{ data.rowData.mateoRawScore }}</td></tr>
+              <tr><td class="y-col">Params</td><td>{{ data.rowData.adalineParams }}</td><td class="g-col">Params</td><td>{{ data.rowData.caitieParams }}</td><td class="y-col">Params</td><td>{{ data.rowData.fabianParams }}</td><td class="g-col">Params</td><td>{{ data.rowData.lameloParams }}</td><td class="y-col">Params</td><td>{{ data.rowData.mateoParams }}</td></tr>
+              <tr><td class="y-col">Runtime</td><td>{{ data.rowData.adalineRuntime }}</td><td class="g-col">Runtime</td><td>{{ data.rowData.caitieRuntime }}</td><td class="y-col">Runtime</td><td>{{ data.rowData.fabianRuntime }}</td><td class="g-col">Runtime</td><td>{{ data.rowData.lameloRuntime }}</td><td class="y-col">Runtime</td><td>{{ data.rowData.mateoRuntime }}</td></tr>
             </tbody>
           </table>
 
@@ -60,14 +61,16 @@ h2 {
 }
 
 h3 {
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 1.2em;
 }
 table {
+	width: 100%;
 	border: 1px solid #4d5060;
 	border-collapse: collapse;
 
 }
+
 
 td, th {
 	padding: 10px;
@@ -84,6 +87,12 @@ td, th {
   background-color: rgba(0, 0, 0, .5);
   display: table;
   transition: opacity .3s ease;
+}
+
+#score {
+	font-size: 1.6em;
+	color: #3C78D8;
+	padding: 20px;
 }
 
 #modalContainer {
@@ -119,5 +128,20 @@ td, th {
   bottom: 0;
 }
 
+.yellow-header {
+	background-color: #FFD966;
+}
+
+.green-header {
+	background-color: #93C47D;
+}
+
+.y-col {
+	background-color: #fff5bc;
+}
+
+.g-col {
+	background-color: #cffcbf;
+}
 
 </style>
