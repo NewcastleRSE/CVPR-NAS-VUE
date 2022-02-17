@@ -27,17 +27,4 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           privateKey: ${{ secrets.PRIVATE_KEY}}
-      - name: Compose Down
-        uses: garygrossgarten/github-action-ssh@release
-        with:
-          command: sudo docker-compose down -v
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          privateKey: ${{ secrets.PRIVATE_KEY}}
-      - name: Compose Up
-        uses: garygrossgarten/github-action-ssh@release
-        with:
-          command: sudo -E docker-compose up -d
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          privateKey: ${{ secrets.PRIVATE_KEY}}
+
