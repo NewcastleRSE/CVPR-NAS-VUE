@@ -3,11 +3,11 @@
     <div class="modal-mask">
       <div id='modalContainer'>
         <div class='modal-header'>
-          <h2>{{ data.rowData.title }} </h2>
+          <h2>{{ getTitle }} </h2>
         </div>
 
         <h3>Final Score</h3>
-				<div id="score">{{ data.rowData.totalScore }} </div>
+        <div id="score">{{ data.rowData.totalScore }} </div>
         <div class='modal-body'>
           <table>
             <thead>
@@ -38,17 +38,19 @@ export default {
   props: [ 'params' ],
   data () {
     return {
-       data: this.params
+       data: JSON.parse(this.params),
+    }
+  },
+  computed: {
+    getTitle() {
+      return this.data.rowData.title;
     }
   },
   methods: {
     close (){
       this.$emit('close')
     }
-  },
-  mounted() {
-    this.data = JSON.parse(this.data);
-  },
+  }
 }
 </script>
 
@@ -65,16 +67,16 @@ h3 {
   font-size: 1.2em;
 }
 table {
-	width: 100%;
-	border: 1px solid #868890;
-	border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #868890;
+  border-collapse: collapse;
 
 }
 
 
 td, th {
-	padding: 10px;
-	border: 1px solid #868890;
+  padding: 10px;
+  border: 1px solid #868890;
 }
 
 .modal-mask {
@@ -90,9 +92,9 @@ td, th {
 }
 
 #score {
-	font-size: 1.6em;
-	color: #3C78D8;
-	padding: 20px;
+  font-size: 1.6em;
+  color: #3C78D8;
+  padding: 20px;
 }
 
 #modalContainer {
@@ -102,7 +104,6 @@ td, th {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  width: 80%;
   height: 65%;
   background: #f6f2f2;
   border-radius: 25px;
@@ -129,19 +130,19 @@ td, th {
 }
 
 .yellow-header {
-	background-color: #FFD966;
+  background-color: #FFD966;
 }
 
 .green-header {
-	background-color: #93C47D;
+  background-color: #93C47D;
 }
 
 .y-col {
-	background-color: #fff5bc;
+  background-color: #fff5bc;
 }
 
 .g-col {
-	background-color: #C4DFB9;
+  background-color: #C4DFB9;
 }
 
 </style>
