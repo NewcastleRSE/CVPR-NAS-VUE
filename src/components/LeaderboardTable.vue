@@ -6,7 +6,6 @@
         :sort-field="sortField"
         :sort="sort"
         :data="data || []"
-        :is-loading="isLoading"
         :css="datatableCss"
         not-found-msg="Items not found"
         @on-update="dtUpdateSort"
@@ -16,7 +15,6 @@
         <a href="#" @click.prevent="actionViewClick(props)">View</a>
       </template>
 
-      <!-- Spinner element as slot used when is-loading attribute is true -->
     </DataTable>
 
     <ScoreModal v-if="showScoreModal"  @close="showScoreModal = false" :params="params" />
@@ -46,6 +44,7 @@ export default {
       user: {},
       headerFields: [
         { name: "title", label : "Entry Title ", sortable : true },
+				{ name: "rank", label : "Rank", sortable : false },
         { name: "totalScore", label : "Final Score", sortable : true },
         { name: "adalineAdjScore", label : "Adaline Adj_Score", sortable : true },
         { name: "caitieAdjScore", label : "Caitie Adj_Score", sortable : true },
@@ -63,26 +62,12 @@ export default {
         arrowDown: "arrow down",
         footer: "footer"
 ***REMOVED***,
-      paginationCss: {
-        paginationItem: "pagination-item",
-        moveFirstPage: "move-first-page",
-        movePreviousPage: "move-previous-page",
-        moveNextPage: "move-next-page",
-        moveLastPage: "move-last-page",
-        pageBtn: "page-btn"
-***REMOVED***,
-      itemsPerPageCss: {
-        select: "item-per-page-dropdown"
-***REMOVED***,
-      isLoading: false,
       sort: "asc",
       sortField: "totalScore",
-      listItemsPerPage: [5, 10, 20, 50, 100],
-      itemsPerPage: 10,
+      itemsPerPage: 100,
       currentPage: 1,
       totalItems: this.myData.length,
-      data: JSON.parse(localStorage.getItem('lbdata')).slice(0, 10),
-		***REMOVED***	data : this.myData.slice(0,10), */
+      data: JSON.parse(localStorage.getItem('lbdata')),
       showScoreModal : false,
       params : ''
     };
@@ -276,10 +261,16 @@ tr:nth-child(odd) {
   width: 500px;
 }
 
-.v-datatable-light .column-1, .column-7 {
+.v-datatable-light .column-2, .column-8 {
   color: #3C78D8;
   font-weight: bold;
 }
+
+.v-datatable-light .column-1 {
+	font-weight: bold;
+	font-style: italic;
+}
+
 
 .column-7 a:hover {
   text-decoration: underline;

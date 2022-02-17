@@ -6,7 +6,7 @@
           <h2>{{ getTitle }} </h2>
         </div>
 
-        <h3>Final Score</h3>
+        <h3>Final Score - Rank {{  data.rowData.rank }}</h3>
         <div id="score">{{ data.rowData.totalScore }} </div>
         <div class='modal-body'>
           <table>

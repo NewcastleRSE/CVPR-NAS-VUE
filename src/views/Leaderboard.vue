@@ -67,6 +67,11 @@ export default {
           tempArray.push(x);
   ***REMOVED***
         this.azureData = tempArray.sort(this.totalScoreCompare).reverse();
+        // add rank to the sorted data base don the index value
+        for (let index in this.azureData){
+            let keypairvalue = parseInt(index)+1;
+            this.azureData[index].rank = keypairvalue;
+  ***REMOVED***
         localStorage.setItem('lbdata', JSON.stringify(this.azureData));
 ***REMOVED***.bind(this))
         .catch( function( error ){
