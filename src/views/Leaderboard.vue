@@ -27,7 +27,7 @@
     </section>
 
     <div id="table-section">
-      <LeaderboardTable2 :my-data="azureData"></LeaderboardTable2>
+      <LeaderboardTable :my-data="azureData"></LeaderboardTable>
     </div>
 
   </div>
@@ -35,12 +35,12 @@
 
 <script>
 
-import LeaderboardTable2 from "../components/LeaderboardTable";
+import LeaderboardTable from "../components/LeaderboardTable";
 
 export default {
   name: "Leaderboard",
   components: {
-      LeaderboardTable2
+      LeaderboardTable
   },
   data() {
     return {
