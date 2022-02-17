@@ -5,7 +5,7 @@
         :header-fields="headerFields"
         :sort-field="sortField"
         :sort="sort"
-        :data="myData || []"
+        :data="data || []"
         :is-loading="isLoading"
         :css="datatableCss"
         not-found-msg="Items not found"
@@ -15,34 +15,9 @@
       <template v-slot:actionView="props">
         <a href="#" @click.prevent="actionViewClick(props)">View</a>
       </template>
-      <!--
-        Pagination component as a slot, but could be drag out from Database element
-      -->
-      <Pagination
-          slot="pagination"
-          :page="currentPage"
-          :total-items="totalItems"
-          :items-per-page="itemsPerPage"
-          :css="paginationCss"
-          @on-update="changePage"
-          @update-current-page="updateCurrentPage"
-      />
-
-      <div class="items-per-page" slot="ItemsPerPage">
-        <label>Items per page</label>
-        <ItemsPerPageDropdown
-            :list-items-per-page="listItemsPerPage"
-            :items-per-page="itemsPerPage"
-            :css="itemsPerPageCss"
-            @on-update="updateItemsPerPage"
-        />
-      </div>
 
       <!-- Spinner element as slot used when is-loading attribute is true -->
-      <Spinner slot="spinner" />
     </DataTable>
-
-    {{ currentPage }}
 
     <ScoreModal v-if="showScoreModal"  @close="showScoreModal = false" :params="params" />
 
@@ -52,7 +27,7 @@
 
 <script>
 
-import { DataTable, ItemsPerPageDropdown, Pagination } from "v-datatable-light";
+import { DataTable } from "v-datatable-light";
 import ScoreModal from "./ScoreModal";
 import orderBy from "lodash.orderby";
 
@@ -63,8 +38,6 @@ export default {
   },
   components: {
     DataTable,
-    ItemsPerPageDropdown,
-    Pagination,
     ScoreModal
   },
   data() {
@@ -74,11 +47,11 @@ export default {
       headerFields: [
         { name: "title", label : "Entry Title ", sortable : true },
         { name: "totalScore", label : "Final Score", sortable : true },
-        { name: "adalineAdjScore", label : "Adaline", sortable : true },
-        { name: "caitieAdjScore", label : "Caitie", sortable : true },
-        { name: "fabianAdjScore", label : "Fabian", sortable : true },
-        { name: "lameloAdjScore", label : "Lamelo", sortable : true },
-        { name: "mateoAdjScore", label : "Mateo", sortable : true },
+        { name: "adalineAdjScore", label : "Adaline Adj_Score", sortable : true },
+        { name: "caitieAdjScore", label : "Caitie Adj_Score", sortable : true },
+        { name: "fabianAdjScore", label : "Fabian Adj_Score", sortable : true },
+        { name: "lameloAdjScore", label : "Lamelo Adj_Score", sortable : true },
+        { name: "mateoAdjScore", label : "Mateo Adj_Score", sortable : true },
         "__slot:actions:actionView",
       ],
       datatableCss: {
@@ -103,12 +76,13 @@ export default {
 ***REMOVED***,
       isLoading: false,
       sort: "asc",
-      sortField: "title",
+      sortField: "totalScore",
       listItemsPerPage: [5, 10, 20, 50, 100],
       itemsPerPage: 10,
       currentPage: 1,
       totalItems: this.myData.length,
       data: JSON.parse(localStorage.getItem('lbdata')).slice(0, 10),
+		***REMOVED***	data : this.myData.slice(0,10), */
       showScoreModal : false,
       params : ''
     };
@@ -128,29 +102,7 @@ export default {
 ***REMOVED***
       const start = (this.currentPage - 1) * this.itemsPerPage;
       const end = this.currentPage * this.itemsPerPage;
-      this.myData = sortedData.slice(start, end);
-    },
-    updateItemsPerPage: function(itemsPerPage) {
-      this.itemsPerPage = parseInt(itemsPerPage);
-      if (itemsPerPage >= this.myData.length) {
-
-        // do nothing
-        ***REMOVED***this.myData = this.myData; */
-***REMOVED*** else {
-        this.myData =  this.myData.slice(0, itemsPerPage);
-***REMOVED***
-      let currentPage = this.currentPage;
-      console.log('current page: ' + currentPage);
-
-    },
-    changePage: function(currentPage) {
-      this.currentPage = parseInt(currentPage);
-      const start = (currentPage - 1) * this.itemsPerPage;
-      const end = currentPage * this.itemsPerPage;
-      this.myData = this.myData.slice(start, end);
-    },
-    updateCurrentPage: function(currentPage) {
-      this.currentPage = parseInt(currentPage);
+      this.data = sortedData.slice(start, end);
     },
     sortNegativeNumbers(sortField, sort) {
       let sorted = [];
