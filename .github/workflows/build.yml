@@ -12,7 +12,7 @@ jobs:
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          registry: epraseregistry.azurecr.io
-          name: epraseregistry.azurecr.io/eprase-client
+          registry: cvprnas.azurecr.io
+          name: cvprnas.azurecr.io/cvprnas-client
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
