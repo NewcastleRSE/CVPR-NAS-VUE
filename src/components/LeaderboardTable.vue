@@ -42,7 +42,7 @@
       <Spinner slot="spinner" />
     </DataTable>
 
-    {{ getCurrentPage }}
+    {{ currentPage }}
 
     <ScoreModal v-if="showScoreModal"  @close="showScoreModal = false" :params="params" />
 
@@ -55,7 +55,6 @@
 import { DataTable, ItemsPerPageDropdown, Pagination } from "v-datatable-light";
 import ScoreModal from "./ScoreModal";
 import orderBy from "lodash.orderby";
-import store from "../store";
 
 export default {
   name: "LeaderboardTable",
@@ -75,11 +74,11 @@ export default {
       headerFields: [
         { name: "title", label : "Entry Title ", sortable : true },
         { name: "totalScore", label : "Final Score", sortable : true },
-        { name: "adalineAdjScore", label : "Adaline Adj_Score", sortable : true },
-        { name: "caitieAdjScore", label : "Caitie Adj_Score", sortable : true },
-        { name: "fabianAdjScore", label : "Fabian Adj_Score", sortable : true },
-        { name: "lameloAdjScore", label : "Lamelo Adj_Score", sortable : true },
-        { name: "mateoAdjScore", label : "Mateo Adj_Score", sortable : true },
+        { name: "adalineAdjScore", label : "Adaline", sortable : true },
+        { name: "caitieAdjScore", label : "Caitie", sortable : true },
+        { name: "fabianAdjScore", label : "Fabian", sortable : true },
+        { name: "lameloAdjScore", label : "Lamelo", sortable : true },
+        { name: "mateoAdjScore", label : "Mateo", sortable : true },
         "__slot:actions:actionView",
       ],
       datatableCss: {
@@ -109,16 +108,11 @@ export default {
       itemsPerPage: 10,
       currentPage: 1,
       totalItems: this.myData.length,
-      data: localStorage.getItem('lbdata'),
+      data: JSON.parse(localStorage.getItem('lbdata')).slice(0, 10),
       showScoreModal : false,
       params : ''
     };
   },
-	computed: {
-		getCurrentPage() {
-			return this.$store.state.currentPage;
-		},
-	},
   methods: {
     actionViewClick: function(params) {
       this.showScoreModal = true;
@@ -137,19 +131,19 @@ export default {
       this.myData = sortedData.slice(start, end);
     },
     updateItemsPerPage: function(itemsPerPage) {
-      this.myData = JSON.parse(this.data);
       this.itemsPerPage = parseInt(itemsPerPage);
       if (itemsPerPage >= this.myData.length) {
+
         // do nothing
+        ***REMOVED***this.myData = this.myData; */
 ***REMOVED*** else {
         this.myData =  this.myData.slice(0, itemsPerPage);
 ***REMOVED***
       let currentPage = this.currentPage;
-			store.dispatch('setCurrentPage', { currentPage });
       console.log('current page: ' + currentPage);
+
     },
     changePage: function(currentPage) {
-      this.myData = JSON.parse(this.data);
       this.currentPage = parseInt(currentPage);
       const start = (currentPage - 1) * this.itemsPerPage;
       const end = currentPage * this.itemsPerPage;
@@ -205,8 +199,7 @@ export default {
     }
   },
   created()  {
-		let currentPage = 1;
-		store.dispatch('setCurrentPage', { currentPage });
+
   }
 }
 </script>
