@@ -35,7 +35,7 @@
 
 <script>
 
-import LeaderboardTable2 from "../components/LeaderboardTable2";
+import LeaderboardTable2 from "../components/LeaderboardTable";
 
 export default {
   name: "Leaderboard",

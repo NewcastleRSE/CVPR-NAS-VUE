@@ -10,8 +10,11 @@
         :css="datatableCss"
         not-found-msg="Items not found"
         @on-update="dtUpdateSort"
-        track-by="title"
     >
+      <!-- Action link slot -->
+      <template v-slot:actionView="props">
+        <a href="#" @click.prevent="actionViewClick(props)">View</a>
+      </template>
       <!--
         Pagination component as a slot, but could be drag out from Database element
       -->
@@ -25,9 +28,6 @@
           @update-current-page="updateCurrentPage"
       />
 
-      <!--
-        ItemsPerPage component as a slot, but could be drag out from Database element
-      -->
       <div class="items-per-page" slot="ItemsPerPage">
         <label>Items per page</label>
         <ItemsPerPageDropdown
@@ -42,7 +42,9 @@
       <Spinner slot="spinner" />
     </DataTable>
 
-		{{ data }}
+    {{ getCurrentPage }}
+
+    <ScoreModal v-if="showScoreModal"  @close="showScoreModal = false" :params="params" />
 
   </div>
 
@@ -51,52 +53,39 @@
 <script>
 
 import { DataTable, ItemsPerPageDropdown, Pagination } from "v-datatable-light";
+import ScoreModal from "./ScoreModal";
 import orderBy from "lodash.orderby";
+import store from "../store";
 
 export default {
   name: "LeaderboardTable",
   props: {
-     myData : []
+    myData : []
   },
   components: {
     DataTable,
     ItemsPerPageDropdown,
     Pagination,
+    ScoreModal
   },
   data() {
     return {
       submissions: [],
       user: {},
       headerFields: [
-        { name: "title", label : "Title", sortable : true },
+        { name: "title", label : "Entry Title ", sortable : true },
         { name: "totalScore", label : "Final Score", sortable : true },
         { name: "adalineAdjScore", label : "Adaline Adj_Score", sortable : true },
-        { name: "adalineParams", label : "Adaline Params", sortable : true },
-        { name: "adalineRawScore", label : "Adaline Raw Score", sortable : true },
-        { name: "adalineRuntime", label : "Adaline Runtime", sortable : true },
         { name: "caitieAdjScore", label : "Caitie Adj_Score", sortable : true },
-        { name: "caitieParams", label : "Caitie Params", sortable : true },
-        { name: "caitieRawScore", label : "Caitie Raw Score", sortable : true },
-        { name: "caitieRuntime", label : "Caitie Runtime", sortable : true },
         { name: "fabianAdjScore", label : "Fabian Adj_Score", sortable : true },
-        { name: "fabianParams", label : "Fabian Params", sortable : true },
-        { name: "fabianRawScore", label : "Fabian Raw Score", sortable : true },
-        { name: "fabianRuntime", label : "Fabian Runtime", sortable : true },
         { name: "lameloAdjScore", label : "Lamelo Adj_Score", sortable : true },
-        { name: "lameloParams", label : "Lamelo Params", sortable : true },
-        { name: "lameloRawScore", label : "Lamelo Raw Score", sortable : true },
-        { name: "lameloRuntime", label : "Lamelo Runtime", sortable : true },
         { name: "mateoAdjScore", label : "Mateo Adj_Score", sortable : true },
-        { name: "mateoParams", label : "Mateo Params", sortable : true },
-        { name: "mateoRawScore", label : "Mateo Raw Score", sortable : true },
-        { name: "mateoRuntime", label : "Mateo Runtime", sortable : true },
-        { name: "dateSubmitted", label : "Date Submitted", sortable : true },
+        "__slot:actions:actionView",
       ],
       datatableCss: {
         table: "table table-bordered table-center",
         th: "header-item",
         thWrapper: "th-wrapper",
-        thWrapperCheckboxes: "th-wrapper checkboxes",
         arrowsWrapper: "arrows-wrapper",
         arrowUp: "arrow up",
         arrowDown: "arrow down",
@@ -120,38 +109,105 @@ export default {
       itemsPerPage: 10,
       currentPage: 1,
       totalItems: this.myData.length,
-      data: this.myData
+      data: localStorage.getItem('lbdata'),
+      showScoreModal : false,
+      params : ''
     };
   },
-	methods: {
-		dtUpdateSort: function({ sortField, sort }) {
-			const sortedData = orderBy(this.myData, [sortField], [sort]);
-			const start = (this.currentPage - 1) * this.itemsPerPage;
-			const end = this.currentPage * this.itemsPerPage;
-			this.myData = sortedData.slice(start, end);
-			console.log("load data based on new sort", this.currentPage);
+	computed: {
+		getCurrentPage() {
+			return this.$store.state.currentPage;
 		},
-		updateItemsPerPage: function(itemsPerPage) {
-			this.myData = JSON.parse(this.data);
-			this.itemsPerPage = parseInt(itemsPerPage);
-			if (itemsPerPage >= this.myData.length) {
-				// do nothing
-			} else {
-				this.myData =  this.myData.slice(0, itemsPerPage);
-			}
-			console.log("load data with new items per page number", itemsPerPage);
-		},
-		changePage: function(currentPage) {
-			this.myData = JSON.parse(this.data);
-			this.currentPage = parseInt(currentPage) ;
-			const start = (currentPage - 1) * this.itemsPerPage;
-			const end = currentPage * this.itemsPerPage;
-			this.myData = this.myData.slice(start, end);
-		},
-		updateCurrentPage: function(currentPage) {
-			this.currentPage = parseInt(currentPage);
-		},
-	}
+	},
+  methods: {
+    actionViewClick: function(params) {
+      this.showScoreModal = true;
+      this.params = JSON.stringify(params);
+    },
+    dtUpdateSort: function({sortField, sort }) {
+      let sortedData = [];
+      if(sortField === 'title'){
+        sortedData = orderBy(this.myData, [sortField], [sort]);
+***REMOVED***
+      else {
+        sortedData = this.sortNegativeNumbers(sortField, sort)
+***REMOVED***
+      const start = (this.currentPage - 1) * this.itemsPerPage;
+      const end = this.currentPage * this.itemsPerPage;
+      this.myData = sortedData.slice(start, end);
+    },
+    updateItemsPerPage: function(itemsPerPage) {
+      this.myData = JSON.parse(this.data);
+      this.itemsPerPage = parseInt(itemsPerPage);
+      if (itemsPerPage >= this.myData.length) {
+        // do nothing
+***REMOVED*** else {
+        this.myData =  this.myData.slice(0, itemsPerPage);
+***REMOVED***
+      let currentPage = this.currentPage;
+			store.dispatch('setCurrentPage', { currentPage });
+      console.log('current page: ' + currentPage);
+    },
+    changePage: function(currentPage) {
+      this.myData = JSON.parse(this.data);
+      this.currentPage = parseInt(currentPage);
+      const start = (currentPage - 1) * this.itemsPerPage;
+      const end = currentPage * this.itemsPerPage;
+      this.myData = this.myData.slice(start, end);
+    },
+    updateCurrentPage: function(currentPage) {
+      this.currentPage = parseInt(currentPage);
+    },
+    sortNegativeNumbers(sortField, sort) {
+      let sorted = [];
+      if(sortField === 'totalScore'){
+        sorted = this.myData.sort(this.totalScoreCompare);
+***REMOVED***
+      else if (sortField === 'adalineAdjScore'){
+        sorted = this.myData.sort(this.adalineAdjScoreCompare);
+***REMOVED***
+      else if (sortField === 'caitieAdjScore'){
+        sorted = this.myData.sort(this.caitieAdjScoreCompare);
+***REMOVED***
+      else if (sortField === 'fabianAdjScore'){
+        sorted = this.myData.sort(this.fabianAdjScoreCompare);
+***REMOVED***
+      else if (sortField === 'lameloAdjScore'){
+        sorted = this.myData.sort(this.lameloAdjScoreCompare);
+***REMOVED***
+      else if (sortField === 'mateoAdjScore'){
+        sorted = this.myData.sort(this.mateoAdjScoreCompare);
+***REMOVED***
+
+      // reverse if necessary
+      if(sort === 'asc'){
+        sorted.reverse();
+***REMOVED***
+      return sorted;
+    },
+    totalScoreCompare(obj1, obj2) {
+        return obj1.totalScore - obj2.totalScore;
+    },
+    adalineAdjScoreCompare(obj1, obj2) {
+      return obj1.adalineAdjScore - obj2.adalineAdjScore;
+    },
+    caitieAdjScoreCompare(obj1, obj2) {
+      return obj1.caitieAdjScore - obj2.caitieAdjScore;
+    },
+    fabianAdjScoreCompare(obj1, obj2) {
+      return obj1.fabianAdjScore - obj2.fabianAdjScore;
+    },
+    lameloAdjScoreCompare(obj1, obj2) {
+      return obj1.lameloAdjScore - obj2.lameloAdjScore;
+    },
+    mateoAdjScoreCompare(obj1, obj2) {
+      return obj1.mateoAdjScore - obj2.mateoAdjScore;
+    }
+  },
+  created()  {
+		let currentPage = 1;
+		store.dispatch('setCurrentPage', { currentPage });
+  }
 }
 </script>
 
@@ -176,6 +232,7 @@ export default {
 
 .table {
   font-size: 16px;
+  width: 100%;
 }
 
 .table-bordered thead td, .table-bordered thead th {
@@ -216,26 +273,26 @@ tr:nth-child(odd) {
   color: #ed9b19;
 }
 
-.v-datatable-light .header-item.no-sortable{
+.v-datatable-light .no-sortable{
   cursor: default;
 }
-.v-datatable-light .header-item.no-sortable:hover {
+.v-datatable-light .no-sortable:hover {
   color: #337ab7;
 }
 
-.v-datatable-light .header-item .th-wrapper {
+.v-datatable-light .th-wrapper {
   display: flex;
   width: 100%;
   height: 100%;
   font-weight: bold;
+  word-wrap: break-word;
 }
 
 .arrows-wrapper {
   display: flex;
   flex-direction: column;
-  margin-left: 80px;
-  margin-top: -20px;
   justify-content: space-between;
+  margin-left: 20px;
 }
 
 .arrows-wrapper.centralized {
@@ -274,9 +331,13 @@ tr:nth-child(odd) {
   width: 500px;
 }
 
-.v-datatable-light .column-1 {
-  color: green;
+.v-datatable-light .column-1, .column-7 {
+  color: #3C78D8;
   font-weight: bold;
+}
+
+.column-7 a:hover {
+  text-decoration: underline;
 }
 
 
