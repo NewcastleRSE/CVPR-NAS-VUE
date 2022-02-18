@@ -52,8 +52,8 @@ export default {
   methods: {
     async getSubmissions() {
 
-    ***REMOVED***  const endpoint = process.env.API_ENDPOINT + '/api/submissions'; */
-      const endpoint = `http://localhost:1337/api/submissions`;
+      const endpoint = process.env.API_ENDPOINT + '/api/submissions';
+     ***REMOVED*** const endpoint = `http://localhost:1337/api/submissions`; */
       await this.axios.get(endpoint, {
         headers: {
           'Content-Type' : 'application/json',

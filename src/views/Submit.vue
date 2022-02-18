@@ -71,7 +71,10 @@ export default {
 			formData.append('data', JSON.stringify(this.data));
 			formData.append('files.file', this.file);
 
-			await this.axios.post('http://localhost:1337/api/submissions', formData, {
+
+			const endpoint = process.env.API_ENDPOINT + '/api/submissions';
+			***REMOVED*** const endpoint = `http://localhost:1337/api/submissions`; */
+			await this.axios.post(endpoint, formData, {
 				headers: {
 					'Content-Type' : 'multipart/form-data',
 					'Authorization' : `Bearer ${window.localStorage.getItem('jwt')}`,

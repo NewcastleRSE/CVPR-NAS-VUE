@@ -159,7 +159,7 @@ td, th {
 }
 
 .y-col {
-  background-color: #fff5bc;
+  background-color: #fff2aa;
 }
 
 .g-col {
