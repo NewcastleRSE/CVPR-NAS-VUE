@@ -11,9 +11,11 @@
         <div class="flex space-x-12 text-black-200 font-raleway">
 
           <router-link to="/">HOME</router-link>
+					<router-link to="/rules">RULES</router-link>
           <router-link to="" v-if="user">
             <font-awesome-icon class="text-xl" :icon="['fas', 'user-circle']" /> {{ user.username }}
           </router-link>
+					<router-link to="/instructions">INFO</router-link>
           <router-link to="download" v-if="user">DOWNLOAD</router-link>
           <router-link to="submit" v-if="user">SUBMIT</router-link>
           <router-link to="leaderboard" v-if="user">LEADERBOARD</router-link>

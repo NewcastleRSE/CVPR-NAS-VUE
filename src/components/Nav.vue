@@ -11,11 +11,13 @@
           <div class="flex space-x-12 text-black-200 font-raleway">
 
 						<router-link to="/">HOME</router-link>
+						<router-link to="/rules">RULES</router-link>
 						<router-link to="/register" v-if="!user">SIGN UP</router-link>
 						<router-link to="/login" v-if="!user">LOGIN</router-link>
 						<router-link to="" v-if="user">
 							<font-awesome-icon class="text-xl" :icon="['fas', 'user-circle']" /> {{ user.username }}
 						</router-link>
+						<router-link to="/instructions">INFO</router-link>
 						<router-link to="download">DOWNLOAD</router-link>
 						<router-link to="submit" v-if="user">SUBMIT</router-link>
 						<router-link to="leaderboard" v-if="user">LEADERBOARD</router-link>
@@ -36,11 +38,13 @@
 					<div class="content">
 						<h2 class="major">The competition</h2>
 						<p>
-							Deep Learning has shown itself to be a powerful tool for solving many challenging machine learning problems. However, it is difficult to identify the correct Deep Learning network to achieve the best possible results for your problem. This is where Neural Architecture Search (NAS) comes in. NAS is all about identifying the best Deep Learning network for a particular dataset. However, most NAS approaches are only evaluated on common datasets such as ImageNet, CIFAR-100, CIFAR-10 or even MNIST. We already know what is a good Deep Learning network for these datasets and as such this doesn't really show how good different NAS approaches are.
+							There is a lot of evidence that Neural Architecture Search can produce excellent models capable of ML tasks on well-known datasets, that is, datasets like CIFAR-10 and ImageNet where years of research have created a set of best practices to follow to achieve good results.
+							This leads us to wonder, are we overfitting our NAS algorithms to well-known datasets?
 						</p>
 						<p>
-							The goal of this competition is to design NAS algorithms to work on unseen datasets. You will be provided with a framework in which to develop your NAS approach, along with training and validation datasets to design and test your algorithms. Once submitted, we will run your algorithms on a collection of unknown datasets to see how well they perform.
+							We want to investigate the "real-world" use case of NAS, that is, searching for a state-of-the-art architecture on an entirely novel dataset. In such a case, there is no existing set of best practices to build from, nor extensive research into optimal architectural patterns, augmentation policies, or hyperparameter selection. In essence, we are asking how well NAS pipelines can work “out-of-the-box” with little-to-no time for tuning. To explore this, we’ve designed this competition to evaluate how well a NAS pipeline fares over unseen novel tasks and datasets.
 						</p>
+						<p>In this competition, you will be asked to design a NAS pipeline, namely a data processor, a NAS algorithm, and a training policy. This pipeline will then be evaluated on our servers over a number of completely novel datasets: the challenge is to design a pipeline that is flexible enough to be competitive regardless of the datasets provided to it.</p>
 						<p>
 							The competition will be run in three phases:
 						</p>
@@ -49,8 +53,8 @@
 							<li>Phase 2: Validation that your framework works within our test environment. Starting March 2022.</li>
 							<li>Phase 3: Running your NAS approach against our hidden data. Competition ends April 2022.</li>
 						</ul>
-						<p>This is in conjunction with our Workshop to be held at CVPR 2022.</p>
-						<p>We hope you will take part in the competition and look forward to seeing you at CVPR 2022.</p>
+						<p>This is in conjunction with our CVPR-NAS workshop at CVPR 2022.</p>
+						<p>We hope you will take part in the competition and look forward to seeing you at CVPR 2022!</p>
 
 					</div>
 				</div>
@@ -86,12 +90,11 @@
 	</div>
 </template>
 <script>
-// import { mapGetters } from 'vuex'
-
 
 export default {
 		name: 'Nav',
 		components: {
+
 		},
 		data() {
 				return {
