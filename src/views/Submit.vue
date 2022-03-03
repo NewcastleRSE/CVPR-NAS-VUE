@@ -71,9 +71,7 @@ export default {
 			formData.append('data', JSON.stringify(this.data));
 			formData.append('files.file', this.file);
 
-
-			const endpoint = process.env.API_ENDPOINT + '/api/submissions';
-			***REMOVED*** const endpoint = `http://localhost:1337/api/submissions`; */
+			const endpoint = `https://cvprnas.azurewebsites.net/api/submissions`;
 			await this.axios.post(endpoint, formData, {
 				headers: {
 					'Content-Type' : 'multipart/form-data',

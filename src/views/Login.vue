@@ -56,12 +56,11 @@ export default {
     async login(e) {
       e.preventDefault()
       try {
-        const endpoint = process.env.API_ENDPOINT + '/api/auth/local';
-      ***REMOVED***	const res = await this.axios.post(`http://localhost:1337/api/auth/local`, { */
-          const res = await this.axios.post(endpoint, {
+          const endpoint = 'https://cvprnas.azurewebsites.net/api/auth/local';
+				  const res = await this.axios.post(endpoint, {
           identifier: this.email,
           password: this.password
-  ***REMOVED***);
+        });
 
         const { jwt, user } = res.data
         window.localStorage.setItem('jwt', jwt)
@@ -70,10 +69,10 @@ export default {
         //window.location.reload()
         this.$router.push('/')
 
-***REMOVED*** catch(error) {
+      } catch(error) {
         this.error = true
         this.password = ''
-***REMOVED***
+      }
     },
     onPasswordLinkClick: function() {
       this.$router.push({path: './forgotpassword'})

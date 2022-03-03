@@ -58,29 +58,27 @@
                 errorMsg: `An Error occurred, please try again`,
                 success: false,
                 successMsg: `Registration successful! Now please login.`
-      ***REMOVED***
-  ***REMOVED***,
+            }
+        },
         methods: {
             async register(e) {
                 try {
                     e.preventDefault()
-
-                        const endpoint = process.env.API_ENDPOINT + '/api/auth/local/register';
-                      ***REMOVED***	await this.axios.post(`http://localhost:1337/api/auth/local/register`, { */
+                        const endpoint = 'https://cvprnas.azurewebsites.net/api/auth/local/register';
                         await this.axios.post(endpoint, {
                         name: this.name,
                         password: this.password,
                         email: this.email,
                         username: this.username
-              ***REMOVED***)
+                    })
                     this.success = true
                     await this.$router.push('login')
-          ***REMOVED*** catch(e) {
+                } catch(e) {
                     this.error = true
                     this.email = ''
-          ***REMOVED***
-      ***REMOVED***
-  ***REMOVED***
+                }
+            }
+        }
     }
 </script>
 

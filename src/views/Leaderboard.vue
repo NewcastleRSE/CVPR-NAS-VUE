@@ -51,32 +51,30 @@ export default {
   },
   methods: {
     async getSubmissions() {
-
-      const endpoint = process.env.API_ENDPOINT + '/api/submissions';
-     ***REMOVED*** const endpoint = `http://localhost:1337/api/submissions`; */
+      const endpoint = `https://cvprnas.azurewebsites.net/api/submissions`;
       await this.axios.get(endpoint, {
         headers: {
           'Content-Type' : 'application/json',
           'Authorization' : `Bearer ${window.localStorage.getItem('jwt')}`
-  ***REMOVED***,
-***REMOVED***).then(function(response){
+        },
+      }).then(function(response){
         let tempArray = []
         let tempData =  response.data;
         for(let i in tempData.data) {
           let x = this.formatData(tempData.data[i])
           tempArray.push(x);
-  ***REMOVED***
+        }
         this.azureData = tempArray.sort(this.totalScoreCompare).reverse();
         // add rank to the sorted data base don the index value
         for (let index in this.azureData){
             let keypairvalue = parseInt(index)+1;
             this.azureData[index].rank = keypairvalue;
-  ***REMOVED***
+        }
         localStorage.setItem('lbdata', JSON.stringify(this.azureData));
-***REMOVED***.bind(this))
+      }.bind(this))
         .catch( function( error ){
           this.axiosError = error;
-  ***REMOVED***.bind(this));
+        }.bind(this));
     },
     formatData(data){
        let tableItem = {
@@ -102,7 +100,7 @@ export default {
          'mateoParams' : data.attributes.mateoParams,
          'mateoRawScore' : data.attributes.mateoRawScore,
          'mateoRuntime' : data.attributes.mateoRuntime
- ***REMOVED***
+       }
        return tableItem;
     },
     totalScoreCompare(obj1, obj2) {
@@ -165,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-***REMOVED*** Banner */
+/* Banner */
 
 #banner {
   padding: 3em 0 4.75em 0 ;

@@ -7,15 +7,13 @@
 			</div>
       <div class="sm:w-1/2">
         <div class="p-5 w-4/5 mx-auto text-left font-raleway">
-					<div class="text-left mb-7">
-						<span class="outline">
-							<router-link to="/">
-									<font-awesome-icon class="mr-5" :icon="['fas', 'arrow-left']" /> HOME
-							</router-link>
-						</span>
-					</div>
+          <div class="text-left mb-10">
+            <router-link to="/login">
+              <font-awesome-icon class="mr-5" :icon="['fas', 'arrow-left']" /> Login
+            </router-link>
+          </div>
 
-					<h2 class="font-bold text-left font-montserrat mb-10 text-2xl sm:text-3xl">Recover your password</h2>
+					<h2 class="font-bold text-left font-montserrat mb-10 text-2xl sm:text-3xl">Recover your competition password</h2>
           <p v-show="done" class="text-sm text-green-500">Password reset link has been sent to {{ email }}</p>
           <p v-show="error" class="text-sm text-red-500">An error occurred</p>
           <form @submit="forgotPassword">
@@ -24,7 +22,7 @@
               <input type="email" v-model="email" class="text-sm outline-none pb-5 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700">
             </div>
 
-            <button type="submit" class="btn-sub p-5 text-white">
+            <button type="submit" class="bg-green-400 p-5 text-white">
               Send Email link <font-awesome-icon class="ml-3" :icon="['fas', 'arrow-right']" />
             </button>
           </form>
@@ -49,16 +47,16 @@ export default {
       e.preventDefault()
       this.done = false;
       this.error = false;
-      this.axios.post(`http://localhost:1337/api/auth/forgot-password`, {
+      this.axios.post(`https://cvprnas.azurewebsites.net/api/auth/forgot-password`, {
         email: this.email
-***REMOVED***)
+      })
           .then(() => {
             this.done = true
-    ***REMOVED***)
+          })
           .catch(e => {
             e;
             this.error = true
-    ***REMOVED***)
+          })
     }
   }
 }

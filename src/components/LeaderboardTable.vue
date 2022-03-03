@@ -54,14 +54,14 @@ export default {
         "__slot:actions:actionView",
       ],
       datatableCss: {
-        table: "table table-bordered table-center",
-        th: "header-item",
-        thWrapper: "th-wrapper",
-        arrowsWrapper: "arrows-wrapper",
-        arrowUp: "arrow up",
-        arrowDown: "arrow down",
-        footer: "footer"
-***REMOVED***,
+				table: "table table-bordered table-center",
+				th: "header-item",
+				thWrapper: "th-wrapper",
+				arrowsWrapper: "arrows-wrapper",
+				arrowUp: "arrow up",
+				arrowDown: "arrow down",
+				footer: "footer"
+			},
       sort: "asc",
       sortField: "totalScore",
       itemsPerPage: 100,
@@ -78,47 +78,47 @@ export default {
       this.params = JSON.stringify(params);
     },
     dtUpdateSort: function({sortField, sort }) {
-      let sortedData = [];
-      if(sortField === 'title'){
-        sortedData = orderBy(this.myData, [sortField], [sort]);
-***REMOVED***
-      else {
-        sortedData = this.sortNegativeNumbers(sortField, sort)
-***REMOVED***
-      const start = (this.currentPage - 1) * this.itemsPerPage;
-      const end = this.currentPage * this.itemsPerPage;
-      this.data = sortedData.slice(start, end);
-    },
+			let sortedData = [];
+			if (sortField === 'title') {
+				sortedData = orderBy(this.myData, [sortField], [sort]);
+			}
+			else {
+					sortedData = this.sortNegativeNumbers(sortField, sort)
+
+					const start = (this.currentPage - 1) * this.itemsPerPage;
+					const end = this.currentPage * this.itemsPerPage;
+					this.data = sortedData.slice(start, end);
+				}
+		},
     sortNegativeNumbers(sortField, sort) {
       let sorted = [];
-      if(sortField === 'totalScore'){
-        sorted = this.myData.sort(this.totalScoreCompare);
-***REMOVED***
-      else if (sortField === 'adalineAdjScore'){
-        sorted = this.myData.sort(this.adalineAdjScoreCompare);
-***REMOVED***
-      else if (sortField === 'caitieAdjScore'){
-        sorted = this.myData.sort(this.caitieAdjScoreCompare);
-***REMOVED***
-      else if (sortField === 'fabianAdjScore'){
-        sorted = this.myData.sort(this.fabianAdjScoreCompare);
-***REMOVED***
-      else if (sortField === 'lameloAdjScore'){
-        sorted = this.myData.sort(this.lameloAdjScoreCompare);
-***REMOVED***
-      else if (sortField === 'mateoAdjScore'){
-        sorted = this.myData.sort(this.mateoAdjScoreCompare);
-***REMOVED***
-
+      if(sortField === 'totalScore') {
+				sorted = this.myData.sort(this.totalScoreCompare);
+			}
+      else if (sortField === 'adalineAdjScore') {
+				sorted = this.myData.sort(this.adalineAdjScoreCompare);
+			}
+      else if (sortField === 'caitieAdjScore') {
+				sorted = this.myData.sort(this.caitieAdjScoreCompare);
+			}
+      else if (sortField === 'fabianAdjScore') {
+				sorted = this.myData.sort(this.fabianAdjScoreCompare);
+			}
+      else if (sortField === 'lameloAdjScore') {
+				sorted = this.myData.sort(this.lameloAdjScoreCompare);
+			}
+      else if (sortField === 'mateoAdjScore') {
+				sorted = this.myData.sort(this.mateoAdjScoreCompare);
+			}
       // reverse if necessary
-      if(sort === 'asc'){
-        sorted.reverse();
-***REMOVED***
-      return sorted;
+      if(sort === 'asc') {
+				sorted.reverse();
+				return sorted;
+			}
     },
     totalScoreCompare(obj1, obj2) {
-        return obj1.totalScore - obj2.totalScore;
-    },
+				return obj1.totalScore - obj2.totalScore;
+		},
     adalineAdjScoreCompare(obj1, obj2) {
       return obj1.adalineAdjScore - obj2.adalineAdjScore;
     },
@@ -134,9 +134,6 @@ export default {
     mateoAdjScoreCompare(obj1, obj2) {
       return obj1.mateoAdjScore - obj2.mateoAdjScore;
     }
-  },
-  created()  {
-
   }
 }
 </script>
@@ -192,7 +189,7 @@ tr:nth-child(odd) {
   background-color: #fff;
 }
 
-***REMOVED*** Datatable CSS */
+/*  Datatable CSS */
 .v-datatable-light .header-item {
   cursor: pointer;
   color: #337ab7;
@@ -277,9 +274,9 @@ tr:nth-child(odd) {
 }
 
 
-***REMOVED*** End Datatable CSS */
+/*  End Datatable CSS */
 
-***REMOVED*** Pagination CSS */
+/*  Pagination CSS */
 .v-datatable-light-pagination {
   list-style: none;
   display: flex;
@@ -319,9 +316,9 @@ tr:nth-child(odd) {
   box-shadow: none;
   opacity: .65;
 }
-***REMOVED*** END PAGINATION CSS */
+/*  END PAGINATION CSS */
 
-***REMOVED*** ITEMS PER PAGE DROPDOWN CSS */
+/*  ITEMS PER PAGE DROPDOWN CSS */
 .item-per-page-dropdown {
   background-color: transparent;
   min-height: 30px;
@@ -332,7 +329,7 @@ tr:nth-child(odd) {
 .item-per-page-dropdown:hover {
   cursor: pointer;
 }
-***REMOVED*** END ITEMS PER PAGE DROPDOWN CSS */
+/*  END ITEMS PER PAGE DROPDOWN CSS */
 
 
 
