@@ -49,7 +49,7 @@ export default {
         { name: "adalineAdjScore", label : "Adaline Adj_Score", sortable : true },
         { name: "caitieAdjScore", label : "Caitie Adj_Score", sortable : true },
         { name: "fabianAdjScore", label : "Fabian Adj_Score", sortable : true },
-        { name: "lameloAdjScore", label : "Lamelo Adj_Score", sortable : true },
+        { name: "lameloAdjScore", label : "LaMelo Adj_Score", sortable : true },
         { name: "mateoAdjScore", label : "Mateo Adj_Score", sortable : true },
         "__slot:actions:actionView",
       ],
