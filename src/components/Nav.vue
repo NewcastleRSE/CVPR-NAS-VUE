@@ -1,6 +1,6 @@
 <template>
 	<!-- Page Wrapper -->
-	<div id="page-wrapper">
+	<div id="page-wrapper" >
 
 	<!-- Banner -->
       <section id="banner">
@@ -16,12 +16,15 @@
 						<router-link to="" v-if="user">
 							<font-awesome-icon class="text-xl" :icon="['fas', 'user-circle']" /> {{ user.username }}
 						</router-link>
+						<router-link to="download">DOWNLOAD</router-link>
+						<router-link to="submit" v-if="user">SUBMIT</router-link>
+						<router-link to="leaderboard" v-if="user">LEADERBOARD</router-link>
 						<span @click="logout">
                   <router-link to="" v-if="user">LOGOUT</router-link>
-                </span>
+						</span>
           </div>
           <br>
-          <h2>CVPR NAS Workshop 2022</h2>
+          <h2>CVPR-NAS 2022 </h2>
 
         </div>
       </section>
@@ -42,7 +45,7 @@
 							The competition will be run in three phases:
 						</p>
 						<ul>
-							<li>Phase 1: Development of your own NAS approach within our testing framework. Starting early January 2022.</li>
+							<li>Phase 1: Local development of your NAS approach using the provided testing framework. Starting January 2022.</li>
 							<li>Phase 2: Validation that your framework works within our test environment. Starting March 2022.</li>
 							<li>Phase 3: Running your NAS approach against our hidden data. Competition ends April 2022.</li>
 						</ul>
@@ -74,7 +77,13 @@
 				</div>
 			</section>
 
-		</div>
+		<!--	<section id="spacer" class="wrapper spotlight style4">
+				<div class="inner">
+
+				</div>
+			</section> -->
+
+	</div>
 </template>
 <script>
 // import { mapGetters } from 'vuex'
@@ -3775,7 +3784,7 @@ body.is-preload #banner p {
 }
 
 .wrapper.spotlight.style4 {
-	background-color: #39477c;
+	background-color: #2d3a69;
 }
 
 .wrapper.spotlight.style4:before, .wrapper.spotlight.style4:after {

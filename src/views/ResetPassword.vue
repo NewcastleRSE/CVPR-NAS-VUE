@@ -47,7 +47,7 @@ export default {
   methods: {
     async resetPassword(e) {
       e.preventDefault()
-      this.axios.post(`http://localhost:1337/api/auth/reset-password`, {
+      this.axios.post(`https://cvprnas.azurewebsites.net/api/auth/reset-password`, {
         code: this.$route.query.code,
         password: this.password,
         passwordConfirmation: this.confirmPassword

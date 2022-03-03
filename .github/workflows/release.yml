@@ -1,0 +1,30 @@
+name: Build and release
+on:
+  release:
+    types: [published]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Publish to Registry
+        uses: elgohr/Publish-Docker-Github-Action@2.20
+        with:
+          registry: cvprnas.azurecr.io
+          name: cvprnas.azurecr.io/cvprnas-client
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+          tag_semver: true
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update CLIENT_VERSION
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: sed -i 's/CLIENT_VERSION\=.*/CLIENT_VERSION=${{ github.event.release.tag_name }}/' .env
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          privateKey: ${{ secrets.PRIVATE_KEY}}
+

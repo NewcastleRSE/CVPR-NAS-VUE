@@ -47,7 +47,7 @@ export default {
       e.preventDefault()
       this.done = false;
       this.error = false;
-      this.axios.post(`http://localhost:1337/api/auth/forgot-password`, {
+      this.axios.post(`https://cvprnas.azurewebsites.net/api/auth/forgot-password`, {
         email: this.email
       })
           .then(() => {

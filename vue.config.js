@@ -7,5 +7,8 @@ module.exports = {
       new Dotenv()
     ]
   },
+  devServer: {
+    host: 'localhost',
+  },
 }
 
