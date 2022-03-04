@@ -63,11 +63,12 @@ export default {
         let tempArray = []
         let tempData =  response.data;
         for(let i in tempData.data) {
-          let x = this.formatData(tempData.data[i])
+          let x = this.formatData(tempData.data[i]);
+          x.totalScore = parseFloat(x.totalScore).toFixed(3);
           tempArray.push(x);
         }
         this.azureData = tempArray.sort(this.totalScoreCompare).reverse();
-        // add rank to the sorted data base don the index value
+        // add rank to the sorted data based on the index value
         for (let index in this.azureData){
             let keypairvalue = parseInt(index)+1;
             this.azureData[index].rank = keypairvalue;
