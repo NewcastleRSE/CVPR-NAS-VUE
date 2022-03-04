@@ -12,6 +12,13 @@ module.exports = {
         'raleway': ['Raleway'],
       }
     },
+    listStyleType: {
+      none: 'none',
+      disc: 'disc',
+      decimal: 'decimal',
+      square: 'square',
+      roman: 'upper-roman',
+    },
   },
   variants: {
     extend: {},
