@@ -31,7 +31,7 @@
               Login <font-awesome-icon class="ml-3" :icon="['fas', 'arrow-right']" />
             </button>
             <p class="my-2">
-              <router-link to="/forgotpassword" >Forgot Password?</router-link>
+           <!--   <router-link to="/forgotpassword" >Forgot Password?</router-link> -->
             </p>
           </form>
         </div>
