@@ -46,7 +46,7 @@ export default {
 		logout() {
 			window.localStorage.removeItem('jwt')
 			window.localStorage.removeItem('userData')
-			this.$router.push('/login')
+			this.$router.push('/')
 		}
   },
 	mounted() {

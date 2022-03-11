@@ -11,7 +11,7 @@
           <div class="flex space-x-12 text-black-200 font-raleway">
 
 						<router-link to="/">HOME</router-link>
-						<router-link to="/rules">RULES</router-link>
+					<!--	<router-link to="/rules">RULES</router-link> -->
 						<router-link to="/register" v-if="!user">SIGN UP</router-link>
 						<router-link to="/login" v-if="!user">LOGIN</router-link>
 						<router-link to="" v-if="user">
@@ -27,6 +27,8 @@
           </div>
           <br>
           <h2>CVPR-NAS 2022 </h2>
+
+					<p>PHASE 1 OF THE COMPETITION IS NOW OPEN!</p>
 
         </div>
       </section>
@@ -79,6 +81,10 @@
 						</li>
 					</ul>
 				</div>
+
+				<div>
+					<p id="email"><a href="mailto:cvpr-2022-nas@newcastle.ac.uk?subject=CVPR-NAS Competition query">cvpr-2022-nas@newcastle.ac.uk</a></p>
+				</div>
 			</section>
 
 		<!--	<section id="spacer" class="wrapper spotlight style4">
@@ -108,7 +114,7 @@ export default {
 				logout() {
 						window.localStorage.removeItem('jwt')
 						window.localStorage.removeItem('userData')
-						this.$router.push('/login')
+						this.$router.push('/')
 				}
 		}
 }
@@ -116,6 +122,7 @@ export default {
 <style scoped>
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic');
+
 
 #twitter {
 	color: #fff;
@@ -197,6 +204,7 @@ input, select, textarea {
 	appearance: none;
 }
 
+
 /* Basic */
 
 @-ms-viewport {
@@ -248,6 +256,11 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 	-webkit-transition: none !important;
 	-ms-transition: none !important;
 	transition: none !important;
+}
+
+#email, #email a {
+	text-align: center;
+	color: #2e3141;
 }
 
 /* Type */
@@ -3933,6 +3946,7 @@ body.is-preload #banner p {
 }
 
 /* Footer */
+
 
 #footer .inner {
 	padding: 5em 0 3em 0 ;

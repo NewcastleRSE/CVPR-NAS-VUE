@@ -60,7 +60,7 @@ export default {
 				arrowsWrapper: "arrows-wrapper",
 				arrowUp: "arrow up",
 				arrowDown: "arrow down",
-				footer: "footer"
+				footer: "table-footer"
 			},
       sort: "asc",
       sortField: "totalScore",
@@ -152,7 +152,7 @@ export default {
   margin: 0 15px;
 }
 
-#footer {
+#table-footer {
   height: 50px;
   border-bottom: 1px solid #dee2e6;
 }

@@ -11,7 +11,7 @@
         <div class="flex space-x-12 text-black-200 font-raleway">
 
           <router-link to="/">HOME</router-link>
-					<router-link to="/rules">RULES</router-link>
+				<!--	<router-link to="/rules">RULES</router-link> -->
           <router-link to="" v-if="user">
             <font-awesome-icon class="text-xl" :icon="['fas', 'user-circle']" /> {{ user.username }}
           </router-link>
@@ -112,7 +112,7 @@ export default {
     logout() {
       window.localStorage.removeItem('jwt')
       window.localStorage.removeItem('userData')
-      this.$router.push('/login')
+      this.$router.push('/')
     }
   },
   mounted() {
