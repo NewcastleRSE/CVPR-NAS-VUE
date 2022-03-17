@@ -44,7 +44,7 @@ export default {
       user: {},
       headerFields: [
         { name: "title", label : "Entry Title ", sortable : true },
-				{ name: "rank", label : "Rank", sortable : false },
+        { name: "rank", label : "Rank", sortable : false },
         { name: "totalScore", label : "Final Score", sortable : true },
         { name: "adalineAdjScore", label : "Adaline Adj_Score", sortable : true },
         { name: "caitieAdjScore", label : "Caitie Adj_Score", sortable : true },
@@ -54,20 +54,20 @@ export default {
         "__slot:actions:actionView",
       ],
       datatableCss: {
-				table: "table table-bordered table-center",
-				th: "header-item",
-				thWrapper: "th-wrapper",
-				arrowsWrapper: "arrows-wrapper",
-				arrowUp: "arrow up",
-				arrowDown: "arrow down",
-				footer: "table-footer"
-			},
+        table: "table table-bordered table-center",
+        th: "header-item",
+        thWrapper: "th-wrapper",
+        arrowsWrapper: "arrows-wrapper",
+        arrowUp: "arrow up",
+        arrowDown: "arrow down",
+        footer: "table-footer"
+      },
       sort: "asc",
       sortField: "totalScore",
       itemsPerPage: 100,
       currentPage: 1,
       totalItems: this.myData.length,
-      data: JSON.parse(localStorage.getItem('lbdata')),
+      data: JSON.parse(window.localStorage.getItem('lbdata')),
       showScoreModal : false,
       params : ''
     };
@@ -78,47 +78,47 @@ export default {
       this.params = JSON.stringify(params);
     },
     dtUpdateSort: function({sortField, sort }) {
-			let sortedData = [];
-			if (sortField === 'title') {
-				sortedData = orderBy(this.myData, [sortField], [sort]);
-			}
-			else {
-					sortedData = this.sortNegativeNumbers(sortField, sort)
+      let sortedData = [];
+      if (sortField === 'title') {
+        sortedData = orderBy(this.myData, [sortField], [sort]);
+      }
+      else {
+          sortedData = this.sortNegativeNumbers(sortField, sort)
 
-					const start = (this.currentPage - 1) * this.itemsPerPage;
-					const end = this.currentPage * this.itemsPerPage;
-					this.data = sortedData.slice(start, end);
-				}
-		},
+          const start = (this.currentPage - 1) * this.itemsPerPage;
+          const end = this.currentPage * this.itemsPerPage;
+          this.data = sortedData.slice(start, end);
+        }
+    },
     sortNegativeNumbers(sortField, sort) {
       let sorted = [];
       if(sortField === 'totalScore') {
-				sorted = this.myData.sort(this.totalScoreCompare);
-			}
+        sorted = this.myData.sort(this.totalScoreCompare);
+      }
       else if (sortField === 'adalineAdjScore') {
-				sorted = this.myData.sort(this.adalineAdjScoreCompare);
-			}
+        sorted = this.myData.sort(this.adalineAdjScoreCompare);
+      }
       else if (sortField === 'caitieAdjScore') {
-				sorted = this.myData.sort(this.caitieAdjScoreCompare);
-			}
+        sorted = this.myData.sort(this.caitieAdjScoreCompare);
+      }
       else if (sortField === 'fabianAdjScore') {
-				sorted = this.myData.sort(this.fabianAdjScoreCompare);
-			}
+        sorted = this.myData.sort(this.fabianAdjScoreCompare);
+      }
       else if (sortField === 'lameloAdjScore') {
-				sorted = this.myData.sort(this.lameloAdjScoreCompare);
-			}
+        sorted = this.myData.sort(this.lameloAdjScoreCompare);
+      }
       else if (sortField === 'mateoAdjScore') {
-				sorted = this.myData.sort(this.mateoAdjScoreCompare);
-			}
+        sorted = this.myData.sort(this.mateoAdjScoreCompare);
+      }
       // reverse if necessary
       if(sort === 'asc') {
-				sorted.reverse();
-				return sorted;
-			}
+        sorted.reverse();
+        return sorted;
+      }
     },
     totalScoreCompare(obj1, obj2) {
-				return obj1.totalScore - obj2.totalScore;
-		},
+        return obj1.totalScore - obj2.totalScore;
+    },
     adalineAdjScoreCompare(obj1, obj2) {
       return obj1.adalineAdjScore - obj2.adalineAdjScore;
     },
@@ -133,6 +133,12 @@ export default {
     },
     mateoAdjScoreCompare(obj1, obj2) {
       return obj1.mateoAdjScore - obj2.mateoAdjScore;
+    }
+  },
+  created() {
+    if(!this.data) {
+      this.data = JSON.parse(window.localStorage.getItem('lbdata'));
+      console.log(this.data);
     }
   }
 }
@@ -264,8 +270,8 @@ tr:nth-child(odd) {
 }
 
 .v-datatable-light .column-1 {
-	font-weight: bold;
-	font-style: italic;
+  font-weight: bold;
+  font-style: italic;
 }
 
 

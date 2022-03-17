@@ -66,7 +66,6 @@ export default {
         window.localStorage.setItem('jwt', jwt)
         window.localStorage.setItem('userData', JSON.stringify(user))
 
-        //window.location.reload()
         this.$router.push('/')
 
       } catch(error) {

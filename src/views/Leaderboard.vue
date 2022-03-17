@@ -11,11 +11,11 @@
         <div class="flex space-x-12 text-black-200 font-raleway">
 
           <router-link to="/">HOME</router-link>
-				<!--	<router-link to="/rules">RULES</router-link> -->
+          <router-link to="/rules">RULES</router-link>
           <router-link to="" v-if="user">
             <font-awesome-icon class="text-xl" :icon="['fas', 'user-circle']" /> {{ user.username }}
           </router-link>
-					<router-link to="/instructions">INFO</router-link>
+          <router-link to="/instructions">INFO</router-link>
           <router-link to="download" v-if="user">DOWNLOAD</router-link>
           <router-link to="submit" v-if="user">SUBMIT</router-link>
           <router-link to="leaderboard" v-if="user">LEADERBOARD</router-link>
@@ -29,7 +29,7 @@
     </section>
 
     <div id="table-section">
-      <LeaderboardTable :my-data="azureData"></LeaderboardTable>
+      <LeaderboardTable v-if="azureData" :my-data="azureData"></LeaderboardTable>
     </div>
 
   </div>
@@ -112,15 +112,14 @@ export default {
     logout() {
       window.localStorage.removeItem('jwt')
       window.localStorage.removeItem('userData')
+      window.localStorage.removeItem('lbdata')
       this.$router.push('/')
     }
   },
   mounted() {
     this.user = JSON.parse(window.localStorage.getItem('userData'))
+    this.getSubmissions();
   },
-  created() {
-     this.submissions =  this.getSubmissions();
-  }
 }
 </script>
 
