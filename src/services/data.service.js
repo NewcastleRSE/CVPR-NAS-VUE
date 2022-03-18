@@ -23,7 +23,9 @@ function getSubmissions() {
     let tempData = response.data;
     for (let i in tempData.data) {
       let x = formatData(tempData.data[i]);
-      x.totalScore = parseFloat(x.totalScore).toFixed(3);
+      if(x.totalScore !== null){
+        x.totalScore = parseFloat(x.totalScore).toFixed(3);
+      }
       tempArray.push(x);
     }
     azureData = tempArray.sort(totalScoreCompare).reverse();
