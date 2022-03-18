@@ -140,6 +140,8 @@
 
 <script>
 
+import {dataService} from "../services/data.service";
+
 export default {
   name: "Instructions",
   data() {
@@ -152,10 +154,8 @@ export default {
   },
   methods: {
     logout() {
-      window.localStorage.removeItem('jwt')
-      window.localStorage.removeItem('userData')
-			window.localStorage.removeItem('lbdata')
-      this.$router.push('/')
+			dataService.logout();
+			this.$router.push('/');
     }
   },
   mounted() {

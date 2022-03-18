@@ -5,7 +5,7 @@
         :header-fields="headerFields"
         :sort-field="sortField"
         :sort="sort"
-        :data="data || []"
+        :data="myData || []"
         :css="datatableCss"
         not-found-msg="Items not found"
         @on-update="dtUpdateSort"
@@ -43,7 +43,7 @@ export default {
       submissions: [],
       user: {},
       headerFields: [
-        { name: "title", label : "Entry Title ", sortable : true },
+        { name: "title", label : "Entry Title ", sortable : false },
         { name: "rank", label : "Rank", sortable : false },
         { name: "totalScore", label : "Final Score", sortable : true },
         { name: "adalineAdjScore", label : "Adaline Adj_Score", sortable : true },
@@ -67,7 +67,7 @@ export default {
       itemsPerPage: 100,
       currentPage: 1,
       totalItems: this.myData.length,
-      data: JSON.parse(window.localStorage.getItem('lbdata')),
+      data: this.myData,
       showScoreModal : false,
       params : ''
     };
@@ -84,11 +84,11 @@ export default {
       }
       else {
           sortedData = this.sortNegativeNumbers(sortField, sort)
-
-          const start = (this.currentPage - 1) * this.itemsPerPage;
-          const end = this.currentPage * this.itemsPerPage;
-          this.data = sortedData.slice(start, end);
-        }
+			}
+			const start = (this.currentPage - 1) * this.itemsPerPage;
+			const end = this.currentPage * this.itemsPerPage;
+			this.data = sortedData.slice(start, end);
+			console.log(this.data);
     },
     sortNegativeNumbers(sortField, sort) {
       let sorted = [];
@@ -136,10 +136,10 @@ export default {
     }
   },
   created() {
-    if(!this.data) {
+   /* if(!this.data) {
       this.data = JSON.parse(window.localStorage.getItem('lbdata'));
       console.log(this.data);
-    }
+    } */
   }
 }
 </script>

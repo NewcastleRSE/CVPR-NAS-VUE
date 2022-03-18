@@ -79,6 +79,8 @@
 
 <script>
 
+import {dataService} from "../services/data.service";
+
 export default {
   name: "Rules",
   components: {
@@ -91,9 +93,8 @@ export default {
 	},
   methods: {
 		logout() {
-			window.localStorage.removeItem('jwt')
-			window.localStorage.removeItem('userData')
-			this.$router.push('/')
+			dataService.logout();
+			this.$router.push('/');
 		}
   },
 	mounted() {
