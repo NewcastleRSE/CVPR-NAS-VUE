@@ -25,8 +25,11 @@
         </div>
         <br>
         <h2>CVPR-NAS 2022 leader board</h2>
+
+				<p id="page-text">New submission scores will remain blank until values are calculated. </p>
       </div>
     </section>
+
 
     <div id="table-section">
       <LeaderboardTable v-if="azureData" :my-data="azureData"></LeaderboardTable>
@@ -188,7 +191,8 @@ h1, h2, h3, h4, h5, h6 {
   filter: blur(0);
   opacity: 1;
   font-family: Raleway, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 0.8em;
+	color: #fff;
   font-weight: 200;
   letter-spacing: 0.1em;
   line-height: 2;

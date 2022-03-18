@@ -88,7 +88,6 @@ export default {
 			const start = (this.currentPage - 1) * this.itemsPerPage;
 			const end = this.currentPage * this.itemsPerPage;
 			this.data = sortedData.slice(start, end);
-			console.log(this.data);
     },
     sortNegativeNumbers(sortField, sort) {
       let sorted = [];
@@ -134,12 +133,6 @@ export default {
     mateoAdjScoreCompare(obj1, obj2) {
       return obj1.mateoAdjScore - obj2.mateoAdjScore;
     }
-  },
-  created() {
-   /* if(!this.data) {
-      this.data = JSON.parse(window.localStorage.getItem('lbdata'));
-      console.log(this.data);
-    } */
   }
 }
 </script>
