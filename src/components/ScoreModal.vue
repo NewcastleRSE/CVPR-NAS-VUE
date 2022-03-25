@@ -48,28 +48,30 @@ export default {
     getAdalineParams() {
       return this.convertParam(this.data.rowData.adalineParams);
     },
-		getCaitieParams() {
-			return this.convertParam(this.data.rowData.caitieParams);
-		},
-		getFabianParams() {
-			return this.convertParam(this.data.rowData.fabianParams);
-		},
-		getLameloParams() {
-			return this.convertParam(this.data.rowData.lameloParams);
-		},
-		getMateoParams() {
-			return this.convertParam(this.data.rowData.mateoParams);
-		}
+    getCaitieParams() {
+      return this.convertParam(this.data.rowData.caitieParams);
+    },
+    getFabianParams() {
+      return this.convertParam(this.data.rowData.fabianParams);
+    },
+    getLameloParams() {
+      return this.convertParam(this.data.rowData.lameloParams);
+    },
+    getMateoParams() {
+      return this.convertParam(this.data.rowData.mateoParams);
+    }
   },
   methods: {
     close (){
       this.$emit('close')
     },
     convertParam(param) {
-      // convert to number first
-      param = parseInt(param);
-      // convert to number with commas
-      return param.toLocaleString('en-US');
+      if(param !== null) {
+        // convert to number first
+        param = parseInt(param);
+        // convert to number with commas
+        return param.toLocaleString('en-US');
+      }
     }
   }
 }

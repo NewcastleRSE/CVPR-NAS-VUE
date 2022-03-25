@@ -16,6 +16,8 @@
 					</div>
 
 					<h2 class="font-bold text-left font-montserrat mb-10 text-2xl sm:text-3xl">Create a submission</h2>
+					<p>Please add a title to your entry - this is the name that will be shown on the leaderboard.</p>
+
 					<p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
 					<form enctype="multipart/form-data">
 						<div class="my-5">
@@ -93,5 +95,13 @@ export default {
 
 <style scoped>
 
+input[type="file"]::-webkit-file-upload-button {
+	border: 2px solid #a09d9d;
+	color: #555555;
+	border-radius: 4px;
+	background-color: #ffffff;
+	margin-right: 20px;
+	padding: 13px 18px;
+}
 
 </style>
