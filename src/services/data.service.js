@@ -16,7 +16,7 @@ function getSubmissions() {
   axios.get(endpoint, {
     headers: {
       'Content-Type' : 'application/json',
-      'Authorization' : `Bearer` + token + ` }`
+      'Authorization' : `Bearer ` + token
     },
   }).then(function(response) {
 
@@ -50,26 +50,18 @@ function formatData(data){
     let tableItem = {
       'title' : data.attributes.title,
       'totalScore' : data.attributes.Final_Score,
-      'adalineAdjScore' : data.attributes.Adaline_Adj_Score,
-      'adalineParams' : data.attributes.Adaline_Params,
-      'adalineRawScore' : data.attributes.Adaline_Raw_Score,
-      'adalineRuntime' : data.attributes.Adaline_Runtime,
-      'caitieAdjScore' : data.attributes.Caitie_Adj_Score,
-      'caitieParams' : data.attributes.Caitie_Params,
-      'caitieRawScore' : data.attributes.Caitie_Raw_Score,
-      'caitieRuntime' : data.attributes.Caitie_Runtime,
-      'fabianAdjScore' : data.attributes.Fabian_Adj_Score,
-      'fabianParams' : data.attributes.Fabian_Params,
-      'fabianRawScore' : data.attributes.Fabian_Raw_Score,
-      'fabianRuntime' : data.attributes.Fabian_Runtime,
-      'lameloAdjScore' : data.attributes.LaMelo_Adj_Score,
-      'lameloParams' : data.attributes.LaMelo_Params,
-      'lameloRawScore' : data.attributes.LaMelo_Raw_Score,
-      'lameloRuntime' : data.attributes.LaMelo_Runtime,
-      'mateoAdjScore' : data.attributes.Mateo_Adj_Score,
-      'mateoParams' : data.attributes.Mateo_Params,
-      'mateoRawScore' : data.attributes.Mateo_Raw_Score,
-      'mateoRuntime' : data.attributes.Mateo_Runtime
+      'chesterAdjScore' : data.attributes.Chester_Adj_Score,
+      'chesterParams' : data.attributes.Chester_Params,
+      'chesterRawScore' : data.attributes.Chester_Raw_Score,
+      'chesterRuntime' : data.attributes.Chester_Runtime,
+      'isabellaAdjScore' : data.attributes.Isabella_Adj_Score,
+      'isabellaParams' : data.attributes.Isabella_Params,
+      'isabellaRawScore' : data.attributes.Isabella_Raw_Score,
+      'isabellaRuntime' : data.attributes.Isabella_Runtime,
+      'sadieAdjScore' : data.attributes.Sadie_Adj_Score,
+      'sadieParams' : data.attributes.Sadie_Params,
+      'sadieRawScore' : data.attributes.Sadie_Raw_Score,
+      'sadieRuntime' : data.attributes.Sadie_Runtime
     }
     return tableItem;
 }

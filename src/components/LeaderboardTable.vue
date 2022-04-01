@@ -46,11 +46,9 @@ export default {
         { name: "title", label : "Entry Title ", sortable : false },
         { name: "rank", label : "Rank", sortable : false },
         { name: "totalScore", label : "Final Score", sortable : true },
-        { name: "adalineAdjScore", label : "Adaline Adj_Score", sortable : true },
-        { name: "caitieAdjScore", label : "Caitie Adj_Score", sortable : true },
-        { name: "fabianAdjScore", label : "Fabian Adj_Score", sortable : true },
-        { name: "lameloAdjScore", label : "LaMelo Adj_Score", sortable : true },
-        { name: "mateoAdjScore", label : "Mateo Adj_Score", sortable : true },
+        { name: "chesterAdjScore", label : "Chester Adj_Score", sortable : true },
+        { name: "isabellaAdjScore", label : "Isabella Adj_Score", sortable : true },
+        { name: "sadieAdjScore", label : "Sadie Adj_Score", sortable : true },
         "__slot:actions:actionView",
       ],
       datatableCss: {
@@ -94,20 +92,14 @@ export default {
       if(sortField === 'totalScore') {
         sorted = this.myData.sort(this.totalScoreCompare);
       }
-      else if (sortField === 'adalineAdjScore') {
-        sorted = this.myData.sort(this.adalineAdjScoreCompare);
+      else if (sortField === 'chesterAdjScore') {
+        sorted = this.myData.sort(this.chesterAdjScoreCompare);
       }
-      else if (sortField === 'caitieAdjScore') {
-        sorted = this.myData.sort(this.caitieAdjScoreCompare);
+      else if (sortField === 'isabellaAdjScore') {
+        sorted = this.myData.sort(this.isabellaAdjScoreCompare);
       }
-      else if (sortField === 'fabianAdjScore') {
-        sorted = this.myData.sort(this.fabianAdjScoreCompare);
-      }
-      else if (sortField === 'lameloAdjScore') {
-        sorted = this.myData.sort(this.lameloAdjScoreCompare);
-      }
-      else if (sortField === 'mateoAdjScore') {
-        sorted = this.myData.sort(this.mateoAdjScoreCompare);
+      else if (sortField === 'sadieAdjScore') {
+        sorted = this.myData.sort(this.sadieAdjScoreCompare);
       }
       // reverse if necessary
       if(sort === 'asc') {
@@ -118,20 +110,14 @@ export default {
     totalScoreCompare(obj1, obj2) {
         return obj1.totalScore - obj2.totalScore;
     },
-    adalineAdjScoreCompare(obj1, obj2) {
-      return obj1.adalineAdjScore - obj2.adalineAdjScore;
+    chesterAdjScoreCompare(obj1, obj2) {
+      return obj1.chesterAdjScore - obj2.chesterAdjScore;
     },
-    caitieAdjScoreCompare(obj1, obj2) {
-      return obj1.caitieAdjScore - obj2.caitieAdjScore;
+    isabellaAdjScoreCompare(obj1, obj2) {
+      return obj1.isabellaAdjScore - obj2.isabellaAdjScore;
     },
-    fabianAdjScoreCompare(obj1, obj2) {
-      return obj1.fabianAdjScore - obj2.fabianAdjScore;
-    },
-    lameloAdjScoreCompare(obj1, obj2) {
-      return obj1.lameloAdjScore - obj2.lameloAdjScore;
-    },
-    mateoAdjScoreCompare(obj1, obj2) {
-      return obj1.mateoAdjScore - obj2.mateoAdjScore;
+    sadieAdjScoreCompare(obj1, obj2) {
+      return obj1.sadieAdjScore - obj2.sadieAdjScore;
     }
   }
 }
@@ -257,7 +243,7 @@ tr:nth-child(odd) {
   width: 500px;
 }
 
-.v-datatable-light .column-2, .column-8 {
+.v-datatable-light .column-2, .column-6 {
   color: #3C78D8;
   font-weight: bold;
 }
@@ -268,7 +254,7 @@ tr:nth-child(odd) {
 }
 
 
-.column-7 a:hover {
+.column-6 a:hover {
   text-decoration: underline;
 }
 

@@ -11,13 +11,13 @@
         <div class='modal-body'>
           <table>
             <thead>
-              <tr><th colspan="2" class="yellow-header">Adaline</th><th colspan="2" class="green-header">Caitie</th><th colspan="2" class="yellow-header">Fabian</th><th colspan="2" class="green-header">Lamelo</th><th colspan="2" class="yellow-header">Mateo</th></tr>
+              <tr><th colspan="2" class="yellow-header">Chester</th><th colspan="2" class="green-header">Isabella</th><th colspan="2" class="yellow-header">Sadie</th></tr>
             </thead>
             <tbody>
-              <tr><td class="y-col">Adjusted Score</td><td>{{ data.rowData.adalineAdjScore }}</td><td class="g-col">Adjusted Score</td><td>{{ data.rowData.caitieAdjScore }}</td><td class="y-col">Adjusted Score</td><td>{{ data.rowData.fabianAdjScore }}</td><td class="g-col">Adjusted Score</td><td>{{ data.rowData.lameloAdjScore }}</td><td class="y-col">Adjusted Score</td><td>{{ data.rowData.mateoAdjScore }}</td></tr>
-              <tr><td class="y-col">Raw Score</td><td>{{ data.rowData.adalineRawScore }}</td><td class="g-col">Raw Score</td><td>{{ data.rowData.caitieRawScore }}</td><td class="y-col">Raw Score</td><td>{{ data.rowData.fabianRawScore }}</td><td class="g-col">Raw Score</td><td>{{ data.rowData.lameloRawScore }}</td><td class="y-col">Raw Score</td><td>{{ data.rowData.mateoRawScore }}</td></tr>
-              <tr><td class="y-col">Params</td><td>{{ getAdalineParams }}</td><td class="g-col">Params</td><td>{{ getCaitieParams }}</td><td class="y-col">Params</td><td>{{ getFabianParams }}</td><td class="g-col">Params</td><td>{{ getLameloParams }}</td><td class="y-col">Params</td><td>{{ getMateoParams }}</td></tr>
-              <tr><td class="y-col">Runtime</td><td>{{ data.rowData.adalineRuntime }}</td><td class="g-col">Runtime</td><td>{{ data.rowData.caitieRuntime }}</td><td class="y-col">Runtime</td><td>{{ data.rowData.fabianRuntime }}</td><td class="g-col">Runtime</td><td>{{ data.rowData.lameloRuntime }}</td><td class="y-col">Runtime</td><td>{{ data.rowData.mateoRuntime }}</td></tr>
+              <tr><td class="y-col">Adjusted Score</td><td>{{ data.rowData.chesterAdjScore }}</td><td class="g-col">Adjusted Score</td><td>{{ data.rowData.isabellaAdjScore }}</td><td class="y-col">Adjusted Score</td><td>{{ data.rowData.sadieAdjScore }}</td></tr>
+              <tr><td class="y-col">Raw Score</td><td>{{ data.rowData.chesterRawScore }}</td><td class="g-col">Raw Score</td><td>{{ data.rowData.isabellaRawScore }}</td><td class="y-col">Raw Score</td><td>{{ data.rowData.sadieRawScore }}</td></tr>
+              <tr><td class="y-col">Params</td><td>{{ getChesterParams }}</td><td class="g-col">Params</td><td>{{ getIsabellaParams }}</td><td class="y-col">Params</td><td>{{ getSadieParams }}</td></tr>
+              <tr><td class="y-col">Runtime</td><td>{{ data.rowData.chesterRuntime }}</td><td class="g-col">Runtime</td><td>{{ data.rowData.isabellaRuntime }}</td><td class="y-col">Runtime</td><td>{{ data.rowData.sadieRuntime }}</td></tr>
             </tbody>
           </table>
 
@@ -45,20 +45,14 @@ export default {
     getTitle() {
       return this.data.rowData.title;
     },
-    getAdalineParams() {
-      return this.convertParam(this.data.rowData.adalineParams);
+    getChesterParams() {
+      return this.convertParam(this.data.rowData.chesterParams);
     },
-    getCaitieParams() {
-      return this.convertParam(this.data.rowData.caitieParams);
+    getIsabellaParams() {
+      return this.convertParam(this.data.rowData.isabellaParams);
     },
-    getFabianParams() {
-      return this.convertParam(this.data.rowData.fabianParams);
-    },
-    getLameloParams() {
-      return this.convertParam(this.data.rowData.lameloParams);
-    },
-    getMateoParams() {
-      return this.convertParam(this.data.rowData.mateoParams);
+    getSadieParams() {
+      return this.convertParam(this.data.rowData.sadieParams);
     }
   },
   methods: {

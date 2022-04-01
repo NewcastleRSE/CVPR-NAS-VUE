@@ -35,8 +35,8 @@
 						</div>
 					</form>
 
-					<p v-show="success" class="successMsg text-sm">{{ successMsg }}</p>
-					<p v-show="error" class="errorMsg text-sm">{{ errorMsg }}</p>
+					<p v-show="success" class="successMsg text-lg">{{ successMsg }}</p>
+					<p v-show="error" class="errorMsg text-lg">{{ errorMsg }}</p>
 				</div>
 			</div>
 		</div>
@@ -57,7 +57,9 @@ export default {
 			errorMsg: `An error occurred, please try again`,
 			success: false,
 			successMsg : `Submission successfully uploaded!`,
-			data: ''
+			data: '',
+			user: {},
+			userEmail: ''
 		}
 	},
 	methods: {
@@ -68,28 +70,41 @@ export default {
 		async submitFile(e) {
 			e.preventDefault();
 			const formData = new FormData();
-			this.data = { "title" : this.title }
+			this.data = {
+				"title" : this.title,
+				"user_email" : this.userEmail
+			}
 
 			formData.append('data', JSON.stringify(this.data));
-			formData.append('files.file', this.file);
 
-			const endpoint = `https://cvprnas.azurewebsites.net/api/submissions`;
-			await this.axios.post(endpoint, formData, {
-				headers: {
-					'Content-Type' : 'multipart/form-data',
-					'Authorization' : `Bearer ${window.localStorage.getItem('jwt')}`,
-				}
-			}).then(function(response){
-						this.axiosResponse = response.data;
-						console.log(this.axiosResponse);
-						this.success = true;
+			if(this.file.type === 'application/x-zip-compressed') {
+				formData.append('files.file', this.file);
+
+				const endpoint = `https://cvprnas.azurewebsites.net/api/submissions`;
+				await this.axios.post(endpoint, formData, {
+					headers: {
+						'Content-Type' : 'multipart/form-data',
+						'Authorization' : `Bearer ${window.localStorage.getItem('jwt')}`,
+					}
+				}).then(function(response){
+					this.axiosResponse = response.data;
+					this.success = true;
 				}.bind(this))
-				.catch( function( error ){
-					this.axiosError = error;
-					this.error = true;
-				}.bind(this));
+						.catch( function( error ){
+							this.axiosError = error;
+							this.error = true;
+						}.bind(this));
+			}
+			else {
+				this.errorMsg = 'Please upload a zip file';
+				this.error = true;
+			}
 		}
-	}
+	},
+	mounted() {
+		this.user = JSON.parse(window.localStorage.getItem('userData'));
+		this.userEmail = this.user.email;
+	},
 }
 </script>
 
