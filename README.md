@@ -55,11 +55,6 @@ Clone the repo into a suitable directory. Create an .env file containing value f
 
 `yarn build` to build the application ready for deployment
 
+## Branches
 
-### Main Branch
-Protected and can only be pushed to via pull requests. Should be considered stable and a representation of production code.
-
-### Dev Branch
-Should be considered fragile, code should compile and run but features may be prone to errors.
-
-
+Dev and main
