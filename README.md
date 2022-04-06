@@ -30,11 +30,9 @@ Newcastle University
 
 ## Getting Started
 
-No specific technology is preferred for the website, however it must be able to deploy Azure based applications to run the competition code.
+This website is Vue.js based front-end that connects to a back-end application created using Strapi. [CVPR-NAS-API](https://github.com/NewcastleRSE/CVPR-NAS-API)
 
-Project milestones relate to the phases of the competition.
-
-The website must be able to collect data from running the competition submissions and display a ranking of competitor results.
+The competition has 3 stages. The website must be able to collect data from running the competition submissions and display a ranking of competitor results.
 
 Last year's website is available for reference at: 
 
@@ -43,42 +41,20 @@ https://competitions.codalab.org/competitions/29853
 
 ### Prerequisites
 
-Vue-cli, Node.js
+Vue-cli, Node.js, yarn
 
 ### Installation
 
-How to build or install the application
+Clone the repo into a suitable directory. Create an .env file containing value for BASE_URL e.g. BASE_URL=localhost:1338
 
 ### Running Locally
 
-yarn serve
-
-### Running Tests
-
-How to run tests on your local system.
+`yarn serve` to start the webserver
 
 ## Deployment
 
-### Local
+`yarn build` to build the application ready for deployment
 
-Deploying to a production style setup but on the local system. Examples of this would include `venv`, `anaconda`, `Docker` or `minikube`. 
-
-### Production
-
-Deploying to the production system. Examples of this would include cloud, HPC or virtual machine. 
-
-## Usage
-
-Any links to production environment, video demos and screenshots.
-
-## Roadmap
-
-- [x] Initial Research  
-- [ ] Minimum viable product <-- You are Here  
-- [ ] Alpha Release  
-- [ ] Feature-Complete Release  
-
-## Contributing
 
 ### Main Branch
 Protected and can only be pushed to via pull requests. Should be considered stable and a representation of production code.
@@ -86,8 +62,4 @@ Protected and can only be pushed to via pull requests. Should be considered stab
 ### Dev Branch
 Should be considered fragile, code should compile and run but features may be prone to errors.
 
-### Feature Branches
-A branch per feature being worked on.
-
-https://nvie.com/posts/a-successful-git-branching-model/
 
