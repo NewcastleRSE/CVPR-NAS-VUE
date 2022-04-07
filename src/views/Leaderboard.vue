@@ -11,9 +11,11 @@
         <div class="flex space-x-12 text-black-200 font-raleway">
 
           <router-link to="/">HOME</router-link>
+          <router-link to="/rules">RULES</router-link>
           <router-link to="" v-if="user">
             <font-awesome-icon class="text-xl" :icon="['fas', 'user-circle']" /> {{ user.username }}
           </router-link>
+          <router-link to="/instructions">INFO</router-link>
           <router-link to="download" v-if="user">DOWNLOAD</router-link>
           <router-link to="submit" v-if="user">SUBMIT</router-link>
           <router-link to="leaderboard" v-if="user">LEADERBOARD</router-link>
@@ -23,11 +25,14 @@
         </div>
         <br>
         <h2>CVPR-NAS 2022 leader board</h2>
+
+				<p id="page-text">If your submission appears on the leaderboard, you have automatically qualified for stage 3 of the competition (New submission scores will remain blank until values are calculated)</p>
       </div>
     </section>
 
+
     <div id="table-section">
-      <LeaderboardTable :my-data="azureData"></LeaderboardTable>
+      <LeaderboardTable v-if="azureData" :my-data="azureData"></LeaderboardTable>
     </div>
 
   </div>
@@ -36,6 +41,7 @@
 <script>
 
 import LeaderboardTable from "../components/LeaderboardTable";
+import {dataService} from "../services/data.service";
 
 export default {
   name: "Leaderboard",
@@ -50,78 +56,20 @@ export default {
     };
   },
   methods: {
-    async getSubmissions() {
-      const endpoint = `https://cvprnas.azurewebsites.net/api/submissions`;
-      await this.axios.get(endpoint, {
-        headers: {
-          'Content-Type' : 'application/json',
-          'Authorization' : `Bearer ${window.localStorage.getItem('jwt')}`
-        },
-      }).then(function(response){
-        let tempArray = []
-        let tempData =  response.data;
-        for(let i in tempData.data) {
-          let x = this.formatData(tempData.data[i])
-          tempArray.push(x);
-        }
-        this.azureData = tempArray.sort(this.totalScoreCompare).reverse();
-        // add rank to the sorted data base don the index value
-        for (let index in this.azureData){
-            let keypairvalue = parseInt(index)+1;
-            this.azureData[index].rank = keypairvalue;
-        }
-        localStorage.setItem('lbdata', JSON.stringify(this.azureData));
-      }.bind(this))
-        .catch( function( error ){
-          this.axiosError = error;
-        }.bind(this));
-    },
-    formatData(data){
-       let tableItem = {
-         'title' : data.attributes.title,
-         'totalScore' : data.attributes.Final_Score,
-         'adalineAdjScore' : data.attributes.Adaline_Adj_Score,
-         'adalineParams' : data.attributes.Adaline_Params,
-         'adalineRawScore' : data.attributes.Adaline_Raw_Score,
-         'adalineRuntime' : data.attributes.Adaline_Runtime,
-         'caitieAdjScore' : data.attributes.Caitie_Adj_Score,
-         'caitieParams' : data.attributes.Caitie_Params,
-         'caitieRawScore' : data.attributes.Caitie_Raw_Score,
-         'caitieRuntime' : data.attributes.Caitie_Runtime,
-         'fabianAdjScore' : data.attributes.Fabian_Adj_Score,
-         'fabianParams' : data.attributes.Fabian_Params,
-         'fabianRawScore' : data.attributes.Fabian_Raw_Score,
-         'fabianRuntime' : data.attributes.Fabian_Runtime,
-         'lameloAdjScore' : data.attributes.LaMelo_Adj_Score,
-         'lameloParams' : data.attributes.LaMelo_Params,
-         'lameloRawScore' : data.attributes.LaMelo_Raw_Score,
-         'lameloRuntime' : data.attributes.LaMelo_Runtime,
-         'mateoAdjScore' : data.attributes.Mateo_Adj_Score,
-         'mateoParams' : data.attributes.Mateo_Params,
-         'mateoRawScore' : data.attributes.Mateo_Raw_Score,
-         'mateoRuntime' : data.attributes.Mateo_Runtime
-       }
-       return tableItem;
-    },
-    totalScoreCompare(obj1, obj2) {
-      return obj1.totalScore - obj2.totalScore;
-    },
     logout() {
-      window.localStorage.removeItem('jwt')
-      window.localStorage.removeItem('userData')
-      this.$router.push('/login')
+			dataService.logout();
+			this.$router.push('/');
     }
   },
   mounted() {
     this.user = JSON.parse(window.localStorage.getItem('userData'))
+		this.azureData = JSON.parse(window.localStorage.getItem('lbdata'));
   },
-  created() {
-     this.submissions =  this.getSubmissions();
-  }
 }
 </script>
 
 <style scoped>
+
 
 #table-section{
   width: 100%;
@@ -244,7 +192,8 @@ h1, h2, h3, h4, h5, h6 {
   filter: blur(0);
   opacity: 1;
   font-family: Raleway, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 0.8em;
+	color: #fff;
   font-weight: 200;
   letter-spacing: 0.1em;
   line-height: 2;

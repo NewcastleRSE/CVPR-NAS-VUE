@@ -30,64 +30,27 @@ Newcastle University
 
 ## Getting Started
 
-No specific technology is preferred for the website, however it must be able to deploy Azure based applications to run the competition code.
+This website is Vue.js based front-end that connects to a back-end application created using Strapi. [CVPR-NAS-API](https://github.com/NewcastleRSE/CVPR-NAS-API)
 
-Project milestones relate to the phases of the competition.
-
-The website must be able to collect data from running the competition submissions and display a ranking of competitor results.
-
-Last year's website is available for reference at: 
-
-https://competitions.codalab.org/competitions/29853 
+The competition has 3 stages. Users are able to upload zip files which are received by the Strapi back-end and recorded. Files are then passed to an Azure batch service with a unique id and run using specific datasets. Once the submissions have been executed via the batch pool, results are returned to the back-end and stored against th rignal submission. The website is able to query the back-end for each submission results and display a ranking of competitors based on runtimes and scores.
 
 
 ### Prerequisites
 
-Vue-cli, Node.js
+Vue-cli, Node.js, yarn
 
 ### Installation
 
-How to build or install the application
+Clone the repo into a suitable directory. Create an .env file containing value for BASE_URL e.g. BASE_URL=localhost:1338.
 
 ### Running Locally
 
-yarn serve
-
-### Running Tests
-
-How to run tests on your local system.
+`yarn serve` to start the webserver.
 
 ## Deployment
 
-### Local
+`yarn build` to build the application ready for deployment. The dist folder can then form the basis of a static front-end.
 
-Deploying to a production style setup but on the local system. Examples of this would include `venv`, `anaconda`, `Docker` or `minikube`. 
+## Branches
 
-### Production
-
-Deploying to the production system. Examples of this would include cloud, HPC or virtual machine. 
-
-## Usage
-
-Any links to production environment, video demos and screenshots.
-
-## Roadmap
-
-- [x] Initial Research  
-- [ ] Minimum viable product <-- You are Here  
-- [ ] Alpha Release  
-- [ ] Feature-Complete Release  
-
-## Contributing
-
-### Main Branch
-Protected and can only be pushed to via pull requests. Should be considered stable and a representation of production code.
-
-### Dev Branch
-Should be considered fragile, code should compile and run but features may be prone to errors.
-
-### Feature Branches
-A branch per feature being worked on.
-
-https://nvie.com/posts/a-successful-git-branching-model/
-
+Main and dev only

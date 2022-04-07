@@ -16,6 +16,8 @@
 					</div>
 
 					<h2 class="font-bold text-left font-montserrat mb-10 text-2xl sm:text-3xl">Create a submission</h2>
+					<p>Please add a title to your entry - this is the name that will be shown on the leaderboard.</p>
+
 					<p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
 					<form enctype="multipart/form-data">
 						<div class="my-5">
@@ -33,8 +35,8 @@
 						</div>
 					</form>
 
-					<p v-show="success" class="successMsg text-sm">{{ successMsg }}</p>
-					<p v-show="error" class="errorMsg text-sm">{{ errorMsg }}</p>
+					<p v-show="success" class="successMsg text-lg">{{ successMsg }}</p>
+					<p v-show="error" class="errorMsg text-lg">{{ errorMsg }}</p>
 				</div>
 			</div>
 		</div>
@@ -55,7 +57,9 @@ export default {
 			errorMsg: `An error occurred, please try again`,
 			success: false,
 			successMsg : `Submission successfully uploaded!`,
-			data: ''
+			data: '',
+			user: {},
+			userEmail: ''
 		}
 	},
 	methods: {
@@ -66,32 +70,53 @@ export default {
 		async submitFile(e) {
 			e.preventDefault();
 			const formData = new FormData();
-			this.data = { "title" : this.title }
+			this.data = {
+				"title" : this.title,
+				"user_email" : this.userEmail
+			}
 
 			formData.append('data', JSON.stringify(this.data));
-			formData.append('files.file', this.file);
 
-			const endpoint = `https://cvprnas.azurewebsites.net/api/submissions`;
-			await this.axios.post(endpoint, formData, {
-				headers: {
-					'Content-Type' : 'multipart/form-data',
-					'Authorization' : `Bearer ${window.localStorage.getItem('jwt')}`,
-				}
-			}).then(function(response){
-						this.axiosResponse = response.data;
-						console.log(this.axiosResponse);
-						this.success = true;
+			if(this.file.type === 'application/x-zip-compressed') {
+				formData.append('files.file', this.file);
+
+				const endpoint = `https://cvprnas.azurewebsites.net/api/submissions`;
+				await this.axios.post(endpoint, formData, {
+					headers: {
+						'Content-Type' : 'multipart/form-data',
+						'Authorization' : `Bearer ${window.localStorage.getItem('jwt')}`,
+					}
+				}).then(function(response){
+					this.axiosResponse = response.data;
+					this.success = true;
 				}.bind(this))
-				.catch( function( error ){
-					this.axiosError = error;
-					this.error = true;
-				}.bind(this));
+						.catch( function( error ){
+							this.axiosError = error;
+							this.error = true;
+						}.bind(this));
+			}
+			else {
+				this.errorMsg = 'Please upload a zip file';
+				this.error = true;
+			}
 		}
-	}
+	},
+	mounted() {
+		this.user = JSON.parse(window.localStorage.getItem('userData'));
+		this.userEmail = this.user.email;
+	},
 }
 </script>
 
 <style scoped>
 
+input[type="file"]::-webkit-file-upload-button {
+	border: 2px solid #a09d9d;
+	color: #555555;
+	border-radius: 4px;
+	background-color: #ffffff;
+	margin-right: 20px;
+	padding: 13px 18px;
+}
 
 </style>

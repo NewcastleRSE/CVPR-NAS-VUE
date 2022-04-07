@@ -8,7 +8,7 @@
       <div class="sm:w-1/2">
         <div class="p-5 w-4/5 mx-auto text-left font-raleway">
           <div class="text-left mb-7">
-            <span class="outline">
+         <span class="outline">
               <router-link to="/">
                 <font-awesome-icon class="mr-5" :icon="['fas', 'arrow-left']" /> HOME
               </router-link>
@@ -31,7 +31,7 @@
               Login <font-awesome-icon class="ml-3" :icon="['fas', 'arrow-right']" />
             </button>
             <p class="my-2">
-              <router-link to="/forgotpassword" >Forgot Password?</router-link>
+           <!--   <router-link to="/forgotpassword" >Forgot Password?</router-link> -->
             </p>
           </form>
         </div>
@@ -57,7 +57,7 @@ export default {
       e.preventDefault()
       try {
           const endpoint = 'https://cvprnas.azurewebsites.net/api/auth/local';
-				  const res = await this.axios.post(endpoint, {
+          const res = await this.axios.post(endpoint, {
           identifier: this.email,
           password: this.password
         });
@@ -66,7 +66,6 @@ export default {
         window.localStorage.setItem('jwt', jwt)
         window.localStorage.setItem('userData', JSON.stringify(user))
 
-        //window.location.reload()
         this.$router.push('/')
 
       } catch(error) {
