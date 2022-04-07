@@ -32,11 +32,7 @@ Newcastle University
 
 This website is Vue.js based front-end that connects to a back-end application created using Strapi. [CVPR-NAS-API](https://github.com/NewcastleRSE/CVPR-NAS-API)
 
-The competition has 3 stages. The website must be able to collect data from running the competition submissions and display a ranking of competitor results.
-
-Last year's website is available for reference at: 
-
-https://competitions.codalab.org/competitions/29853 
+The competition has 3 stages. Users are able to upload zip files which are received by the Strapi back-end and recorded. Files are then passed to an Azure batch service with a unique id and run using specific datasets. Once the submissions have been executed via the batch pool, results are returned to the back-end and stored against th rignal submission. The website is able to query the back-end for each submission results and display a ranking of competitors based on runtimes and scores.
 
 
 ### Prerequisites
@@ -45,16 +41,16 @@ Vue-cli, Node.js, yarn
 
 ### Installation
 
-Clone the repo into a suitable directory. Create an .env file containing value for BASE_URL e.g. BASE_URL=localhost:1338
+Clone the repo into a suitable directory. Create an .env file containing value for BASE_URL e.g. BASE_URL=localhost:1338.
 
 ### Running Locally
 
-`yarn serve` to start the webserver
+`yarn serve` to start the webserver.
 
 ## Deployment
 
-`yarn build` to build the application ready for deployment
+`yarn build` to build the application ready for deployment. The dist folder can then form the basis of a static front-end.
 
 ## Branches
 
-Dev and main
+Main and dev only
