@@ -17,6 +17,9 @@
 
 					<h2 class="font-bold text-left font-montserrat mb-10 text-2xl sm:text-3xl">Create a submission</h2>
 					<p>Please add a title to your entry - this is the name that will be shown on the leaderboard.</p>
+          <br>
+					<br>
+					<p>PLEASE NOTE - CODE SUBMISSION WILL BE AVAILABLE WHEN PHASE 2 OF THE COMPETITION OPENS</p>
 
 					<p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
 					<form enctype="multipart/form-data">
@@ -29,7 +32,8 @@
 							<input type="file" id="file" ref="file" v-on:change="uploadFile()"/>
 							<br><br>
 
-							<button type="submit" :disabled="title === ''" class="btn-sub p-5 text-white" @click="submitFile($event)">
+						<!--	<button type="submit" :disabled="title === ''" class="btn-sub p-5 text-white" @click="submitFile($event)"> -->
+								<button type="submit" :disabled=disabled class="btn-sub p-5 text-white" >
 								Upload <font-awesome-icon class="ml-3" :icon="['fas', 'arrow-right']" />
 							</button>
 						</div>
@@ -59,7 +63,8 @@ export default {
 			successMsg : `Submission successfully uploaded!`,
 			data: '',
 			user: {},
-			userEmail: ''
+			userEmail: '',
+			disabled: true
 		}
 	},
 	methods: {
@@ -109,6 +114,10 @@ export default {
 </script>
 
 <style scoped>
+
+button:disabled {
+	background-color: #b5b6bd;
+}
 
 input[type="file"]::-webkit-file-upload-button {
 	border: 2px solid #a09d9d;
