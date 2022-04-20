@@ -60,6 +60,8 @@
              </ul></li>
           </ul>
 
+          <p>"Do not include the evaluation files "main.py" or "score.py" in your submission or include any files named "main.py" or "score.py", any such files will be overwritten and invalidate your submission."</p>
+
 					<div id="pipeline">
 
 					<h2 class="major">Evaluation Pipeline</h2>
