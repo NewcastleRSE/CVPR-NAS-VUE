@@ -19,7 +19,7 @@
           <p class="submit-text">Please add a title to your entry - this is the name that will be shown on the leaderboard.</p>
         
           <p class="submit-text"><strong>* Please ensure you have no file named main.py or score.py in your submission, this will cause your submission to error!*</strong></p>
-          
+          <p class="submit-text-extra"><strong>NOTE: submissions are now restricted to 5 attempts!</strong>
          <!-- <p>PLEASE NOTE - CODE SUBMISSION WILL BE AVAILABLE WHEN PHASE 2 OF THE COMPETITION OPENS</p> -->
 
           <p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
@@ -66,7 +66,8 @@ export default {
       data: '',
       user: {},
       userEmail: '',
-      disabled: true
+      disabled: true,
+      submissionLimit: 0
     }
   },
   methods: {
@@ -83,10 +84,12 @@ export default {
       }
 
       formData.append('data', JSON.stringify(this.data));
+      // find the current value
+      this.submissionLimit = JSON.parse(window.localStorage.getItem('submissionLimit'));
+      this.submissionLimit = parseInt(this.submissionLimit);
 
-      if(this.file.type === 'application/x-zip-compressed') {
+      if(this.submissionLimit <= 4) { 
         formData.append('files.file', this.file);
-
         const endpoint = `https://cvprnas.azurewebsites.net/api/submissions`;
         await this.axios.post(endpoint, formData, {
           headers: {
@@ -96,21 +99,31 @@ export default {
         }).then(function(response){
           this.axiosResponse = response.data;
           this.success = true;
+        
+          this.submissionLimit++;
+          window.localStorage.setItem('submissionLimit', this.submissionLimit); 
+
         }.bind(this))
             .catch( function( error ){
               this.axiosError = error;
               this.error = true;
-            }.bind(this));
+            }.bind(this));   
       }
       else {
-        this.errorMsg = 'Please upload a zip file';
+        this.errorMsg = 'You have reached your submission limit';
         this.error = true;
-      }
+      } 
     }
   },
   mounted() {
     this.user = JSON.parse(window.localStorage.getItem('userData'));
     this.userEmail = this.user.email;
+    // set the intial value to zero only if its blank
+    let subValue = window.localStorage.getItem('submissionLimit');
+    if(!subValue) {
+          window.localStorage.setItem('submissionLimit', this.submissionLimit);
+    }
+    console.log(subValue); 
   },
 }
 </script>
@@ -133,5 +146,10 @@ input[type="file"]::-webkit-file-upload-button {
 .submit-text {
   margin-bottom: 20px;
 }
+
+.submit-text-extra {
+  margin-bottom: 40px;
+}
+
 
 </style>
