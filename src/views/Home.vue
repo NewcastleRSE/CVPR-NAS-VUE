@@ -53,7 +53,7 @@
           <ul>
             <li>Phase 1: Local development of your NAS approach using the provided testing framework. Starting January 2022.</li>
             <li>Phase 2: Validation that your framework works within our test environment. Starting March 2022.</li>
-            <li>Phase 3: Running your NAS approach against our hidden data. Competition ends April 2022.</li>
+            <li>Phase 3: Running your NAS approach against our hidden data. Competition ends May 2022.</li>
           </ul>
           <p>This is in conjunction with our CVPR-NAS workshop at CVPR 2022.</p>
           <p>We hope you will take part in the competition and look forward to seeing you at CVPR 2022!</p>
