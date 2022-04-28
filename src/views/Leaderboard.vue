@@ -27,6 +27,8 @@
         <h2>CVPR-NAS 2022 leader board</h2>
 
 				<p id="page-text">If your submission appears on the leaderboard, you have automatically qualified for stage 3 of the competition (New submission scores will remain blank until values are calculated)</p>
+
+				<p>Submissions with uniform -100 scores have *failed*, please consult your Submission Completed email to see the submission stdout and stderr.</p>
       </div>
     </section>
 
