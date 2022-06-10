@@ -10,11 +10,11 @@ Between 5-10 submissions are expected per day during the allowed submission peri
 
 
 ### Project Team
-Stephen McGough - ([stephen.mcgough@newcastle.ac.uk](mailto:stephen.mcgough@newcastle.ac.uk))
-Rob Geada - ([rob@geada.net](mailto:rob@geada.net))
-David Towers - ([d.towers2@newcastle.ac.uk](mailto:d.towers2@newcastle.ac.uk))
-Nik Khadijah Nik Aznan  - ([nik.nik-aznan@newcastle.ac.uk](mailto:nik.nik-aznan@newcastle.ac.uk))
-Amir Atapour-Abarghouei - ([amir.atapour-abarghouei@durham.ac.uk](mailto:amir.atapour-abarghouei@durham.ac.uk))
+* Stephen McGough - ([stephen.mcgough@newcastle.ac.uk](mailto:stephen.mcgough@newcastle.ac.uk))
+* Rob Geada - ([rob@geada.net](mailto:rob@geada.net))
+* David Towers - ([d.towers2@newcastle.ac.uk](mailto:d.towers2@newcastle.ac.uk))
+* Nik Khadijah Nik Aznan  - ([nik.nik-aznan@newcastle.ac.uk](mailto:nik.nik-aznan@newcastle.ac.uk))
+* Amir Atapour-Abarghouei - ([amir.atapour-abarghouei@durham.ac.uk](mailto:amir.atapour-abarghouei@durham.ac.uk))
 
 
 ### RSE Contact
@@ -49,7 +49,7 @@ Clone the repo into a suitable directory. Create an .env file containing value f
 
 ## Deployment
 
-`yarn build` to build the application ready for deployment. The dist folder can then form the basis of a static front-end.
+`yarn build` to build the application ready for deployment. The dist folder can then form the basis of a static front-end. The application is currently manaully deployed to Azure (RSE Team General -> Storage Accounts -> cvprnas -> Blob Containers -> $web) using Azure Storage Explorer. Files and folders are deleted and then re-uploaded from the lastest compiled contents of the dist folder.
 
 ## Branches
 

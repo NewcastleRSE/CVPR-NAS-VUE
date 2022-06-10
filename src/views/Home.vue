@@ -28,7 +28,7 @@
         <br>
         <h2>CVPR-NAS 2022 </h2>
 
-        <p>PHASE 2 OF THE COMPETITION IS NOW OPEN!</p>
+        <p>Phase 3 of the competition is now open to qualified competitors</p>
 
       </div>
     </section>
