@@ -49,7 +49,7 @@ Clone the repo into a suitable directory. Create an .env file containing value f
 
 ## Deployment
 
-`yarn build` to build the application ready for deployment. The dist folder can then form the basis of a static front-end. The application is currently manaully deployed to Azure (RSE Team General -> Storage Accounts -> cvprnas -> Blob Containers -> $web) using Azure Storage Explorer. Files and folders are deleted and then re-uploaded from the lastest compiled contents of the dist folder.
+`yarn build` to build the application ready for deployment. Source code is minified and compiled in a 'dist' directory. Contents of the dist folder can then form the basis of a static front-end. The application is currently manually deployed to Azure (RSE Team General -> Storage Accounts -> cvprnas -> Blob Containers -> $web) using Azure Storage Explorer. Files and folders are deleted and then re-uploaded from the lastest compiled contents of the dist folder.
 
 ## Branches
 
