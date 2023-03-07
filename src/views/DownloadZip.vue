@@ -57,7 +57,7 @@
 
 					<p>Download the <strong><em>testing framework</em></strong> from the following link:</p>
 
-					<p id="download-link"><a class="download-zip" href="https://cvprnas.blob.core.windows.net/download/CVPRNAS_2022_Starting_Kit.tar.gz"> <font-awesome-icon class="text-xl" :icon="['fas', 'file-archive']" />  &nbsp; CVPR-NAS Unseen Data Starting Kit</a></p>
+					<p id="download-link"><a class="download-zip" href="https://cvprnas.blob.core.windows.net/download/CVPRNAS_Starting_Kit.tar.gz"> <font-awesome-icon class="text-xl" :icon="['fas', 'file-archive']" />  &nbsp; CVPR-NAS Unseen Data Starting Kit</a></p>
 
 
 				</div>
