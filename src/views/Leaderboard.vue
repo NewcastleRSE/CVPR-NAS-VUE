@@ -24,7 +24,7 @@
             </span>
         </div>
         <br>
-        <h2>CVPR-NAS 2022 leader board</h2>
+        <h2>CVPR-NAS 2023 leader board</h2>
 
 				<p id="page-text">If your submission appears on the leaderboard, you have automatically qualified for stage 3 of the competition (New submission scores will remain blank until values are calculated)</p>
 

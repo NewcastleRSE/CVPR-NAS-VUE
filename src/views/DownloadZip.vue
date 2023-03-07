@@ -24,9 +24,9 @@
             </span>
 				</div>
 				<br>
-				<h2>CVPR-NAS 2022 </h2>
+				<h2>CVPR-NAS 2023 </h2>
 
-				<p>Phase 3 of the competition is now open to qualified competitors.</p>
+				<p>Phase 1 of the competition is now open!</p>
 
 			</div>
 		</section>
@@ -39,7 +39,7 @@
 					<h2 class="major">Download our starting kit!</h2>
 
 					<div id="download-text">
-						<p>Here you can download the Starting Kit for the <strong>2022 CVPR-NAS Unseen Data Competition</strong>, which contains everything you need to get started. Specifically, the Starting Kit contains both a submission template and example submission, as well as an evaluation pipeline that exactly mirrors how we’ll evaluate your submissions on our servers.</p>
+						<p>Here you can download the Starting Kit for the <strong>CVPR-NAS Unseen Data Competition</strong>, which contains everything you need to get started. Specifically, the Starting Kit contains both a submission template and example submission, as well as an evaluation pipeline that exactly mirrors how we’ll evaluate your submissions on our servers.</p>
 
 						<h3 class="font-bold text-left font-montserrat mb-4 text-4xl">The starting kit contains the following files and directories: </h3>
 						<ul class="list-disc">
@@ -57,7 +57,7 @@
 
 					<p>Download the <strong><em>testing framework</em></strong> from the following link:</p>
 
-					<p id="download-link"><a class="download-zip" href="https://cvprnas.blob.core.windows.net/download/CVPRNAS_2022_Starting_Kit.tar.gz"> <font-awesome-icon class="text-xl" :icon="['fas', 'file-archive']" />  &nbsp; CVPR-NAS 2022 Starting Kit</a></p>
+					<p id="download-link"><a class="download-zip" href="https://cvprnas.blob.core.windows.net/download/CVPRNAS_2022_Starting_Kit.tar.gz"> <font-awesome-icon class="text-xl" :icon="['fas', 'file-archive']" />  &nbsp; CVPR-NAS Unseen Data Starting Kit</a></p>
 
 
 				</div>
@@ -85,7 +85,7 @@
 			</div>
 
 			<div>
-				<p id="email"><a href="mailto:cvpr-2022-nas@newcastle.ac.uk?subject=CVPR-NAS Competition query">cvpr-2022-nas@newcastle.ac.uk</a></p>
+				<p id="email"><a href="mailto:nas-competition@ncl.ac.uk?subject=CVPR-NAS Competition query">nas-competition@newcastle.ac.uk</a></p>
 			</div>
 		</section>
 
