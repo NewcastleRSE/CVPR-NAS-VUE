@@ -24,9 +24,9 @@
             </span>
           </div>
           <br>
-          <h2>CVPR-NAS 2022 Info</h2>
+          <h2>CVPR-NAS 2023 Info</h2>
 
-					<p>Phase 3 of the competition is now open to qualified competitors.</p>
+					<p>Phase 1 of the competition is now open!</p>
 
         </div>
       </section>
@@ -102,7 +102,7 @@
 
 					<h3>Other</h3>
 
-					<p>If you run into any problems or simply have questions, feel free to reach out to us! A great way to reach us is by leaving an issue on the competition’s <a href="https://github.com/RobGeada/CVPRNAS-2022-Starting-Kit/issues">GitHub page</a> or by emailing us at : <a href="mailto:cvpr-2022-nas@newcastle.ac.uk
+					<p>If you run into any problems or simply have questions, feel free to reach out to us! A great way to reach us is by leaving an issue on the competition’s <a href="https://github.com/RobGeada/CVPRNAS-2022-Starting-Kit/issues">GitHub page</a> or by emailing us at : <a href="mailto:nas-competition@ncl.ac.uk
 ?subject=CVPR-NAS Competition query">Competition team</a>.</p>
 
 
@@ -131,7 +131,7 @@
 			</div>
 
 			<div>
-				<p id="email"><a href="mailto:cvpr-2022-nas@newcastle.ac.uk?subject=CVPR-NAS Competition query">cvpr-2022-nas@newcastle.ac.uk</a></p>
+				<p id="email"><a href="mailto:nas-competition@ncl.ac.uk?subject=CVPR-NAS Competition query">nas-competition@newcastle.ac.uk</a></p>
 			</div>
 		</section>
 

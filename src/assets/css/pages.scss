@@ -106,8 +106,8 @@ html {
 }
 
 body {
-  background-color: #3C78D8;
- /* background-image: linear-gradient(to top, rgba(28, 68, 135, 0.8), rgba(28, 68, 135, 0.8)), url("../bg.png"); */
+  background-color: #FF695B;
+ /* background-image: linear-gradient(to top, rgba(232, 64, 52, 1), rgba(232, 64, 52, 1)), url("../bg.png"); */
   background-size: auto,
   cover;
   background-attachment: fixed,
@@ -150,7 +150,7 @@ body, input, select, textarea {
 @media screen and (min-width: 1280px){
 
   #banner  {
-    background-image: linear-gradient(to top, rgba(28, 68, 135, 0.8), rgba(28, 68, 135, 0.8)), url("../assets/bg.png");
+    background-image: linear-gradient(to top, rgba(232, 64, 52, 1), rgba(232, 64, 52, 1)), url("../assets/bg.png");
     margin-bottom: -6.5em;
   }
 
@@ -2349,7 +2349,7 @@ input[type="radio"]:checked + label:before {
 
 input[type="checkbox"]:focus + label:before,
 input[type="radio"]:focus + label:before {
-  border-color: #3C78D8;
+  border-color: #FF695B;
 }
 
 input[type="checkbox"] + label:before {
@@ -2774,7 +2774,7 @@ ul.pagination li > .page:hover {
 }
 
 ul.pagination li > .page.active {
-  background-color: #3C78D8;
+  background-color: #FF695B;
 }
 
 ul.pagination li:first-child {
@@ -2942,7 +2942,7 @@ input[type="reset"].primary,
 input[type="button"].primary,
 button.primary,
 .button.primary {
-  background-color: #3C78D8;
+  background-color: #FF695B;
   box-shadow: none;
 }
 
@@ -3278,8 +3278,8 @@ button:disabled,
 
   #banner {
     padding: 7em 0 8.25em 0 ;
-    background-color: #3C78D8;
-    background-image: linear-gradient(to top, rgba(28, 68, 135, 0.8), rgba(28, 68, 135, 0.8)), url("../assets/bg.png");
+    background-color: #FF695B;
+    background-image: linear-gradient(to top, rgba(232, 64, 52, 1), rgba(232, 64, 52, 1)), url("../assets/bg.png");
     background-size: auto,
     cover;
     background-position: center,
@@ -3390,8 +3390,8 @@ body.is-preload #banner p {
 
   #wrapper > header {
     padding: 9em 0 6.25em 0 ;
-    background-color: #3C78D8;
-    background-image: linear-gradient(to top, rgba(28, 68, 135, 0.8), rgba(28, 68, 135, 0.8)), url("../assets/bg.png");
+    background-color: #FF695B;
+    background-image: linear-gradient(to top, rgba(232, 64, 52, 1), rgba(232, 64, 52, 1)), url("../assets/bg.png");
     background-size: auto,
     cover;
     background-position: center,
@@ -3438,7 +3438,7 @@ body.is-preload #banner p {
 }
 
 .wrapper {
-  background-color: #3C78D8;
+  background-color: #FF695B;
   margin: 6.5em 0;
   position: relative;
 }
@@ -3448,11 +3448,11 @@ body.is-preload #banner p {
 }
 
 .wrapper:before {
-  box-shadow: inset 0 -1px 0 0 #3C78D8, 0 1px 0 0 #3C78D8;
+  box-shadow: inset 0 -1px 0 0 #FF695B, 0 1px 0 0 #FF695B;
 }
 
 .wrapper:after {
-  box-shadow: inset 0 -1px 0 0 #3C78D8, 0 1px 0 0 #3C78D8;
+  box-shadow: inset 0 -1px 0 0 #FF695B, 0 1px 0 0 #FF695B;
 }
 
 .wrapper:before, .wrapper:after {
@@ -3500,35 +3500,36 @@ body.is-preload #banner p {
 }
 
 .wrapper.style2 {
-  background-color: #93C47D;
+  background-color: #FF9A85;
 }
 
 .wrapper.style2:before, .wrapper.style2:after {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%2393C47D %3B' /%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23FF9A85 %3B' /%3E%3C/svg%3E");
 }
 
 .wrapper.style2:before {
-  box-shadow: inset 0 -1px 0 0 #93C47D , 0 1px 0 0 #93C47D ;
+  box-shadow: inset 0 -1px 0 0 #FF9A85 , 0 1px 0 0 #FF9A85 ;
 }
 
 .wrapper.style2:after {
-  box-shadow: inset 0 -1px 0 0 #93C47D , 0 1px 0 0 #93C47D ;
+  box-shadow: inset 0 -1px 0 0 #FF9A85 , 0 1px 0 0 #FF9A85 ;
 }
 
 .wrapper.style3 {
-  background-color: #FFD966;
+  background-color: #FFB8BA;
+  margin: 6.5em 0 0 0;
 }
 
 .wrapper.style3:before, .wrapper.style3:after {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23FFD966%3B' /%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23FFB8BA%3B' /%3E%3C/svg%3E");
 }
 
 .wrapper.style3:before {
-  box-shadow: inset 0 -1px 0 0 #FFD966, 0 1px 0 0 #FFD966;
+  box-shadow: inset 0 -1px 0 0 #FFB8BA, 0 1px 0 0 #FFB8BA;
 }
 
 .wrapper.style3:after {
-  box-shadow: inset 0 -1px 0 0 #FFD966, 0 1px 0 0 #FFD966;
+  box-shadow: inset 0 -1px 0 0 #FFB8BA, 0 1px 0 0 #FFB8BA;
 }
 
 .wrapper.style4 {
@@ -3580,19 +3581,19 @@ body.is-preload #banner p {
 }
 
 .wrapper.spotlight {
-  background-color: #3C78D8;
+  background-color: #FF695B;
 }
 
 .wrapper.spotlight:before, .wrapper.spotlight:after {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%233C78D8%3B' /%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23FF695B%3B' /%3E%3C/svg%3E");
 }
 
 .wrapper.spotlight:before {
-  box-shadow: inset 0 -1px 0 0 #3C78D8, 0 1px 0 0 #3C78D8;
+  box-shadow: inset 0 -1px 0 0 #FF695B, 0 1px 0 0 #FF695B;
 }
 
 .wrapper.spotlight:after {
-  box-shadow: inset 0 -1px 0 0 #3C78D8, 0 1px 0 0 #3C78D8;
+  box-shadow: inset 0 -1px 0 0 #FF695B, 0 1px 0 0 #FF695B;
 }
 
 .wrapper.spotlight .inner {
@@ -3642,35 +3643,39 @@ body.is-preload #banner p {
 
 
 .wrapper.spotlight.style2 {
-  background-color: #93C47D;
+  background-color: #FF9A85;
 }
 
 .wrapper.spotlight.style2:before, .wrapper.spotlight.style2:after {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%2393C47D %3B' /%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23FF9A85 %3B' /%3E%3C/svg%3E");
 }
 
 .wrapper.spotlight.style2:before {
-  box-shadow: inset 0 -1px 0 0 #93C47D , 0 1px 0 0 #93C47D ;
+  box-shadow: inset 0 -1px 0 0 #FF9A85 , 0 1px 0 0 #FF9A85 ;
 }
 
 .wrapper.spotlight.style2:after {
-  box-shadow: inset 0 -1px 0 0 #93C47D , 0 1px 0 0 #93C47D ;
+  box-shadow: inset 0 -1px 0 0 #FF9A85 , 0 1px 0 0 #FF9A85 ;
 }
 
 .wrapper.spotlight.style3 {
-  background-color: #FFD966;
+  background-color: #FFB8BA;
 }
 
 .wrapper.spotlight.style3:before, .wrapper.spotlight.style3:after {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23FFD966%3B' /%3E%3C/svg%3E");
-}
-
-.wrapper.spotlight.style3:before {
-  box-shadow: inset 0 -1px 0 0 #FFD966, 0 1px 0 0 #FFD966;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23FFB8BA%3B' /%3E%3C/svg%3E");
 }
 
 .wrapper.spotlight.style3:after {
-  box-shadow: inset 0 -1px 0 0 #FFD966, 0 1px 0 0 #FFD966;
+  content: none;
+}
+
+.wrapper.spotlight.style3:before {
+  box-shadow: inset 0 -1px 0 0 #FFB8BA, 0 1px 0 0 #FFB8BA;
+}
+
+.wrapper.spotlight.style3:after {
+  box-shadow: inset 0 -1px 0 0 #FFB8BA, 0 1px 0 0 #FFB8BA;
 }
 
 .wrapper.spotlight.style4 {
@@ -3920,7 +3925,7 @@ body.is-preload #banner p {
 @media screen and (max-width: 1280px) {
 
   #footer {
-    background-color: #93C47D;
+    background-color: #FF9A85;
     background-size: auto,
     cover;
     background-position: center,

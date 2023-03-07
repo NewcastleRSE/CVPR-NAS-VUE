@@ -1,6 +1,6 @@
 <template>
   <!-- Page Wrapper -->
-  <div id="page-wrapper" >
+  <div id="page-wrapper" class="remove-white">
 
     <!-- Banner -->
     <section id="banner">
@@ -26,9 +26,9 @@
             </span>
         </div>
         <br>
-        <h2>CVPR-NAS 2022 </h2>
+        <h2>CVPR-NAS 2023 </h2>
 
-        <p>Phase 3 of the competition is now open to qualified competitors</p>
+        <p>Phase 1 of the competition is now open!</p>
 
       </div>
     </section>
@@ -51,12 +51,12 @@
             The competition will be run in three phases:
           </p>
           <ul>
-            <li>Phase 1: Local development of your NAS approach using the provided testing framework. Starting January 2022.</li>
-            <li>Phase 2: Validation that your framework works within our test environment. Starting March 2022.</li>
-            <li>Phase 3: Running your NAS approach against our hidden data. Competition ends May 2022.</li>
+            <li>Phase 1: Local development of your NAS approach using the provided testing framework. <strong>LIVE NOW</strong>, please download the starter kit to take part.</li>
+            <li>Phase 2: Validation that your framework works within our test environment. Starting TBD.</li>
+            <li>Phase 3: Running your NAS approach against our hidden data. Competition ends TBD.</li>
           </ul>
-          <p>This is in conjunction with our CVPR-NAS workshop at CVPR 2022.</p>
-          <p>We hope you will take part in the competition and look forward to seeing you at CVPR 2022!</p>
+          <p>This is in conjunction with our CVPR-NAS workshop at CVPR 2023.</p>
+          <p>We hope you will take part in the competition and look forward to seeing you at CVPR 2023!</p>
 
         </div>
       </div>
@@ -83,7 +83,7 @@
       </div>
 
       <div>
-        <p id="email"><a href="mailto:cvpr-2022-nas@newcastle.ac.uk?subject=CVPR-NAS Competition query">cvpr-2022-nas@newcastle.ac.uk</a></p>
+        <p id="email"><a href="mailto:nas-competition@ncl.ac.uk?subject=CVPR-NAS Competition query">nas-competition@newcastle.ac.uk</a></p>
       </div>
     </section>
 

@@ -24,9 +24,9 @@
             </span>
 				</div>
 				<br>
-				<h2>CVPR-NAS 2022 Rules</h2>
+				<h2>CVPR-NAS 2023 Rules</h2>
 
-				<p>Phase 3 of the competition is now open to qualified competitors</p>
+				<p>Phase 1 of the competition is now open!</p>
 
 			</div>
 		</section>
@@ -67,7 +67,7 @@
 			</div>
 
 			<div>
-				<p id="email"><a href="mailto:cvpr-2022-nas@newcastle.ac.uk?subject=CVPR-NAS Competition query">cvpr-2022-nas@newcastle.ac.uk</a></p>
+				<p id="email"><a href="mailto:nas-competition@ncl.ac.uk?subject=CVPR-NAS Competition query">nas-competition@newcastle.ac.uk</a></p>
 			</div>
 		</section>
 
