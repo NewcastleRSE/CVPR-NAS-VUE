@@ -82,8 +82,8 @@ export default {
   padding: 0;
   border: 0;
   font-size: 128%;
-  background-image: linear-gradient(to top, rgba(28, 68, 135, 0.8), rgba(28, 68, 135, 0.8)), url("../assets/bg.png");
-  background-color: #3C78D8;
+  /*background-image: linear-gradient(to top, rgba(28, 68, 135, 0.8), rgba(28, 68, 135, 0.8)), url("../assets/bg.png"); */
+  background-color: #e84034;
 }
 
 #leaderboard {

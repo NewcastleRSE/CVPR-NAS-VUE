@@ -32,7 +32,9 @@ footer, header, hgroup, nav, section {
 
 body {
   line-height: 1;
+  background-color: #FFB8BA;
 }
+
 
 img.round {
   border-radius: 50%;
@@ -3660,6 +3662,7 @@ body.is-preload #banner p {
 
 .wrapper.spotlight.style3 {
   background-color: #FFB8BA;
+  padding-bottom: 50px;
 }
 
 .wrapper.spotlight.style3:before, .wrapper.spotlight.style3:after {
