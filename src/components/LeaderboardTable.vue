@@ -130,7 +130,7 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
-  color: #337ab7;
+  color: #b73335;
 }
 
 .items-per-page label {
@@ -220,7 +220,7 @@ tr:nth-child(odd) {
 }
 
 .v-datatable-light .arrow.up {
-  border-bottom: 8px solid #337ab7;
+  border-bottom: 8px solid #e84034;
   margin-bottom: 2px;
 }
 
@@ -229,7 +229,7 @@ tr:nth-child(odd) {
 }
 
 .v-datatable-light .arrow.down {
-  border-top: 8px solid #337ab7;
+  border-top: 8px solid #e84034;
   margin-top: 2px;
 }
 
