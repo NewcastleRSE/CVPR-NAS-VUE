@@ -43,6 +43,18 @@ Vue-cli, Node.js, yarn
 
 Clone the repo into a suitable directory. Create an .env file containing value for BASE_URL e.g. BASE_URL=localhost:1338.
 
+Install vue-cli 
+
+`npm install -g @vue/cli`
+
+Install node modules
+
+`npm install`
+
+Install yarn
+
+`npm i yarn`
+
 ### Running Locally
 
 `yarn serve` to start the webserver.
