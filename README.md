@@ -41,7 +41,9 @@ Vue-cli, Node.js, yarn
 
 ### Installation
 
-Clone the repo into a suitable directory. Create an .env file containing value for BASE_URL e.g. BASE_URL=localhost:1338.
+Clone the repo into a suitable directory. Create an .env file containing value for BASE_URL e.g. BASE_URL=localhost:1338. 
+
+Use Node 16.
 
 Install vue-cli 
 
