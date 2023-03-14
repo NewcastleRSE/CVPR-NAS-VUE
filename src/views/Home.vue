@@ -55,7 +55,7 @@
             <li>Phase 2: Validation that your framework works within our test environment. Starting TBD.</li>
             <li>Phase 3: Running your NAS approach against our hidden data. Competition ends TBD.</li>
           </ul>
-          <p>This is in conjunction with our CVPR-NAS workshop at CVPR 2023.</p>
+          <p>This is in conjunction with our <a href="http://cvpr-nas.com/">CVPR-NAS</a> workshop at <a href="https://cvpr2023.thecvf.com">CVPR 2023</a>.</p>
           <p>We hope you will take part in the competition and look forward to seeing you at CVPR 2023!</p>
 
         </div>
