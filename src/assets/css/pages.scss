@@ -139,6 +139,10 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
   color: #2e3141;
 }
 
+body a {
+  text-decoration: underline;
+}
+
 /* Type */
 
 body, input, select, textarea {
