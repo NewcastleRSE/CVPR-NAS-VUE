@@ -127,7 +127,7 @@ td, th {
 }
 
 .close-btn {
-  background-color: #93C47D;
+  background-color: #ff695b;
   padding: 20px;
   margin: 20px;
 }
@@ -147,19 +147,19 @@ td, th {
 }
 
 .yellow-header {
-  background-color: #FFD966;
+  background-color: #FF9285;
 }
 
 .green-header {
-  background-color: #93C47D;
+  background-color: #ff9a85;
 }
 
 .y-col {
-  background-color: #fff2aa;
+  background-color: #ffb8ba;
 }
 
 .g-col {
-  background-color: #C4DFB9;
+  background-color: #ffb8ba;
 }
 
 </style>
