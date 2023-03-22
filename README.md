@@ -1,4 +1,4 @@
-# CVPR-NAS
+# CVPR-NAS Competition
 
 ## About
 
@@ -11,7 +11,6 @@ Between 5-10 submissions are expected per day during the allowed submission peri
 
 ### Project Team
 * Stephen McGough - ([stephen.mcgough@newcastle.ac.uk](mailto:stephen.mcgough@newcastle.ac.uk))
-* Rob Geada - ([rob@geada.net](mailto:rob@geada.net))
 * David Towers - ([d.towers2@newcastle.ac.uk](mailto:d.towers2@newcastle.ac.uk))
 * Nik Khadijah Nik Aznan  - ([nik.nik-aznan@newcastle.ac.uk](mailto:nik.nik-aznan@newcastle.ac.uk))
 * Amir Atapour-Abarghouei - ([amir.atapour-abarghouei@durham.ac.uk](mailto:amir.atapour-abarghouei@durham.ac.uk))
@@ -64,6 +63,30 @@ Install yarn
 ## Deployment
 
 `yarn build` to build the application ready for deployment. Source code is minified and compiled in a 'dist' directory. Contents of the dist folder can then form the basis of a static front-end. The application is currently manually deployed to Azure (RSE Team General -> Storage Accounts -> cvprnas -> Blob Containers -> $web) using Azure Storage Explorer. Files and folders are deleted and then re-uploaded from the lastest compiled contents of the dist folder.
+
+Part of the the pipeline process is that emails are sent to all users that submit code via the website. An initial 'submission-accepted' notification on submission and then a 'submission-completed' email after the batch process has completed. The submission-completed email contains a link to the output file generated on Azure  (RSE Team General -> Storage Accounts -> cvprnas -> Blob Containers -> outputs) . The email link is in the format of <path-to-file?sasToken>.
+
+The email service is provided by SendGrid which is set up as SaaS on Azure. This account may expire due to inactivity so may need to be recreated as each year. To access SendGrid you need to login through the Azure portal link `Open SaaS Account on publisher's site`. The current service is free up to 100 emails a day.
+
+Once in the SendGrid site there is access to the email templates in the Email API section. Email API -> Dynamic templates. Expand each email section to see the template ID and a preview thumbnail of the email. The correct template ids and account API key must be set as environment variable values in the Azure hosted strapi backend - cvprnas App Service -> Configuration. Th API key is at Settings -> API keys, the value is hidden but has the format: `SG.<api-key-id>.xxx`
+
+```
+SENDGRID_API_KEY
+SENDGRID_COMPLETED_TEMPLATE
+SENDGRID_SUBMISSION_TEMPLATE
+```
+
+![template view](templates.png)
+
+The email templates can be edited by using the SendGrid design Settings and Build features.
+
+![design view](design-and-build.png)
+
+You can edit the source code for sections by clcking the < > Edit Module HTML button.
+
+![html view](edit-email-html.png)
+
+There is also a function to preview the emai design and set dummy data. Click the PREVIEW button on the main navigation bar, then the 'Show test data' button. Test emails can be sent to address of your choosing, using the dummy data.
 
 ## Branches
 
