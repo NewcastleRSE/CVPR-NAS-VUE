@@ -102,8 +102,7 @@
 
 					<h3>Other</h3>
 
-					<p>If you run into any problems or simply have questions, feel free to reach out to us! A great way to reach us is by leaving an issue on the competition’s <a href="https://github.com/RobGeada/CVPRNAS-2022-Starting-Kit/issues">GitHub page</a> or by emailing us at : <a href="mailto:nas-competition@ncl.ac.uk
-?subject=CVPR-NAS Competition query">Competition team</a>.</p>
+					<p>If you run into any problems or simply have questions, feel free to reach out to us! A great way to reach us is by leaving an issue on the competition’s <a href="https://github.com/RobGeada/CVPRNAS-2022-Starting-Kit/issues">GitHub page</a> or by emailing us at : <a href="mailto:cvpr-2023-nas@newcastle.ac.uk?subject=CVPR-NAS Competition query">Competition team</a>.</p>
 
 
 				</div>
