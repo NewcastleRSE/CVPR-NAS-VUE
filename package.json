@@ -14,7 +14,7 @@
     "@fortawesome/vue-fontawesome": "^2.0.6",
     "autoprefixer": "9",
     "axios": "^0.25.0",
-    "core-js": "^3.6.5",
+    "core-js": "^3.29.1",
     "dotenv-webpack": "^7.0.3",
     "google-fonts-webpack-plugin": "^0.4.4",
     "lodash": "^4.17.21",
