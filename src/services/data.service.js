@@ -32,6 +32,7 @@ function getSubmissions() {
       tempArray.push(x);
     }
 
+    // filter out previous submission so that only the last is shown on the leaderboard
     // group by emails
     const groupByEmail = _.groupBy(tempArray, 'userEmail');
 
@@ -40,27 +41,28 @@ function getSubmissions() {
        console.log(myGroup.length);
        if(myGroup.length > 1)
        {
-          console.log('More than one');
-
           // put the array in datetime order
           const data = myGroup.sort(dateCompare); 
           // get the last element of the data array
           var last = data.slice(-1);
-          console.log(last);
+          // overwrite the group with single entry
+          groupByEmail[group] = last;
        } 
     } 
 
+    // flatten the structure into a simpler array
+    let myData = Object.values(groupByEmail);
+    var flattened = myData.reduce(function(a, b) {
+      return a.concat(b);
+    });
 
-    console.log('groupedSubs');
-    //console.log(groupByEmail);
-
-    azureData = tempArray.sort(totalScoreCompare).reverse();
+    azureData = flattened.sort(totalScoreCompare).reverse();
     // add rank to the sorted data based on the index value
     for (let index in azureData){
       let keypairvalue = parseInt(index)+1;
       azureData[index].rank = keypairvalue;
     }
-    // filter out previous submission so that only the last is shown on the leaderboard
+    
     
 
     // send to local storage
