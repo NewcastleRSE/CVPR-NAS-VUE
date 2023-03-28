@@ -26,9 +26,10 @@
         <br>
         <h2>CVPR-NAS 2023 leader board</h2>
 
-				<p id="page-text">If your submission appears on the leaderboard, you have automatically qualified for stage 3 of the competition (New submission scores will remain blank until values are calculated)</p>
-
+				<p id="page-text">If your submission appears on the leaderboard, you have automatically qualified for stage 3 of the competition (New submission scores will remain blank until values are calculated)
+        </p>
 				<p>Submissions with uniform -100 scores have *failed*, please consult your Submission Completed email to see the submission stdout and stderr.</p>
+        <p>Please note: only the <em>last</em> submission from any entrant to the competition will now be displayed on the leaderboard.</p>
       </div>
     </section>
 
