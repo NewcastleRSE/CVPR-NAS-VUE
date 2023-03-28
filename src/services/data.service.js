@@ -1,5 +1,8 @@
 import axios from "axios";
 
+// Requiring the lodash library 
+const _ = require("lodash"); 
+
 export const dataService = {
   getSubmissions,
   logout,
@@ -28,12 +31,40 @@ function getSubmissions() {
       }
       tempArray.push(x);
     }
-    azureData = tempArray.sort(totalScoreCompare).reverse();
+
+    // filter out previous submission so that only the last is shown on the leaderboard
+    // group by emails
+    const groupByEmail = _.groupBy(tempArray, 'userEmail');
+
+    for (var group in groupByEmail) {
+       var myGroup = groupByEmail[group];
+       console.log(myGroup.length);
+       if(myGroup.length > 1)
+       {
+          // put the array in datetime order
+          const data = myGroup.sort(dateCompare); 
+          // get the last element of the data array
+          var last = data.slice(-1);
+          // overwrite the group with single entry
+          groupByEmail[group] = last;
+       } 
+    } 
+
+    // flatten the structure into a simpler array
+    let myData = Object.values(groupByEmail);
+    var flattened = myData.reduce(function(a, b) {
+      return a.concat(b);
+    });
+
+    azureData = flattened.sort(totalScoreCompare).reverse();
     // add rank to the sorted data based on the index value
     for (let index in azureData){
       let keypairvalue = parseInt(index)+1;
       azureData[index].rank = keypairvalue;
     }
+    
+    
+
     // send to local storage
     localStorage.setItem('lbdata', JSON.stringify(azureData));
   }.bind(this))
@@ -45,6 +76,10 @@ function getSubmissions() {
 function totalScoreCompare(obj1, obj2) {
   return obj1.totalScore - obj2.totalScore;
 }
+
+function dateCompare(obj1, obj2){
+  return obj1.createdAt > obj2.createdAt; 
+} 
 
 function formatData(data){
     let tableItem = {
@@ -61,7 +96,9 @@ function formatData(data){
       'sadieAdjScore' : data.attributes.Sadie_Adj_Score,
       'sadieParams' : data.attributes.Sadie_Params,
       'sadieRawScore' : data.attributes.Sadie_Raw_Score,
-      'sadieRuntime' : data.attributes.Sadie_Runtime
+      'sadieRuntime' : data.attributes.Sadie_Runtime,
+      'createdAt' : data.attributes.createdAt,
+      'userEmail': data.attributes.user_email
     }
     return tableItem;
 }
