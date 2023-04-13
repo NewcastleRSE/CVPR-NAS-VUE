@@ -36,13 +36,11 @@ The competition has 3 stages. Users are able to upload zip files which are recei
 
 ### Prerequisites
 
-Vue-cli, Node.js, yarn
+Vue-cli, Node.js, yarn. Use Node 16.
 
 ### Installation
 
 Clone the repo into a suitable directory. Create an .env file containing value for BASE_URL e.g. BASE_URL=localhost:1338. 
-
-Use Node 16.
 
 Install vue-cli 
 
