@@ -20,7 +20,7 @@
         
           <p class="submit-text"><strong>* Please ensure you have no file named main.py or score.py in your submission, this will cause your submission to error!*</strong></p>
           <p class="submit-text-extra"><strong>NOTE: submissions are now restricted to 5 attempts!</strong></p>
-         <!-- <p>PLEASE NOTE - CODE SUBMISSION WILL BE AVAILABLE WHEN PHASE 2 OF THE COMPETITION OPENS</p> -->
+         <p>PLEASE NOTE - CODE SUBMISSION WILL BE AVAILABLE WHEN PHASE 2 OF THE COMPETITION OPENS</p> 
 
           <p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
           <form enctype="multipart/form-data">
@@ -33,9 +33,9 @@
               <input type="file" id="file" ref="file" v-on:change="uploadFile()"/>
               <br><br>
 
-                <button type="submit" :disabled="title === ''" class="btn-sub p-5 text-white" @click="submitFile($event)">
+               <!--<button type="submit" :disabled="title === ''" class="btn-sub p-5 text-white" @click="submitFile($event)"> -->
                 <!-- this line prevents form submission -->
-                <!--	<button type="submit" :disabled=disabled class="btn-sub p-5 text-white" > -->
+                <button type="submit" :disabled=disabled class="btn-sub p-5 text-white" > 
                 Upload <font-awesome-icon class="ml-3" :icon="['fas', 'arrow-right']" />
               </button>
             </div>
