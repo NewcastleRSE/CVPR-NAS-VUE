@@ -26,7 +26,7 @@
           <br>
           <h2>CVPR-NAS 2023 Info</h2>
 
-					<p>Phase 1 of the competition is now open!</p>
+					<p>Phase 2 of the competition is now open!</p>
 
         </div>
       </section>

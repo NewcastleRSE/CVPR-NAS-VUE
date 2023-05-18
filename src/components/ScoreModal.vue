@@ -9,9 +9,9 @@
         <h3>Final Score - Rank {{  data.rowData.rank }}</h3>
         <div id="score">{{ data.rowData.totalScore }} </div>
         <div class='modal-body'>
-          <table>
+          <table class="score-table">
             <thead>
-              <tr><th colspan="2" class="yellow-header">Chester</th><th colspan="2" class="green-header">Isabella</th><th colspan="2" class="yellow-header">Sadie</th></tr>
+              <tr><th colspan="2" class="midgrey-header">Chester</th><th colspan="2" class="midgrey-header">Isabella</th><th colspan="2" class="midgrey-header">Sadie</th></tr>
             </thead>
             <tbody>
               <tr><td class="y-col">Adjusted Score</td><td>{{ data.rowData.chesterAdjScore }}</td><td class="g-col">Adjusted Score</td><td>{{ data.rowData.isabellaAdjScore }}</td><td class="y-col">Adjusted Score</td><td>{{ data.rowData.sadieAdjScore }}</td></tr>
@@ -83,17 +83,20 @@ h3 {
   margin-top: 20px;
   font-size: 1.2em;
 }
-table {
+
+table.score-table {
   width: 100%;
-  border: 1px solid #868890;
-  border-collapse: collapse;
+  /*border: 1px solid #868890; */
+  border-collapse: separate;
+  border-radius: 20px;
+  overflow: hidden;
 
 }
 
 
 td, th {
   padding: 10px;
-  border: 1px solid #868890;
+  /*border: 1px solid #868890;*/
 }
 
 .modal-mask {
@@ -130,6 +133,7 @@ td, th {
   background-color: #ff695b;
   padding: 20px;
   margin: 20px;
+  border-radius: 10px;;
 }
 
 .modal-body {
@@ -146,20 +150,16 @@ td, th {
   bottom: 0;
 }
 
-.yellow-header {
-  background-color: #FF9285;
-}
-
-.green-header {
-  background-color: #ff9a85;
+.midgrey-header {
+  background-color: #acabab;
 }
 
 .y-col {
-  background-color: #ffb8ba;
+  background-color: #d8d6d5;
 }
 
 .g-col {
-  background-color: #ffb8ba;
+  background-color: #d8d6d5;
 }
 
 </style>

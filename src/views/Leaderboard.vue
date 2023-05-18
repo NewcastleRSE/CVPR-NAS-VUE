@@ -29,7 +29,7 @@
 				<p id="page-text">If your submission appears on the leaderboard, you have automatically qualified for stage 3 of the competition (New submission scores will remain blank until values are calculated)
         </p>
 				<p>Submissions with uniform -100 scores have *failed*, please consult your Submission Completed email to see the submission stdout and stderr.</p>
-        <p>Please note: only the <em>last</em> submission from any entrant to the competition will now be displayed on the leaderboard.</p>
+        <p>Please note: only the <em>last</em> submission from any entrant to the competition will now be displayed on the leaderboard. In Phase 2, test runs are limited to 1 hour in duration.</p>
       </div>
     </section>
 
