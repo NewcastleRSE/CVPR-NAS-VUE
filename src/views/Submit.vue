@@ -88,7 +88,7 @@ export default {
       this.submissionLimit = JSON.parse(window.localStorage.getItem('submissionLimit'));
       this.submissionLimit = parseInt(this.submissionLimit);
 
-      if(this.submissionLimit <= 4) { 
+      if(this.submissionLimit <= 6) { 
         formData.append('files.file', this.file);
         const endpoint = `https://cvprnas.azurewebsites.net/api/submissions`;
         await this.axios.post(endpoint, formData, {
