@@ -15,7 +15,8 @@ function getSubmissions() {
   let tempArray = [];
   let azureData = [];
 
-  const endpoint = `https://cvprnas.azurewebsites.net/api/submissions`;
+
+  const endpoint = `https://cvprnas.azurewebsites.net/api/submissions?pagination[pageSize]=9999`;
   axios.get(endpoint, {
     headers: {
       'Content-Type' : 'application/json',
