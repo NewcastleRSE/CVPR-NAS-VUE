@@ -19,7 +19,7 @@
           <p class="submit-text">Please add a title to your entry - this is the name that will be shown on the leaderboard.</p>
         
           <p class="submit-text"><strong>* Please ensure you have no file named main.py or score.py in your submission, this will cause your submission to error!*</strong></p>
-          <p class="submit-text-extra"><strong>NOTE: submissions are now restricted to 5 attempts!</strong></p>
+          <p class="submit-text-extra"><strong>NOTE: submissions are now restricted to 7 attempts!</strong></p>
         <!--  <p>PLEASE NOTE - CODE SUBMISSION WILL BE AVAILABLE WHEN PHASE 2 OF THE COMPETITION OPENS</p> -->
 
           <p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
