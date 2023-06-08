@@ -19,8 +19,10 @@
           <p class="submit-text">Please add a title to your entry - this is the name that will be shown on the leaderboard.</p>
         
           <p class="submit-text"><strong>* Please ensure you have no file named main.py or score.py in your submission, this will cause your submission to error!*</strong></p>
-          <p class="submit-text-extra"><strong>NOTE: submissions are now restricted to 5 attempts!</strong></p>
+        <!-- <p class="submit-text-extra"><strong>NOTE: submissions are now restricted to 7 attempts!</strong></p>--> 
         <!--  <p>PLEASE NOTE - CODE SUBMISSION WILL BE AVAILABLE WHEN PHASE 2 OF THE COMPETITION OPENS</p> -->
+
+          <p>PLEASE NOTE - CODE SUBMISSION IS NOW ONLY OPEN TO PHASE 3 FINALISTS.</p> 
 
           <p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
           <form enctype="multipart/form-data">
@@ -35,7 +37,7 @@
 
                <button type="submit" :disabled="title === ''" class="btn-sub p-5 text-white" @click="submitFile($event)"> 
                 <!-- this line prevents form submission -->
-              <!--  <button type="submit" :disabled=disabled class="btn-sub p-5 text-white" > -->
+              <!-- <button type="submit" :disabled=disabled class="btn-sub p-5 text-white" > -->
                 Upload <font-awesome-icon class="ml-3" :icon="['fas', 'arrow-right']" />
               </button>
             </div>
@@ -88,7 +90,7 @@ export default {
       this.submissionLimit = JSON.parse(window.localStorage.getItem('submissionLimit'));
       this.submissionLimit = parseInt(this.submissionLimit);
 
-      if(this.submissionLimit <= 4) { 
+      if(this.submissionLimit <= 6) { 
         formData.append('files.file', this.file);
         const endpoint = `https://cvprnas.azurewebsites.net/api/submissions`;
         await this.axios.post(endpoint, formData, {

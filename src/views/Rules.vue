@@ -10,7 +10,10 @@
 
 					<router-link to="/">HOME</router-link>
 					<router-link to="/rules">RULES</router-link>
-					<router-link to="/register" v-if="!user">SIGN UP</router-link>
+
+					<!-- close off sign up so that only stage 3 qualifiying users can now sign in and upload -->
+					<!--	<router-link to="/register" v-if="!user">SIGN UP</router-link> -->
+				
 					<router-link to="/login" v-if="!user">LOGIN</router-link>
 					<router-link to="" v-if="user">
 						<font-awesome-icon class="text-xl" :icon="['fas', 'user-circle']" /> {{ user.username }}
@@ -26,7 +29,9 @@
 				<br>
 				<h2>CVPR-NAS 2023 Rules</h2>
 
-				<p>Phase 1 of the competition is now open!</p>
+				<!--<p>Phase 2 of the competition is now open until the 7th June!</p>-->
+
+				<p>Phase 3 of the competition has begun!</p>
 
 			</div>
 		</section>
@@ -38,7 +43,7 @@
 					<h2 class="major">Competition Rules</h2>
 					<p>Please do not attempt to download the datasets used in the final stages of the competition. Attempts to do so will lead to immediate disqualification.</p>
 
-					<p>Finalists will be expected to attend the conference and give a short presentation of their work, in person or virtually. The first-place team must attend <strong>in person</strong> to receive the GPU prize on offer.
+					<p>Finalists will be expected to attend the conference and give a short presentation of their work, in person or virtually. The first-place team must attend <strong>in person</strong> to receive the prize on offer.
 					</p>
 					<p>The top three finalists will also be expected to attend.</p>
 
