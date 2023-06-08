@@ -12,7 +12,10 @@
 
           <router-link to="/">HOME</router-link>
           <router-link to="/rules">RULES</router-link>
-          <router-link to="/register" v-if="!user">SIGN UP</router-link>
+
+          <!-- close off sign up so that only stage 3 qualifiying users can now sign in and upload -->
+					<!--	<router-link to="/register" v-if="!user">SIGN UP</router-link> -->
+
           <router-link to="/login" v-if="!user">LOGIN</router-link>
           <router-link to="" v-if="user">
             <font-awesome-icon class="text-xl" :icon="['fas', 'user-circle']" /> {{ user.username }}
@@ -30,7 +33,10 @@
 
        <!-- <p>Phase 1 of the competition is still open, but get ready as Phase 2 begins 18th May!</p> -->
 
-       <p>Phase 2 of the competition is now open until the 7th June! Submissions will be accepted until this new date.</p>
+       <!-- <p>Phase 2 of the competition is now open until the 7th June! Submissions will be accepted until this new date.</p> -->
+
+       <p>Phase 3 of the competition has begun!</p>
+
 
       </div>
     </section>
@@ -54,8 +60,8 @@
           </p>
           <ul>
            <li>Phase 1: Local development of your NAS approach using the provided testing framework, please download the starter kit to take part.</li>
-            <li>Phase 2: Validation that your framework works within our test environment. Starts 18th May <strong>LIVE NOW</strong>.</li>
-            <li>Phase 3: Running your NAS approach against our hidden data. Starts 8th June.</li>
+            <li>Phase 2: Validation that your framework works within our test environment. Starts 18th May <!--<strong>LIVE NOW</strong>.--></li>
+            <li>Phase 3: Running your NAS approach against our hidden data. Starts 8th June. <strong>LIVE NOW</strong></li>
           </ul>
           <p>This is in conjunction with our <a href="http://cvpr-nas.com/">CVPR-NAS</a> workshop at <a href="https://cvpr2023.thecvf.com">CVPR 2023</a>.</p>
           <p>We hope you will take part in the competition and look forward to seeing you at CVPR 2023!</p>
