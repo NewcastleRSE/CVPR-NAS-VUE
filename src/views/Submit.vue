@@ -22,7 +22,7 @@
         <!-- <p class="submit-text-extra"><strong>NOTE: submissions are now restricted to 7 attempts!</strong></p>--> 
         <!--  <p>PLEASE NOTE - CODE SUBMISSION WILL BE AVAILABLE WHEN PHASE 2 OF THE COMPETITION OPENS</p> -->
 
-          <p>PLEASE NOTE - CODE SUBMISSION IS NOW ONLY OPEN TO PHASE 3 FINALISTS.</p> 
+          <p>PLEASE NOTE - CODE SUBMISSION WILL NOW ONLY OPEN TO PHASE 3 FINALISTS ON AN APPROVED DATE.</p> 
 
           <p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
           <form enctype="multipart/form-data">
@@ -35,9 +35,9 @@
               <input type="file" id="file" ref="file" v-on:change="uploadFile()"/>
               <br><br>
 
-               <button type="submit" :disabled="title === ''" class="btn-sub p-5 text-white" @click="submitFile($event)"> 
+               <!-- <button type="submit" :disabled="title === ''" class="btn-sub p-5 text-white" @click="submitFile($event)"> -->
                 <!-- this line prevents form submission -->
-              <!-- <button type="submit" :disabled=disabled class="btn-sub p-5 text-white" > -->
+                <button type="submit" :disabled=disabled class="btn-sub p-5 text-white" >
                 Upload <font-awesome-icon class="ml-3" :icon="['fas', 'arrow-right']" />
               </button>
             </div>
