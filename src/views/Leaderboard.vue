@@ -30,6 +30,7 @@
         </p>
 				<p>Submissions with uniform -100 scores have *failed*, please consult your Submission Completed email to see the submission stdout and stderr.</p>
         <p>Please note: only the <em>last</em> submission from any entrant to the competition will now be displayed on the leaderboard. In Phase 2, test runs are limited to 1 hour in duration.</p>
+        <p>PHASE 3 SUBMISSIONS ARE NOW CLOSED</p> 
       </div>
     </section>
 
