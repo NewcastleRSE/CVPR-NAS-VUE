@@ -35,7 +35,8 @@
 
        <!-- <p>Phase 2 of the competition is now open until the 7th June! Submissions will be accepted until this new date.</p> -->
 
-       <p>Phase 3 of the competition has begun!</p>
+       <!--<p>Phase 3 of the competition has begun!</p>-->
+       <p>PHASE 3 SUBMISSIONS ARE NOW CLOSED</p> 
 
 
       </div>
@@ -61,7 +62,7 @@
           <ul>
            <li>Phase 1: Local development of your NAS approach using the provided testing framework, please download the starter kit to take part.</li>
             <li>Phase 2: Validation that your framework works within our test environment. Starts 18th May <!--<strong>LIVE NOW</strong>.--></li>
-            <li>Phase 3: Running your NAS approach against our hidden data. Starts 8th June. <strong>LIVE NOW</strong></li>
+            <li>Phase 3: Running your NAS approach against our hidden data. Starts 8th June, ends 15th June <!--<strong>LIVE NOW</strong> --></li>
           </ul>
           <p>This is in conjunction with our <a href="http://cvpr-nas.com/">CVPR-NAS</a> workshop at <a href="https://cvpr2023.thecvf.com">CVPR 2023</a>.</p>
           <p>We hope you will take part in the competition and look forward to seeing you at CVPR 2023!</p>

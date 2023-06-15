@@ -31,7 +31,9 @@
 
 				<!--<p>Phase 2 of the competition is now open until the 7th June!</p>-->
 
-				<p>Phase 3 of the competition has begun!</p>
+				<!--<p>Phase 3 of the competition has begun!</p>-->
+
+				<p>PHASE 3 SUBMISSIONS ARE NOW CLOSED</p> 
 
 			</div>
 		</section>

@@ -31,7 +31,9 @@
 
                 <!-- <p>Phase 1 of the competition is now open!</p>-->
 
-                <p>Phase 3 of the competition has begun!</p>
+                <!--<p>Phase 3 of the competition has begun!</p>-->
+
+                <p>PHASE 3 SUBMISSIONS ARE NOW CLOSED</p> 
 
             </div>
         </section>
