@@ -30,7 +30,7 @@
             </span>
         </div>
         <br>
-        <h2>NAS Unseen-Data Challenge </h2>
+        <h2>Organisers </h2>
         <p> PHASE 1 - Open </p>
         <p> PHASE 2 - Coming Soon </p> 
 
@@ -39,46 +39,56 @@
     </section>
 
     <!-- The information -->
-    <section id="one" class="wrapper spotlight style1">
-      <div class="inner">
-
-        <div class="content">
-          <h2 class="major">The competition</h2>
-          <p>
-            There is a lot of evidence that Neural Architecture Search can produce excellent models capable of ML tasks on well-known datasets, that is, 
-						datasets like CIFAR-10 and ImageNet where years of research have created a set of best practices to follow to achieve good results. This leads 
-						us to wonder, are we overfitting our NAS algorithms to well-known datasets?
-          </p>
-          <p>
-            We want to investigate the "real-world" use case of NAS, that is, searching for a state-of-the-art architecture on an entirely novel dataset. 
-						In such a case, there is no existing set of best practices to build from, nor extensive research into optimal architectural patterns, augmentation 
-						policies, or hyperparameter selection. In essence, we are asking how well NAS pipelines can work “out-of-the-box” with little-to-no time for tuning. 
-						To explore this, we have designed this competition to evaluate how well a NAS pipeline fares over unseen novel tasks and datasets.
-          </p>
-          <p>
-            In this competition, you will be asked to design a NAS pipeline, namely a data processor, a NAS algorithm, and a training policy. 
-						This pipeline will then be evaluated on our machines over a number of completely novel datasets: the challenge is to design a pipeline that is flexible enough 
-						to be competitive regardless of the datasets provided to it.
-          </p>
-          <p>
-            This year we are running the competition at AutoML 2024 (<a href="https://2024.automl.cc" >2024.automl.cc</a>). AutoML is more alligned with NAS than previous venues, and  we think it will be a more suitable home for the
-            competition.
-          </p>
-          <p>
-            The competition will be run in three phases:
-          </p>
-          <ul>
-            <li>Phase 1: Local development of your NAS approach using the provided testing framework. <strong>Open Now!</strong></li>
-            <li>Phase 2: Validation that your framework works within our test environment. Starting Soon.</li>
-            <li>Phase 3: Running your NAS approach against our hidden data. Starting August 2024.</li>
-          </ul>
-          <p>
-            Results are to be announced at <a href="https://2024.automl.cc" >AutoML 2024</a> in Paris, September 9th-12th, with finalists being informed in late August/ early September.
-          </p>
-
-        </div>
-      </div>
-    </section>
+    <section id="two" class="wrapper spotlight style1">
+					<div class="inner">
+						<!-- <a href="#" class="image"><img src="../assets/pic01.jpg" alt="" /></a> -->
+						<img class="image" src="../assets/David.png"/>
+						<div class="content">
+							<h2 class="major"> David Towers </h2>
+							<h4> PhD Candidate at Newcastle University</h4>
+						</div>
+					</div>
+				</section>	
+					<section id="one" class="wrapper alt spotlight style2">
+						<div class="inner">
+							<!-- <a href="#" class="image"><img src="../assets/pic01.jpg" alt="" /></a> -->
+							<img class="image" src="../assets/Steve-crop.png"/>
+							<div class="content">
+								<h2 class="major"> A. Stephen McGough </h2>
+								<h4> Reader at Newcastle University</h4>
+							</div>
+						</div>
+					</section>
+					<section id="two" class="wrapper spotlight style3">
+						<div class="inner">
+							<!-- <a href="#" class="image"><img src="../assets/pic01.jpg" alt="" /></a> -->
+							<img class="image" src="../assets/Amir.jpg"/>
+							<div class="content">
+								<h2 class="major"> Amir Atapour-Abarghouei </h2>
+								<h4> Assistant Professor at Durham University</h4>
+							</div>
+						</div>
+					</section>
+					<section id="one" class="wrapper alt spotlight style2">
+						<div class="inner">
+							<!-- <a href="#" class="image"><img src="../assets/pic01.jpg" alt="" /></a> -->
+							<img class="image" src="../assets/Elliot-crop.png"/>
+							<div class="content">
+								<h2 class="major"> Elliot J. Crowley </h2>
+								<h4> Lecturer at the University of Edinburgh</h4>
+							</div>
+						</div>
+					</section>
+					<section id="one" class="wrapper spotlight style1">
+						<div class="inner">
+							<!-- <a href="#" class="image"><img src="../assets/pic01.jpg" alt="" /></a> -->
+							<img class="image" src="../assets/Linus.jpg"/>
+							<div class="content">
+								<h2 class="major"> Linus Ericsson </h2>
+								<h4> PostDoc at the University of Edinburgh</h4>
+							</div>
+						</div>
+					</section>
 
     <!-- Footer -->
     <section id="footer" class="wrapper alt spotlight style2">

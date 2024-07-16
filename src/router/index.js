@@ -4,8 +4,8 @@ import Home from '../views/Home.vue'
 import Register from '../views/Register.vue'
 import Login from '../views/Login.vue'
 import ForgottenPassword from '../views/ForgottenPassword.vue'
+import Organisers from '../views/Organisers.vue'
 import ResetPassword from '../views/ResetPassword.vue'
-import DownloadZip from "../views/DownloadZip";
 import Submit from "../views/Submit";
 import Leaderboard from "../views/Leaderboard";
 import Instructions from "../views/Instructions";
@@ -34,14 +34,14 @@ const routes = [
     component: ForgottenPassword
   },
   {
+    path: '/organisers',
+    name: 'Organisers',
+    component: Organisers
+  },
+  {
     path: '/resetpassword',
     name: 'ResetPassword',
     component: ResetPassword
-  },
-  {
-    path: '/download',
-    name: 'DownloadZip',
-    component: DownloadZip
   },
   {
     path: '/submit',
@@ -75,7 +75,7 @@ router.beforeEach((to, from, next) => {
   // redirect to login page if not logged in and trying to access a restricted page
 
   // list public pages
-  const publicPages = ['/','/home', '/login', '/register','/forgotpassword', '/resetpassword', '/download', '/rules', '/instructions'];
+  const publicPages = ['/','/home', '/login', '/register', '/organisers', '/forgotpassword', '/resetpassword', '/rules', '/instructions'];
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem('userData');
 

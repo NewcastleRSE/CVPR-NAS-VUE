@@ -32,7 +32,12 @@ footer, header, hgroup, nav, section {
 
 body {
   line-height: 1;
-  background-color: #FFB8BA;
+  background-color: #CEA9D1;
+}
+
+img.unilogo{
+	height: 5em;
+	padding: 0 1em;
 }
 
 
@@ -108,8 +113,8 @@ html {
 }
 
 body {
-  background-color: #FF695B;
- /* background-image: linear-gradient(to top, rgba(232, 64, 52, 1), rgba(232, 64, 52, 1)), url("../bg.png"); */
+  //background-color: #523278;
+  background-image: linear-gradient(to top, rgba(82, 50, 120, 0.8), rgba(82, 50, 120, 0.8)), url("../assets/bg.png");
   background-size: auto,
   cover;
   background-attachment: fixed,
@@ -136,7 +141,6 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 
 #email, #email a {
   text-align: center;
-  color: #2e3141;
 }
 
 body a {
@@ -156,12 +160,12 @@ body, input, select, textarea {
 @media screen and (min-width: 1280px){
 
   #banner  {
-    background-image: linear-gradient(to top, rgba(232, 64, 52, 1), rgba(232, 64, 52, 1)), url("../assets/bg.png");
+    background-image: linear-gradient(to top, rgba(82, 50, 120, 0.8), rgba(82, 50, 120, 0.8)), url("../assets/bg.png");
     margin-bottom: -6.5em;
   }
 
   .wrapper.spotlight {
-    background-color: #2d3a69;
+    background-color: #6F3582;
   }
 }
 
@@ -2355,7 +2359,7 @@ input[type="radio"]:checked + label:before {
 
 input[type="checkbox"]:focus + label:before,
 input[type="radio"]:focus + label:before {
-  border-color: #FF695B;
+  border-color: #523278;
 }
 
 input[type="checkbox"] + label:before {
@@ -2780,7 +2784,7 @@ ul.pagination li > .page:hover {
 }
 
 ul.pagination li > .page.active {
-  background-color: #FF695B;
+  background-color: #523278;
 }
 
 ul.pagination li:first-child {
@@ -2948,7 +2952,7 @@ input[type="reset"].primary,
 input[type="button"].primary,
 button.primary,
 .button.primary {
-  background-color: #FF695B;
+  background-color: #523278;
   box-shadow: none;
 }
 
@@ -3284,8 +3288,8 @@ button:disabled,
 
   #banner {
     padding: 7em 0 8.25em 0 ;
-    background-color: #FF695B;
-    background-image: linear-gradient(to top, rgba(232, 64, 52, 1), rgba(232, 64, 52, 1)), url("../assets/bg.png");
+    background-color: #523278;
+    background-image: linear-gradient(to top, rgba(82, 50, 120, 0.8), rgba(82, 50, 120, 0.8)), url("../assets/bg.png");
     background-size: auto,
     cover;
     background-position: center,
@@ -3396,8 +3400,8 @@ body.is-preload #banner p {
 
   #wrapper > header {
     padding: 9em 0 6.25em 0 ;
-    background-color: #FF695B;
-    background-image: linear-gradient(to top, rgba(232, 64, 52, 1), rgba(232, 64, 52, 1)), url("../assets/bg.png");
+    background-color: #523278;
+    background-image: linear-gradient(to top, rgba(82, 50, 120, 0.8), rgba(82, 50, 120, 0.8)), url("../assets/bg.png");
     background-size: auto,
     cover;
     background-position: center,
@@ -3444,7 +3448,7 @@ body.is-preload #banner p {
 }
 
 .wrapper {
-  background-color: #FF695B;
+  background-color: #523278;
   margin: 6.5em 0;
   position: relative;
 }
@@ -3454,11 +3458,11 @@ body.is-preload #banner p {
 }
 
 .wrapper:before {
-  box-shadow: inset 0 -1px 0 0 #FF695B, 0 1px 0 0 #FF695B;
+  box-shadow: inset 0 -1px 0 0 #523278, 0 1px 0 0 #523278;
 }
 
 .wrapper:after {
-  box-shadow: inset 0 -1px 0 0 #FF695B, 0 1px 0 0 #FF695B;
+  box-shadow: inset 0 -1px 0 0 #523278, 0 1px 0 0 #523278;
 }
 
 .wrapper:before, .wrapper:after {
@@ -3506,7 +3510,7 @@ body.is-preload #banner p {
 }
 
 .wrapper.style2 {
-  background-color: #FF9A85;
+  background-color: #C597D4;
 }
 
 .wrapper.style2:before, .wrapper.style2:after {
@@ -3514,15 +3518,15 @@ body.is-preload #banner p {
 }
 
 .wrapper.style2:before {
-  box-shadow: inset 0 -1px 0 0 #FF9A85 , 0 1px 0 0 #FF9A85 ;
+  box-shadow: inset 0 -1px 0 0 #C597D4 , 0 1px 0 0 #C597D4 ;
 }
 
 .wrapper.style2:after {
-  box-shadow: inset 0 -1px 0 0 #FF9A85 , 0 1px 0 0 #FF9A85 ;
+  box-shadow: inset 0 -1px 0 0 #C597D4 , 0 1px 0 0 #C597D4 ;
 }
 
 .wrapper.style3 {
-  background-color: #FFB8BA;
+  background-color: #CEA9D1;
   margin: 6.5em 0 0 0;
 }
 
@@ -3531,11 +3535,11 @@ body.is-preload #banner p {
 }
 
 .wrapper.style3:before {
-  box-shadow: inset 0 -1px 0 0 #FFB8BA, 0 1px 0 0 #FFB8BA;
+  box-shadow: inset 0 -1px 0 0 #CEA9D1, 0 1px 0 0 #CEA9D1;
 }
 
 .wrapper.style3:after {
-  box-shadow: inset 0 -1px 0 0 #FFB8BA, 0 1px 0 0 #FFB8BA;
+  box-shadow: inset 0 -1px 0 0 #CEA9D1, 0 1px 0 0 #CEA9D1;
 }
 
 .wrapper.style4 {
@@ -3587,19 +3591,19 @@ body.is-preload #banner p {
 }
 
 .wrapper.spotlight {
-  background-color: #FF695B;
+  background-color: #6F3582;
 }
 
 .wrapper.spotlight:before, .wrapper.spotlight:after {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23FF695B%3B' /%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%236F3582%3B' /%3E%3C/svg%3E");
 }
 
 .wrapper.spotlight:before {
-  box-shadow: inset 0 -1px 0 0 #FF695B, 0 1px 0 0 #FF695B;
+  box-shadow: inset 0 -1px 0 0 #6F3582, 0 1px 0 0 #6F3582;
 }
 
 .wrapper.spotlight:after {
-  box-shadow: inset 0 -1px 0 0 #FF695B, 0 1px 0 0 #FF695B;
+  box-shadow: inset 0 -1px 0 0 #6F3582, 0 1px 0 0 #6F3582;
 }
 
 .wrapper.spotlight .inner {
@@ -3648,45 +3652,58 @@ body.is-preload #banner p {
 }
 
 
+.wrapper.spotlight.style1:before, .wrapper.spotlight.style1:after {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%236F3582%3B' /%3E%3C/svg%3E");
+}
+
+.wrapper.spotlight.style1:before {
+  box-shadow: inset 0 -1px 0 0 #6F3582, 0 1px 0 0 #6F3582;
+}
+
+.wrapper.spotlight.style1:after {
+  box-shadow: inset 0 -1px 0 0 #6F3582, 0 1px 0 0 #6F3582;
+}
+
+
 .wrapper.spotlight.style2 {
-  background-color: #FF9A85;
+  background-color: #C597D4;
 }
 
 .wrapper.spotlight.style2:before, .wrapper.spotlight.style2:after {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23FF9A85 %3B' /%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23C597D4%3B' /%3E%3C/svg%3E");
 }
 
 .wrapper.spotlight.style2:before {
-  box-shadow: inset 0 -1px 0 0 #FF9A85 , 0 1px 0 0 #FF9A85 ;
+  box-shadow: inset 0 -1px 0 0 #C597D4 , 0 1px 0 0 #C597D4 ;
 }
 
 .wrapper.spotlight.style2:after {
-  box-shadow: inset 0 -1px 0 0 #FF9A85 , 0 1px 0 0 #FF9A85 ;
+  box-shadow: inset 0 -1px 0 0 #C597D4 , 0 1px 0 0 #C597D4 ;
 }
 
 .wrapper.spotlight.style3 {
-  background-color: #FFB8BA;
+  background-color: #CEA9D1;
   padding-bottom: 50px;
 }
 
 .wrapper.spotlight.style3:before, .wrapper.spotlight.style3:after {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23FFB8BA%3B' /%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23CEA9D1%3B' /%3E%3C/svg%3E");
 }
 
-.wrapper.spotlight.style3:after {
+.wrapper.spotlight.style3.end:after {
   content: none;
 }
 
 .wrapper.spotlight.style3:before {
-  box-shadow: inset 0 -1px 0 0 #FFB8BA, 0 1px 0 0 #FFB8BA;
+  box-shadow: inset 0 -1px 0 0 #CEA9D1, 0 1px 0 0 #CEA9D1;
 }
 
 .wrapper.spotlight.style3:after {
-  box-shadow: inset 0 -1px 0 0 #FFB8BA, 0 1px 0 0 #FFB8BA;
+  box-shadow: inset 0 -1px 0 0 #CEA9D1, 0 1px 0 0 #CEA9D1;
 }
 
 .wrapper.spotlight.style4 {
-  background-color: #2d3a69;
+  background-color: #6F3582;
 }
 
 .wrapper.spotlight.style4:before, .wrapper.spotlight.style4:after {
@@ -3718,19 +3735,19 @@ body.is-preload #banner p {
 }
 
 .wrapper.spotlight.style6 {
-  background-color: #2d3a69;
+  background-color: #6F3582;
 }
 
 .wrapper.spotlight.style6:before, .wrapper.spotlight.style6:after {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%232d3a69%3B' /%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%236F3582%3B' /%3E%3C/svg%3E");
 }
 
 .wrapper.spotlight.style6:before {
-  box-shadow: inset 0 -1px 0 0 #2d3a69, 0 1px 0 0 #2d3a69;
+  box-shadow: inset 0 -1px 0 0 #6F3582, 0 1px 0 0 #6F3582;
 }
 
 .wrapper.spotlight.style6:after {
-  box-shadow: inset 0 -1px 0 0 #2d3a69, 0 1px 0 0 #2d3a69;
+  box-shadow: inset 0 -1px 0 0 #6F3582, 0 1px 0 0 #6F3582;
 }
 
 @media screen and (max-width: 980px) {
@@ -3862,9 +3879,9 @@ body.is-preload #banner p {
   width: calc(50% - 1.5em);
 }
 
-#footer .inner .contact {
-  width: calc(50% - 1.5em);
-}
+// #footer .inner .contact {
+//   width: calc(50% - 1.5em);
+// }
 
 #copy .inner {
   padding: 0;
@@ -3881,8 +3898,13 @@ body.is-preload #banner p {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0 auto;
-  width: 55em;
+  //width: 55em;
 }
+
+#copy.wrapper > .inner {
+  width:100%;
+}
+
 #copy .inner .copyright {
   border-top: solid 2px rgba(255, 255, 255, 1);
   list-style: none;
@@ -3932,7 +3954,7 @@ body.is-preload #banner p {
 @media screen and (max-width: 1280px) {
 
   #footer {
-    background-color: #FF9A85;
+    background-color: #C597D4;
     background-size: auto,
     cover;
     background-position: center,
