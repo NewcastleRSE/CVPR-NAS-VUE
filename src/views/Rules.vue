@@ -30,8 +30,9 @@
 				<br>
 				<h2>Challenge Rules</h2>
 
-				<p> PHASE 1 - Open </p>
-                <p> PHASE 2 - Coming Soon </p> 
+				<!-- <p> PHASE 1 - Open </p> -->
+                <p> PHASE 2 - Open </p> 
+
 
 			</div>
 		</section>

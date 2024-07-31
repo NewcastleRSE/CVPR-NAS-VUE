@@ -32,8 +32,8 @@
         </div>
         <br>
         <h2>NAS Unseen-Data Challenge </h2>
-        <p> PHASE 1 - Open </p>
-        <p> PHASE 2 - Coming Soon </p> 
+        <!-- <p> PHASE 1 - Open </p> -->
+        <p> PHASE 2 - Open </p> 
 
 
       </div>
@@ -69,9 +69,9 @@
             The competition will be run in three phases:
           </p>
           <ul>
-            <li>Phase 1: Local development of your NAS approach using the provided testing framework. <strong>Open Now!</strong></li>
-            <li>Phase 2: Validation that your framework works within our test environment. Starting Soon.</li>
-            <li>Phase 3: Running your NAS approach against our hidden data. Starting August 2024.</li>
+            <li>Phase 1: Local development of your NAS approach using the provided testing framework. --finished--</li>
+            <li>Phase 2: Validation that your framework works within our test environment. Starting Soon. <strong>Open Now!</strong></li>
+            <li>Phase 3: Running your NAS approach against our hidden data. Starting August 14th 2024.</li>
           </ul>
           <p>
             Results are to be announced at <a href="https://2024.automl.cc" >AutoML 2024</a> in Paris, September 9th-12th, with finalists being informed in late August/ early September.
