@@ -14,7 +14,7 @@
             <!-- close off sign up so that only stage 3 qualifiying users can now sign in and upload -->
             <!-- <router-link to="/register" v-if="!user">SIGN UP</router-link> -->
 
-            <router-link to="/login" v-if="!user">LOGIN</router-link>
+            <!-- <router-link to="/login" v-if="!user">LOGIN</router-link> -->
             <router-link to="" v-if="user">
               <font-awesome-icon class="text-xl" :icon="['fas', 'user-circle']" /> {{ user.username }}
             </router-link>
