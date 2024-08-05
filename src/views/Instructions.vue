@@ -22,7 +22,7 @@
             <router-link to="/organisers">ORGANISERS</router-link>
             <a href="https://github.com/Towers-D/NAS-Comp-Starter-Kit">DOWNLOAD</a>
             <router-link to="submit" v-if="user">SUBMIT</router-link>
-            <router-link to="leaderboard" v-if="user">LEADERBOARD</router-link>
+            <!-- <router-link to="leaderboard" v-if="user">LEADERBOARD</router-link> -->
             <span @click="logout">
                   <router-link to="" v-if="user">LOGOUT</router-link>
             </span>

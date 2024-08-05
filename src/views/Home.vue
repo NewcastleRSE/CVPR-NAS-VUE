@@ -25,7 +25,7 @@
           <router-link to="/login" v-if="!user">LOGIN</router-link>
           <router-link to="/register" v-if="!user">SIGN UP</router-link>
           <router-link to="submit" v-if="user">SUBMIT</router-link>
-          <router-link to="leaderboard" v-if="user">LEADERBOARD</router-link>
+          <!-- <router-link to="leaderboard" v-if="user">LEADERBOARD</router-link> -->
           <span @click="logout">
                   <router-link to="" v-if="user">LOGOUT</router-link>
             </span>
